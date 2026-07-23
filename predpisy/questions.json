@@ -3,7 +3,13 @@
   "questions": [
     {
       "q": "1. Zajištění účelného využívání rádiových kmitočtů a správu rádiového spektra vykonává:",
-      "options": ["Český telekomunikační úřad", "Ministerstvo dopravy ČR", "Úřad pro civilní letectví"], "answer": 0 },
+      "options": [
+        "Český telekomunikační úřad",
+        "Ministerstvo dopravy ČR", 
+        "Úřad pro civilní letectví"
+      ], 
+      "answer": 0 
+    },
     { "q": "2. Radiokomunikační službou je komunikační činnost, která spočívá v přenosu, vysílání nebo příjmu signálů prostřednictvím:", "options": ["akustických signálů v atmosféře", "rádiových vln", "optických kabelů"], "answer": 1 },
     { "q": "3. Individuální oprávnění k využívání rádiových kmitočtů uděluje:", "options": ["Řízení letového provozu ČR", "Letecká informační služba", "Český telekomunikační úřad"], "answer": 2 },
     { "q": "4. Držitel individuálního oprávnění k využívání rádiových kmitočtů je povinen platit za využívání rádiových kmitočtů:", "options": ["poplatek dle nařízení vlády o poplatcích", "paušální roční daň z vysílání", "poplatek Mezinárodní telekomunikační unii (ITU)"], "answer": 0 },
