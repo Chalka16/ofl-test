@@ -1,0 +1,292 @@
+{\rtf1\ansi\ansicpg1250\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw8400\paperh11900\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \{\
+  "title": "c) Elektrotechnika a radiotechnika",\
+  "questions": [\
+    \{\
+      "q": "1. Paraleln\uc0\u283  \u345 azen\'e9 akumul\'e1tory:",\
+      "options": [\
+        "umo\'9e\uc0\u328 uj\'ed dod\'e1vat v\u283 t\'9a\'ed proud",\
+        "zvy\'9auj\'ed celkov\'e9 dod\'e1van\'e9 nap\uc0\u283 t\'ed",\
+        "sni\'9euj\'ed celkovou kapacitu baterie"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "2. S\'e9riov\uc0\u283  \u345 azen\'e9 akumul\'e1tory:",\
+      "options": [\
+        "se zapojuj\'ed pro zv\'fd\'9aen\'ed dod\'e1van\'e9ho proudu",\
+        "se zapojuj\'ed pro zv\'fd\'9aen\'ed dod\'e1van\'e9ho nap\uc0\u283 t\'ed",\
+        "nemaj\'ed vliv na celkov\'e9 nap\uc0\u283 t\'ed ani proud"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "3. Jmenovit\'e9 nap\uc0\u283 t\'ed \u269 l\'e1nku olov\u283 n\'e9ho akumul\'e1toru je:",\
+      "options": [\
+        "1,2 V",\
+        "1,5 V",\
+        "2 V"\
+      ],\
+      "answer": 2\
+    \},\
+    \{\
+      "q": "4. Jmenovit\'e9 nap\uc0\u283 t\'ed \u269 l\'e1nku alkalick\'e9ho akumul\'e1toru je:",\
+      "options": [\
+        "1,2 V",\
+        "1,5 V",\
+        "2,0 V"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "5. Jmenovit\'e9 nap\uc0\u283 t\'ed such\'e9ho galvanick\'e9ho \u269 l\'e1nku je:",\
+      "options": [\
+        "1,2 V",\
+        "1,5 V",\
+        "2,0 V"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "6. Such\'e9 galvanick\'e9 \uc0\u269 l\'e1nky:",\
+      "options": [\
+        "nelze dob\'edjet",\
+        "lze b\uc0\u283 \'9en\u283  dob\'edjet v jak\'e9koliv nab\'edje\u269 ce",\
+        "je nutn\'e9 p\uc0\u345 ed pou\'9eit\'edm nab\'edt"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "7. Ant\'e9ny d\uc0\u283 l\'edme podle sm\u283 ru vys\'edl\'e1n\'ed nebo p\u345 \'edjmu na:",\
+      "options": [\
+        "horizont\'e1ln\'ed a vertik\'e1ln\'ed",\
+        "sm\uc0\u283 rov\'e9 a v\'9aesm\u283 rov\'e9",\
+        "aktivn\'ed a pasivn\'ed"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "8. V\'9aesm\uc0\u283 rov\'e1 ant\'e9na m\'e1 vyza\u345 ovac\'ed charakteristiku:",\
+      "options": [\
+        "osmi\uc0\u269 kovou",\
+        "kruhovou",\
+        "\'fazce sm\uc0\u283 rovanou"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "9. V\'9aesm\uc0\u283 rov\'e1 ant\'e9na mus\'ed p\u345 ij\'edmat nebo vys\'edlat stejn\u283  v\'9aemi sm\u283 ry:",\
+      "options": [\
+        "ve vertik\'e1ln\'ed rovin\uc0\u283 ",\
+        "v horizont\'e1ln\'ed rovin\uc0\u283 ",\
+        "ve v\'9aech rovin\'e1ch bez omezen\'ed"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "10. P\uc0\u367 lvlnn\'fd dip\'f3l:",\
+      "options": [\
+        "m\uc0\u367 \'9ee b\'fdt sm\u283 rov\'e1 i v\'9aesm\u283 rov\'e1 ant\'e9na, z\'e1le\'9e\'ed na jeho orientaci k zemsk\'e9mu povrchu",\
+        "je v\'fdhradn\uc0\u283  v\'9aesm\u283 rov\'e1 ant\'e9na za v\'9aech okolnost\'ed",\
+        "je v\'fdhradn\uc0\u283  sm\u283 rov\'e1 ant\'e9na ur\u269 en\'e1 pro d\'e1lkov\'e9 spoje"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "11. P\uc0\u367 lvlnn\'fd dip\'f3l um\'edst\u283 n\'fd rovnob\u283 \'9en\u283  se zemsk\'fdm povrchem:",\
+      "options": [\
+        "m\'e1 v horizont\'e1ln\'ed rovin\uc0\u283  kruhovou vyza\u345 ovac\'ed charakteristiku",\
+        "m\'e1 v horizont\'e1ln\'ed rovin\uc0\u283  osmi\u269 kovou vyza\u345 ovac\'ed charakteristiku",\
+        "nevys\'edl\'e1 v horizont\'e1ln\'ed rovin\uc0\u283  \'9e\'e1dn\'fd sign\'e1l"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "12. Vztah mezi d\'e9lkou vlny (\uc0\u955 ) a kmito\u269 tem (f), kdy\'9e c je rychlost sv\u283 tla, je:",\
+      "options": [\
+        "f = c * \uc0\u955 ",\
+        "f = c / \uc0\u955 ",\
+        "f = \uc0\u955  / c"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "13. Kter\'fd typ modulace m\uc0\u283 n\'ed kmito\u269 et vysokofrekven\u269 n\'edho sign\'e1lu v z\'e1vislosti na p\u345 iv\'e1d\u283 n\'e9m modula\u269 n\'edm nap\u283 t\'ed?",\
+      "options": [\
+        "amplitudov\'e1 modulace",\
+        "kmito\uc0\u269 tov\'e1 modulace",\
+        "f\'e1zov\'e1 modulace"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "14. Amp\'e9rmetr a voltmetr se p\uc0\u345 i m\u283 \u345 en\'ed za\u345 azuj\'ed:",\
+      "options": [\
+        "amp\'e9rmetr do s\'e9rie se spot\uc0\u345 ebi\u269 em, voltmetr paraleln\u283  ke spot\u345 ebi\u269 i",\
+        "amp\'e9rmetr paraleln\uc0\u283  ke spot\u345 ebi\u269 i, voltmetr do s\'e9rie se spot\u345 ebi\u269 em",\
+        "oboustrann\uc0\u283  paraleln\u283  ke zdroji i spot\u345 ebi\u269 i"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "15. V such\'e9m, bezpra\'9an\'e9m prost\uc0\u345 ed\'ed pova\'9eujeme p\u345 i dotyku \'9eiv\'fdch \u269 \'e1st\'ed za\u345 \'edzen\'ed b\u283 hem jeho obsluhy za bezpe\u269 n\'e1 nap\u283 t\'ed:",\
+      "options": [\
+        "stejnosm\uc0\u283 rn\'e9 do 120 V a st\u345 \'eddav\'e9 do 50 V",\
+        "stejnosm\uc0\u283 rn\'e9 do 60 V a st\u345 \'eddav\'e9 do 25 V",\
+        "stejnosm\uc0\u283 rn\'e9 do 24 V a st\u345 \'eddav\'e9 do 12 V"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "16. P\uc0\u345 i \'farazu elektrick\'fdm proudem:",\
+      "options": [\
+        "vyprost\'edme posti\'9een\'e9ho z dosahu el. proudu, zavol\'e1me z\'e1chrannou slu\'9ebu, provedeme z\'e1klon hlavy a dojde-li k selh\'e1n\'ed z\'e1kladn\'edch \'9eivotn\'edch funkc\'ed (tep, puls, v\uc0\u283 dom\'ed), zah\'e1j\'edme resuscitaci mas\'e1\'9e\'ed srdce a\'9e do p\u345 \'edjezdu z\'e1chran\'e1\u345 \u367 , p\u345 \'edpadn\u283  um\u283 l\'fdm d\'fdch\'e1n\'edm.",\
+        "okam\'9eit\uc0\u283  pod\'e1me posti\'9een\'e9mu tekutiny a uvedeme ho do stabilizovan\'e9 polohy bez kontroly d\'fdch\'e1n\'ed",\
+        "nejprve zjist\'edme p\uc0\u345 \'ed\u269 inu poruchy za\u345 \'edzen\'ed a a\'9e pot\'e9 p\u345 istoup\'edme k posti\'9een\'e9mu"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "17. Funkce \'84SQUELCH\'93 VKV radiostanice je ur\uc0\u269 ena:",\
+      "options": [\
+        "ke zv\'fd\'9aen\'ed vys\'edlac\'edho v\'fdkonu p\uc0\u345 i slab\'e9m sign\'e1lu",\
+        "k potla\uc0\u269 en\'ed slab\'9a\'edch ru\'9aiv\'fdch sign\'e1l\u367  v\u269 etn\u283  vlastn\'edho \'9aumu p\u345 ij\'edma\u269 e.",\
+        "k automatick\'e9mu lad\uc0\u283 n\'ed frekvence podle intenzity sign\'e1lu"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "18. \'dadaj elektrick\'e9 nap\uc0\u283 t\'ed 2 V lze tak\'e9 zapsat:",\
+      "options": [\
+        "200 mV",\
+        "2000 mV",\
+        "0,2 mV"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "19. Kmito\uc0\u269 et 406 MHz lze tak\'e9 zapsat:",\
+      "options": [\
+        "4,06 GHz",\
+        "0,406 GHz",\
+        "40,6 GHz"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "20. D\'e9lka r\'e1diov\'e9 vlny v p\'e1smu 160 MHz (VHF) je:",\
+      "options": [\
+        "cca. 2 m",\
+        "cca. 20 m",\
+        "cca. 2 cm"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "21. Vztah mezi nap\uc0\u283 t\'edm (U), proudem (I) a odporem (R) je:",\
+      "options": [\
+        "U = R / I",\
+        "U = R*I",\
+        "U = I / R"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "22. Vztah mezi v\'fdkonem (p\uc0\u345 \'edkonem) (P), nap\u283 t\'edm (U) a proudem (I) je:",\
+      "options": [\
+        "P = U / I",\
+        "P = U*I",\
+        "P = I / U"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "23. Radiostanice odeb\'edraj\'edc\'ed z baterie 12 V proud 500 mA m\'e1 p\uc0\u345 \'edkon:",\
+      "options": [\
+        "6000 W",\
+        "6 W",\
+        "60 W"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "24. T\uc0\u345 i dobr\'e9 vodi\u269 e elekt\u345 iny jsou:",\
+      "options": [\
+        "m\uc0\u283 \u271 , zlato, st\u345 \'edbro",\
+        "uhl\'edk, k\uc0\u345 em\'edk, sklo",\
+        "hlin\'edk, plast, guma"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "25. \uc0\u268 ty\u345 i dobr\'e9 izolanty jsou:",\
+      "options": [\
+        "sklo, m\uc0\u283 \u271 , plast, \'9eelezo",\
+        "sklo, vzduch, plast, porcel\'e1n",\
+        "porcel\'e1n, voda, m\uc0\u283 \u271 , hlin\'edk"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "26. Ke zdroji 10 V jsou p\uc0\u345 ipojeny dva odpory 10 \u937  zapojen\'e9 do s\'e9rie. Odeb\'edran\'fd p\u345 \'edkon \u269 in\'ed:",\
+      "options": [\
+        "10 W",\
+        "5 W",\
+        "20 W"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "27. Radiotechnick\'e1 sou\uc0\u269 \'e1stka je identifikov\'e1na jako kondenz\'e1tor, pokud se jej\'ed hodnota m\u283 \u345 \'ed v:",\
+      "options": [\
+        "pF",\
+        "mH",\
+        "k\uc0\u937 "\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "28. V\'fdstupn\'edm v\'fdkonem stanice se rozum\'ed:",\
+      "options": [\
+        "v\'fdkon koncov\'e9ho stupn\uc0\u283  vys\'edla\u269 e dod\'e1van\'fd do napaje\u269 e ant\'e9nn\'edho syst\'e9mu.",\
+        "celkov\'fd p\uc0\u345 \'edkon odeb\'edran\'fd z nap\'e1jec\'edho akumul\'e1toru",\
+        "akustick\'fd v\'fdkon reproduktoru p\uc0\u345 em\u283 n\u283 n\'fd na zvuk"\
+      ],\
+      "answer": 0\
+    \},\
+    \{\
+      "q": "29. Je mo\'9en\'e9 vys\'edlat bez ant\'e9ny?",\
+      "options": [\
+        "ano, ale dosah bude omezen na 1 km",\
+        "ne, hroz\'ed po\'9akozen\'ed radiostanice",\
+        "ano, pokud je zapnut\'e1 funkce squelch"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "30. Co NEN\'cd mo\'9en\'e9 d\uc0\u283 lat, kdy\'9e m\'e1me stisknut\'e9 tla\u269 \'edtko pro vys\'edl\'e1n\'ed (PTT)?",\
+      "options": [\
+        "vys\'edlat vlastn\'ed hlas",\
+        "p\uc0\u345 ij\'edmat jin\'e9 vys\'edl\'e1n\'ed",\
+        "odeb\'edrat proud z akumul\'e1toru"\
+      ],\
+      "answer": 1\
+    \},\
+    \{\
+      "q": "31. V jak\'e9m kmito\uc0\u269 tov\'e9m p\'e1smu pracuje letadlov\'e1 VHF radiostanice?",\
+      "options": [\
+        "118\'96137 MHz",\
+        "400\'96470 MHz",\
+        "88\'96108 MHz"\
+      ],\
+      "answer": 0\
+    \}\
+  ]\
+\}\
+}
