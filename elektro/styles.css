@@ -1,0 +1,236 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f7;
+    color: #1c1c1e;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.app-container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px 15px 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+#sub-title {
+    color: #8e8e93;
+    font-size: 0.95rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.question-title,
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-btn,
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    background: #fafafa;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.option:hover {
+    background: #f0f7ff;
+}
+
+.option input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: #007aff;
+}
+
+.option-btn.selected,
+.option.selected {
+    border-color: #007aff;
+    background: #e5f1ff;
+}
+
+/* Správná odpověď */
+.option.correct {
+    background: #d4edda !important;
+    border: 2px solid #28a745 !important;
+    color: #155724;
+    font-weight: 600;
+}
+
+/* Špatná odpověď */
+.option.incorrect {
+    background: #f8d7da !important;
+    border: 2px solid #dc3545 !important;
+    color: #721c24;
+    font-weight: 600;
+}
+
+.btn-submit,
+.action-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #007aff;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-submit:hover,
+.action-btn:hover {
+    background: #0063cc;
+}
+
+.btn-secondary {
+    background: #8e8e93;
+}
+
+.btn-secondary:hover {
+    background: #6f6f74;
+}
+
+.result-box {
+    margin-top: 20px;
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.pass {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.fail {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Po vyhodnocení už nelze odpovědi měnit */
+.option.disabled {
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+/* Plynulé zvýraznění */
+.option.correct,
+.option.incorrect {
+    transition: background-color .25s ease,
+                border-color .25s ease,
+                transform .15s ease;
+}
+
+.option.correct {
+    transform: scale(1.01);
+}\}\
+\
+.card \{\
+    background: #ffffff;\
+    padding: 16px;\
+    margin-bottom: 14px;\
+    border-radius: 12px;\
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);\
+\}\
+\
+.question-title \{\
+    font-weight: 600;\
+    margin-bottom: 12px;\
+    font-size: 0.95em;\
+    line-height: 1.4;\
+\}\
+\
+.options \{\
+    display: flex;\
+    flex-direction: column;\
+    gap: 8px;\
+\}\
+\
+.option-btn \{\
+    padding: 12px;\
+    border: 1px solid #e5e5ea;\
+    background: #f8f8f8;\
+    border-radius: 8px;\
+    cursor: pointer;\
+    text-align: left;\
+    font-size: 0.9em;\
+\}\
+\
+.option-btn.selected \{\
+    border-color: #007aff;\
+    background: #e5f1ff;\
+    font-weight: 600;\
+\}\
+\
+.option-btn.correct \{\
+    background: #d4edda !important;\
+    border-color: #28a745 !important;\
+    color: #155724;\
+    font-weight: bold;\
+\}\
+\
+.option-btn.incorrect \{\
+    background: #f8d7da !important;\
+    border-color: #dc3545 !important;\
+    color: #721c24;\
+\}\
+\
+.action-btn \{\
+    display: block;\
+    width: 100%;\
+    padding: 15px;\
+    background: #007aff;\
+    color: white;\
+    border: none;\
+    border-radius: 12px;\
+    font-size: 1em;\
+    font-weight: 600;\
+    cursor: pointer;\
+    margin-top: 15px;\
+\}\
+\
+.result-box \{\
+    background: white;\
+    padding: 20px;\
+    border-radius: 12px;\
+    text-align: center;\
+    margin-bottom: 20px;\
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);\
+\}\
+.pass \{ color: #34c759; \}\
+.fail \{ color: #ff3b30; \}\
+}
