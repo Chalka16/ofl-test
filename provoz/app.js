@@ -1,80 +1,164 @@
 let questionsData = [];
 let userAnswers = {};
+let testFinished = false;
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('./questions.json')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('app-title').innerText = data.title || "OFL Test";
-      questionsData = data.questions || [];
-      renderQuiz();
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("./questions.json")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("app-title").innerText = data.title || "OFL Test";
+            questionsData = data.questions || [];
+            renderQuiz();
+        });
 });
 
 function renderQuiz() {
-  const container = document.getElementById('main-content');
-  container.innerHTML = '';
-  userAnswers = {};
 
-  questionsData.forEach((q, index) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.id = `q-${index}`;
+    testFinished = false;
+    userAnswers = {};
 
-    // Podpora pro klíč "q" i "question"
-    const questionText = q.q || q.question || '';
+    const container = document.getElementById("main-content");
+    container.innerHTML = "";
 
-    let optionsHTML = '';
-    q.options.forEach((opt, optIndex) => {
-      optionsHTML += `
-        <label class="option">
-          <input type="radio" name="q-${index}" value="${optIndex}" onchange="selectAnswer(${index}, ${optIndex})">
-          <span>${opt}</span>
-        </label>
-      `;
+    questionsData.forEach((q, index) => {
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.id = `q-${index}`;
+
+        let optionsHTML = "";
+
+        q.options.forEach((opt, optIndex) => {
+
+            optionsHTML += `
+                <label class="option" id="q-${index}-o-${optIndex}">
+                    <input
+                        type="radio"
+                        name="q-${index}"
+                        value="${optIndex}"
+                        onchange="selectAnswer(${index},${optIndex})">
+
+                    <span>${opt}</span>
+                </label>
+            `;
+        });
+
+        card.innerHTML = `
+            <h3>${q.q || q.question}</h3>
+            <div class="options">
+                ${optionsHTML}
+            </div>
+        `;
+
+        container.appendChild(card);
     });
 
-    card.innerHTML = `
-      <h3>${questionText}</h3>
-      <div class="options">${optionsHTML}</div>
-    `;
-    container.appendChild(card);
-  });
+    const btn = document.createElement("button");
+    btn.className = "btn-submit";
+    btn.innerText = "Vyhodnotit test";
+    btn.onclick = evaluateQuiz;
 
-  const submitBtn = document.createElement('button');
-  submitBtn.className = 'btn-submit';
-  submitBtn.innerText = 'Vyhodnotit test';
-  submitBtn.onclick = evaluateQuiz;
-  container.appendChild(submitBtn);
+    container.appendChild(btn);
+
 }
 
-function selectAnswer(qIndex, optIndex) {
-  userAnswers[qIndex] = optIndex;
+function selectAnswer(question, answer) {
+
+    if (testFinished) return;
+
+    userAnswers[question] = answer;
+
 }
 
 function evaluateQuiz() {
-  let correctCount = 0;
-  questionsData.forEach((q, index) => {
-    const card = document.getElementById(`q-${index}`);
-    const selected = userAnswers[index];
-    
-    // Podpora pro klíč "answer" i "correct"
-    const correctAnswer = (q.answer !== undefined) ? q.answer : q.correct;
-    
-    if (selected === correctAnswer) {
-      correctCount++;
-      card.classList.add('correct');
-      card.classList.remove('incorrect');
-    } else {
-      card.classList.add('incorrect');
-      card.classList.remove('correct');
-    }
-  });
 
-  const percentage = Math.round((correctCount / questionsData.length) * 100);
-  alert(`Výsledek: ${correctCount} z ${questionsData.length} (${percentage} %)\nPožadováno: 90 %`);
+    if (testFinished) return;
+
+    testFinished = true;
+
+    let correctCount = 0;
+
+    questionsData.forEach((q, index) => {
+
+        const correct = q.answer ?? q.correct;
+        const selected = userAnswers[index];
+
+        q.options.forEach((opt, optIndex) => {
+
+            const option = document.getElementById(`q-${index}-o-${optIndex}`);
+            const radio = option.querySelector("input");
+
+            option.classList.remove("correct");
+            option.classList.remove("incorrect");
+
+            radio.disabled = true;
+            option.classList.add("disabled");
+
+        });
+
+        document
+            .getElementById(`q-${index}-o-${correct}`)
+            .classList.add("correct");
+
+        if (selected !== undefined && selected !== correct) {
+
+            document
+                .getElementById(`q-${index}-o-${selected}`)
+                .classList.add("incorrect");
+
+        }
+
+        if (selected === correct)
+            correctCount++;
+
+    });
+
+    const percentage = Math.round(correctCount / questionsData.length * 100);
+
+    const oldResult = document.getElementById("result-box");
+
+    if (oldResult)
+        oldResult.remove();
+
+    const result = document.createElement("div");
+    result.className = "result-box";
+    result.id = "result-box";
+
+    result.innerHTML = `
+        <h2>${percentage >= 90 ? "✅ Test splněn" : "❌ Test nesplněn"}</h2>
+
+        <p><strong>${correctCount}</strong> z <strong>${questionsData.length}</strong> správně</p>
+
+        <h3 class="${percentage>=90 ? "pass":"fail"}">
+            ${percentage} %
+        </h3>
+
+        <p>Požadovaná úspěšnost: 90 %</p>
+    `;
+
+    document
+        .getElementById("main-content")
+        .prepend(result);
+
+    const restart = document.createElement("button");
+
+    restart.className = "btn-submit";
+
+    restart.innerText = "Opakovat test";
+
+    restart.onclick = renderQuiz;
+
+    document
+        .getElementById("main-content")
+        .appendChild(restart);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
