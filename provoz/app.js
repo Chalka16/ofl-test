@@ -25,6 +25,9 @@ function renderQuiz() {
     card.className = 'card';
     card.id = `q-${index}`;
 
+    // Podpora pro klíč "q" i "question"
+    const questionText = q.q || q.question || '';
+
     let optionsHTML = '';
     q.options.forEach((opt, optIndex) => {
       optionsHTML += `
@@ -36,7 +39,7 @@ function renderQuiz() {
     });
 
     card.innerHTML = `
-      <h3>${index + 1}. ${q.question}</h3>
+      <h3>${questionText}</h3>
       <div class="options">${optionsHTML}</div>
     `;
     container.appendChild(card);
@@ -59,7 +62,10 @@ function evaluateQuiz() {
     const card = document.getElementById(`q-${index}`);
     const selected = userAnswers[index];
     
-    if (selected === q.correct) {
+    // Podpora pro klíč "answer" i "correct"
+    const correctAnswer = (q.answer !== undefined) ? q.answer : q.correct;
+    
+    if (selected === correctAnswer) {
       correctCount++;
       card.classList.add('correct');
       card.classList.remove('incorrect');
