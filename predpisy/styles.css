@@ -1,40 +1,163 @@
-{\rtf1\ansi\ansicpg1250\cocoartf2639
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw8400\paperh11900\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f7;
+    color: #1c1c1e;
+    -webkit-tap-highlight-color: transparent;
+}
 
-\f0\fs24 \cf0 body \{\
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;\
-    margin: 0;\
-    padding: 0;\
-    background-color: #f2f2f7;\
-    color: #1c1c1e;\
-    -webkit-tap-highlight-color: transparent;\
-\}\
-\
-.app-container \{\
-    max-width: 600px;\
-    margin: 0 auto;\
-    padding: 20px 15px;\
-\}\
-\
-header \{\
-    text-align: center;\
-    margin-bottom: 20px;\
-\}\
-\
-header h1 \{\
-    font-size: 1.5em;\
-    margin: 10px 0 5px 0;\
-\}\
-\
-#sub-title \{\
-    color: #8e8e93;\
-    font-size: 0.85em;\
-    margin: 0;\
-\}\
+.app-container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px 15px 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+#sub-title {
+    color: #8e8e93;
+    font-size: 0.95rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.question-title,
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-btn,
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    background: #fafafa;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.option:hover {
+    background: #f0f7ff;
+}
+
+.option input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: #007aff;
+}
+
+.option-btn.selected,
+.option.selected {
+    border-color: #007aff;
+    background: #e5f1ff;
+}
+
+/* Správná odpověď */
+.option.correct {
+    background: #d4edda !important;
+    border: 2px solid #28a745 !important;
+    color: #155724;
+    font-weight: 600;
+}
+
+/* Špatná odpověď */
+.option.incorrect {
+    background: #f8d7da !important;
+    border: 2px solid #dc3545 !important;
+    color: #721c24;
+    font-weight: 600;
+}
+
+.btn-submit,
+.action-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #007aff;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-submit:hover,
+.action-btn:hover {
+    background: #0063cc;
+}
+
+.btn-secondary {
+    background: #8e8e93;
+}
+
+.btn-secondary:hover {
+    background: #6f6f74;
+}
+
+.result-box {
+    margin-top: 20px;
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.pass {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.fail {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Po vyhodnocení už nelze odpovědi měnit */
+.option.disabled {
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+/* Plynulé zvýraznění */
+.option.correct,
+.option.incorrect {
+    transition: background-color .25s ease,
+                border-color .25s ease,
+                transform .15s ease;
+}
+
+.option.correct {
+    transform: scale(1.01);
+}\}\
 \
 .card \{\
     background: #ffffff;\
