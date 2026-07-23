@@ -1,0 +1,752 @@
+{
+  "title": "b) Radiokomunikační provoz",
+  "questions": [
+    {
+      "q": "1. Letecká pohyblivá služba je:",
+      "options": [
+        "pohyblivá služba mezi leteckými stanicemi a letadlovými stanicemi nebo mezi letadlovými stanicemi navzájem",
+        "telekomunikační služba výhradně mezi pevnými pozemními stanovišti",
+        "služba určená k vysílání informací týkajících se leteckého provozu"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "2. Letecká pevná služba (AFS dle L10) je:",
+      "options": [
+        "pohyblivá služba mezi leteckými stanicemi a letadlovými stanicemi",
+        "telekomunikační služba mezi stanovenými pevnými body",
+        "rozhlasová služba určená pro širokou veřejnost"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "3. Letecká rozhlasová služba (dle L10) je:",
+      "options": [
+        "telekomunikační služba mezi stanovenými pevnými body",
+        "služba určená pro obsluhu tísňového vysílání",
+        "služba určená k vysílání informací týkajících se leteckého provozu"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "4. Pozemní stanice letecké pohyblivé služby je:",
+      "options": [
+        "letecká stanice",
+        "letadlová stanice",
+        "pozemní radionavigační maják"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "5. Vysílání pokusných signálů nesmí trvat déle než:",
+      "options": [
+        "30 vteřin",
+        "1 minutu",
+        "10 vteřin"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "6. Při zkušebním vysílání dokonalá čitelnost je uváděna stupněm:",
+      "options": [
+        "5 (Dokonale čitelné)",
+        "10 (Bezchybné)",
+        "1 (Sotva čitelné)"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "7. Zkušební vysílání musí obsahovat:",
+      "options": [
+        "pouze volací značku letadla a slova „ROZUMÍM“",
+        "volací značku volané stanice, volací značku letadla, slova „ZKOUŠKA RÁDIA“, používaný kmitočet",
+        "stav paliva, počet osob na palubě a volací značku"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "8. Rychlost hovoru při radiotelefonním spojení nemá převyšovat:",
+      "options": [
+        "150 slov za minutu",
+        "100 slov za minutu",
+        "60 slov za minutu"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "9. Radiotelefonní spojení letadlo – země by se mělo provádět:",
+      "options": [
+        "všeobecně v jazyce, ve kterém komunikuje pozemní stanice",
+        "výhradně v anglickém jazyce bez ohledu na stanici",
+        "v rodném jazyce velitele letadla"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "10. Zprávy musí být vysílány:",
+      "options": [
+        "v libovolných hovorových výrazech",
+        "v otevřené řeči a ve schválených frázích",
+        "výhradně pomocí Q-kódů"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "11. Při vysílání:",
+      "options": [
+        "zachováváme stále stejnou výši hlasu ve všech fázích hovoru",
+        "postupně zvyšujeme hlasitost k dovírání věty",
+        "měníme intonaci podle důležitosti sdělení"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "12. Pořadí zpráv dopravovaných leteckou pohyblivou službou je:",
+      "options": [
+        "tísňové, pilnostní, o rádiovém zaměřování, pro zajištění bezpečnosti letů, meteorologické, o pravidelnosti letů",
+        "pilnostní, tísňové, o bezpečnosti letů, meteorologické",
+        "tísňové, meteorologické, pilnostní, o pravidelnosti letů"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "13. MAYDAY je radiotelefonní signál:",
+      "options": [
+        "pilnostní zprávy",
+        "zprávy o pravidelnosti letu",
+        "tísňové zprávy"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "14. PAN PAN je radiotelefonní signál:",
+      "options": [
+        "pilnostní zprávy",
+        "tísňové zprávy",
+        "meteorologické zprávy"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "15. Tísňová korespondence:",
+      "options": [
+        "má přednost před všemi ostatními druhy spojení",
+        "má přednost pouze před meteorologickými zprávami",
+        "má stejnou prioritu jako pilnostní korespondence"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "16. Pilnostní zpráva:",
+      "options": [
+        "má absolutní přednost před všemi zprávami včetně tísňových",
+        "má přednost před všemi ostatními druhy spojení vyjma tísňového provozu",
+        "má nižší prioritu než meteorologické zprávy"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "17. Tísňový a pilnostní provoz musí být zahájen na kmitočtu:",
+      "options": [
+        "výhradně na záložním kmitočtu letiště",
+        "vždy na kmitočtu 121,500 MHz bez ohledu na okolnosti",
+        "který je v dané chvíli používán"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "18. Po volání letecké stanice, na které tato stanice neodpoví, je letadlová stanice povinna:",
+      "options": [
+        "opakovat volání okamžitě",
+        "vyčkat nejméně 10 sekund, než provede další volání",
+        "přepnout na jinou frekvenci do 5 sekund"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "19. Jména, zkratky a slova, jejichž výslovnost může vyvolat pochybnost, se v radiotelefonním provozu musí:",
+      "options": [
+        "hláskovat",
+        "přeložit do angličtiny",
+        "opakovat třikrát za sebou pomalým hlasem"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "20. Letadlová stanice udržuje rádiové spojení s řídící stanicí:",
+      "options": [
+        "pouze během vzletu a přistání",
+        "vždy, je-li to možné",
+        "pouze při letu v řízeném okrsku CTR"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "21. Letadlová stanice potvrzuje příjem důležitých zpráv řízení letového provozu nebo jejich částí:",
+      "options": [
+        "jejich opakováním a připojením vlastní volací značky",
+        "pouze slovesem „ROZUMÍM“",
+        "trojitým stisknutím tlačítka PTT"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "22. Za letu musí letadlová stanice:",
+      "options": [
+        "udržovat stálou poslechovou hlídku",
+        "vysílat polohu každých 5 minut",
+        "mít vypnutý squelch"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "23. Letadlo přechází z jednoho rádiového kmitočtu na druhý:",
+      "options": [
+        "z příkazu letecké stanice v souladu s dohodnutými postupy",
+        "zcela podle uvážení pilota bez ohlášení",
+        "automaticky každých 15 minut"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "24. Jestliže letadlová stanice není schopna navázat spojení s leteckou stanicí na určeném a jiném kmitočtu pro danou trať:",
+      "options": [
+        "pokusí se navázat spojení s jiným letadlem nebo jinými leteckými stanicemi",
+        "okamžitě provede nouzové přistání na nejbližším poli",
+        "ukončí veškeré vysílání a vypne radiostanici"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "25. Letadlo za letu:",
+      "options": [
+        "nesmí měnit svou volací značku",
+        "může měnit volací značku při přechodu do jiného státu",
+        "mění volací značku podle aktuální výšky"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "26. Poznávací značka civilního letadla je složena:",
+      "options": [
+        "ze značky státní příslušnosti a rejstříkové značky",
+        "z typu letadla a roku výroby",
+        "z jména pilota a registračního čísla letiště"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "27. Volací značku letadla lze tvořit:",
+      "options": [
+        "radiotelefonním označením provozovatele letadla za kterým následuje označení (číslo) letu v souladu s předpisem ICAO",
+        "libovolnou přezdívkou zvolenou před vzletem",
+        "výrobcem letadla a počtem sedadel"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "28. Volací značka letecké stanice je tvořena:",
+      "options": [
+        "zeměpisným názvem její polohy a službou, která je k dispozici",
+        "jménem službu konajícího dispečera a časem",
+        "číslem licence a volacím znakem OK"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "29. Ve volací značce letecké stanice přibližovacího stanoviště může být název:",
+      "options": [
+        "APPROACH",
+        "TOWER",
+        "RADAR"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "30. Ve volací značce letecké stanice pro neřízená letiště je název:",
+      "options": [
+        "INFO nebo RADIO",
+        "CONTROL nebo TOWER",
+        "APPROACH nebo DISPATCH"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "31. Zkrácenou volací značku použije letadlová stanice:",
+      "options": [
+        "pouze v případě, že byla tímto způsobem oslovena leteckou stanicí",
+        "kdykoliv pro urychlení komunikace podle uvážení pilota",
+        "ihned po prvním navázání spojení"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "32. Správné zkrácení volací značky OKABC je:",
+      "options": [
+        "ABC",
+        "OKC",
+        "OBC"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "33. Fráze „vysílám naslepo“ se použije:",
+      "options": [
+        "při neúspěšném navázání spojení",
+        "při letu v mraku podle přístrojů",
+        "při poruše vysílače"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "34. Jestliže letadlová stanice není schopna navázat spojení s leteckou stanicí na určeném kmitočtu:",
+      "options": [
+        "pokusí se o navázání spojení na jiném kmitočtu pro danou trať",
+        "ihned vysílá signál MAYDAY",
+        "vyčká bez vysílání až do přistání"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "35. Všechna čísla se vyslovují:",
+      "options": [
+        "jednotlivě, s výjimkou čísel souvisejících s výškou nad hladinou moře, s výškou oblačnosti, dohlednosti a dráhové dohlednosti",
+        "jako celé stovky a tisíce bez výjimky",
+        "vždy po dvojicích číslic"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "36. Rádiové spojení může být ukončeno:",
+      "options": [
+        "na pokyn letecké stanice",
+        "automaticky po 5 minutách hovoru",
+        "kdykoliv ze strany pilota bez ohlášení"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "37. V radiotelefonním provozu v pásmech VKV se kmitočet 119,000 MHz vyjadřuje:",
+      "options": [
+        "JEDNA JEDNA DEVĚT ČÁRKA NULA",
+        "Sto devatenáct celých nula",
+        "JEDNA JEDNA DEVĚT ČÁRKA NULA NULA NULA"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "38. V radiotelefonním provozu v pásmech VKV se kmitočet 121,500 MHz vyjadřuje:",
+      "options": [
+        "JEDNA DVA JEDNA ČÁRKA PĚT NULA NULA",
+        "JEDNA DVA JEDNA ČÁRKA PĚT",
+        "Sto dvacet jedna celých pět"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "39. V radiotelefonním provozu v pásmech VKV se kmitočet 121,050 MHz vyjadřuje:",
+      "options": [
+        "JEDNA DVA JEDNA ČÁRKA NULA PĚT NULA",
+        "JEDNA DVA JEDNA ČÁRKA NULA PĚT",
+        "JEDNA DVA JEDNA ČÁRKA PĚT"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "40. V radiotelefonním provozu v pásmech VKV se vysílací kanál vyjadřuje:",
+      "options": [
+        "čtyřmi nebo šesti číslicemi",
+        "dvěma nebo třemi číslicemi",
+        "vždy osmi číslicemi"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "41. V radiotelefonním provozu v pásmech VKV se kmitočet 118,055 MHz vyjadřuje:",
+      "options": [
+        "JEDNA JEDNA OSUM ČÁRKA NULA PĚT PĚT",
+        "JEDNA JEDNA OSUM ČÁRKA PĚT PĚT",
+        "JEDNA JEDNA OSUM ČÁRKA NULA PĚT"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "42. Jaké jsou správné hláskovací výrazy pro písmena A, E, I (Národní / Mezinárodní)?",
+      "options": [
+        "A - Adam / Alpha, E - Emil / Echo, I - Ivan / India",
+        "A - Antonín / Alpha, E - Eduard / Echo, I - Ignác / India",
+        "A - Adam / Alfa, E - Emil / Ekho, I - Ivan / Indigo"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "43. Jaké jsou správné hláskovací výrazy pro písmena B, F, J (Národní / Mezinárodní)?",
+      "options": [
+        "B - Boleslav / Bravo, F - František / Foxtrot, J - Jaroslav / Juliett",
+        "B - Božena / Bravo, F - František / Foxtrot, J - Josef / Juliett",
+        "B - Berta / Bravo, F - Filip / Foxtrot, J - Josef / Juliett"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "44. Jaké jsou správné hláskovací výrazy pro písmena C, G, K (Národní / Mezinárodní)?",
+      "options": [
+        "C - Cyril / Charlie, G - Gustav / Golf, K - Karel / Kilo",
+        "C - Ctihrad / Charlie, G - Gabriel / Golf, K - Květoslav / Kilo",
+        "C - Cyril / Charlie, G - Gustav / Golf, K - Klement / Kilo"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "45. Jaké jsou správné hláskovací výrazy pro písmena D, H, L (Národní / Mezinárodní)?",
+      "options": [
+        "D - David / Delta, H - Helena / Hotel, L - Ludvík / Lima",
+        "D - Daniel / Delta, H - Horymír / Hotel, L - Libor / Lima",
+        "D - David / Delta, H - Hana / Hotel, L - Ladislav / Lima"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "46. Jaké jsou správné hláskovací výrazy pro písmena M, Q, U (Národní / Mezinárodní)?",
+      "options": [
+        "M - Marie / Mike, Q - Quido / Quebec, U - Urban / Uniform",
+        "M - Martin / Mike, Q - Quido / Quebec, U - Ulrych / Uniform",
+        "M - Marie / Mike, Q - Kvido / Quebec, U - Urban / Unit"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "47. Jaké jsou správné hláskovací výrazy pro písmena N, R, V (Národní / Mezinárodní)?",
+      "options": [
+        "N - Norbert / November, R - Rudolf / Romeo, V - Václav / Victor",
+        "N - Nela / November, R - Radim / Romeo, V - Vratislav / Victor",
+        "N - Norbert / November, R - Radek / Romeo, V - Václav / Victor"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "48. Jaké jsou správné hláskovací výrazy pro písmena O, S, W (Národní / Mezinárodní)?",
+      "options": [
+        "O - Oldřich / Oscar, S - Stanislav / Sierra, W - dvojité V / Whiskey",
+        "O – Otakar / Oscar, S - Svatopluk / Sierra, W - dvojité V / Whisky",
+        "O - Otakar / Oscar, S - Svatopluk / Sierra, W - Walter / Whisky"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "49. Jaké jsou správné hláskovací výrazy pro písmena P, T, X (Národní / Mezinárodní)?",
+      "options": [
+        "P - Petr / Papa, T - Tomáš / Tango, X - Xaver / X-ray",
+        "P - Pavel / Papa, T - Tadeáš / Tango, X - Xaver / X-ray",
+        "P - Petr / Papa, T - Tomáš / Tango, X - Xénie / X-ray"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "50. Jaké jsou správné hláskovací výrazy pro písmena Y, Z (Národní / Mezinárodní)?",
+      "options": [
+        "Y - Ypsilon / Yankee, Z - Zuzana / Zulu",
+        "Y - Ypsilon / Yankee, Z - Zdeněk / Zulu",
+        "Y - York / Yankee, Z - Zuzana / Zulu"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "51. Správný Q-kód pro „tlak indikující nadmořskou výšku, přepočtený na střední hladinu moře“:",
+      "options": [
+        "QFE",
+        "QNH",
+        "QDM"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "52. Správný Q-kód pro „magnetický kurs pro směr k zaměřovači“:",
+      "options": [
+        "QDM",
+        "QDR",
+        "QTE"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "53. Správný Q-kód pro „žádost o zaměření“:",
+      "options": [
+        "QDL",
+        "QDM",
+        "QFU"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "54. Správná zkratka pro „vzletová a přistávací dráha“:",
+      "options": [
+        "RWY",
+        "TWY",
+        "APRON"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "55. Správná zkratka pro „automatická informační služba koncové řízené oblasti“:",
+      "options": [
+        "ATIS",
+        "METAR",
+        "VOLMET"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "56. Správná zkratka pro „letová informační oblast“:",
+      "options": [
+        "FIR",
+        "CTA",
+        "CTR"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "57. Správná zkratka pro „kmitočet“:",
+      "options": [
+        "FREQ",
+        "FRQ",
+        "FRC"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "58. Zkušební vysílání musí obsahovat:",
+      "options": [
+        "volací značku volané stanice, volací značku letadla, slova „ZKOUŠKA RÁDIA“, používaný kmitočet",
+        "jméno pilota, typ letadla a čas",
+        "pouze kmitočet a slovo „ZKOUŠKA“"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "59. Kód QFE se vztahuje k:",
+      "options": [
+        "tlaku vzduchu vztaženému k nadmořské výšce letiště",
+        "tlaku vzduchu přepočtenému na hladinu moře",
+        "standardnímu tlaku 1013,25 hPa"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "60. V případě, že letadlo stojí na ploše letiště a hodnota tlaku je nastavena na QFE, bude výškoměr ukazovat:",
+      "options": [
+        "nulu",
+        "nadmořskou výšku letiště",
+        "hodnotu standardní atmosféry"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "61. Odchylky od spisovné češtiny při vysílání čísel jsou:",
+      "options": [
+        "u číslic: 1, 3, 5, 9",
+        "u číslic: 2, 4, 7, 8",
+        "u číslic: 0, 6, 8, 9"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "62. Nastavení výškoměru na hodnotu 1000 hPa se vysílá takto:",
+      "options": [
+        "jeden tisíc",
+        "tisíc",
+        "JEDNA NULA NULA NULA"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "63. Nastavení výškoměru na hodnotu 1009 hPa se vysílá takto:",
+      "options": [
+        "QNH JEDNA NULA NULA DEVĚT",
+        "QNH tisíc devět",
+        "QNH JEDNA DEVĚT"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "64. Letová hladina FL 300 se vysílá takto:",
+      "options": [
+        "letová hladina TŘI STA",
+        "letová hladina TŘI NULA NULA",
+        "letová hladina TŘI TISÍCE"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "65. Letová hladina FL 180 se vysílá takto:",
+      "options": [
+        "letová hladina JEDEN OSUM NULA",
+        "letová hladina STO OSMDESÁT",
+        "letová hladina JEDNA OSM NULA"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "66. Potvrzení příjmu leteckou stanicí musí obsahovat:",
+      "options": [
+        "volací značku letadla za kterou následuje, je-li to nutné, volací značka letecké stanice",
+        "pouze slovo „ROZUMÍM“",
+        "čas přijetí zprávy"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "67. Rádiové spojení může být ukončeno:",
+      "options": [
+        "na pokyn letecké stanice",
+        "kdykoliv podle uvážení pilota bez vysílání",
+        "automaticky po předání polohy"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "68. Volací znak INFORMATION je přiřazen:",
+      "options": [
+        "letištím, poskytujícím službu AFIS",
+        "výhradně vojenským letištím",
+        "stanovištím řízení přiblížení"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "69. Volací znak INFORMATION je přiřazen:",
+      "options": [
+        "letovým informačním střediskům např. FIC Praha",
+        "řídícím věžím TOWER",
+        "meteorologické stanici letiště"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "70. Fráze „čekejte“ znamená:",
+      "options": [
+        "čekejte, zavolám Vás",
+        "přerušte let a vyčkejte na místě",
+        "opakujte poslední zprávu"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "71. Fráze „konec“ znamená:",
+      "options": [
+        "rozhovor je ukončen a neočekává se odpověď",
+        "přecházím na jinou frekvenci",
+        "vypínám radiostanici"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "72. Fráze „provedu“ znamená:",
+      "options": [
+        "rozumím Vaší zprávě a budu podle ní postupovat",
+        "přijal jsem vše z Vašeho posledního vysílání",
+        "potvrdil jsem přijetí bez závazku"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "73. Fráze „potvrďte“ znamená:",
+      "options": [
+        "potvrďte mi, že jste zprávu přijal a rozuměl jí",
+        "opakujte celé vysílání od začátku",
+        "schvaluji váš požadavek"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "74. Fráze „příjem“ znamená:",
+      "options": [
+        "moje vysílání skončilo, očekávám Vaši odpověď",
+        "rozhovor je zcela ukončen",
+        "rozumím vašemu sdělení"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "75. Fráze „rozumím“ znamená:",
+      "options": [
+        "přijal jsem vše z Vašeho posledního vysílání",
+        "budu postupovat podle Vašich pokynů",
+        "schvaluji Vaši žádost"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "76. Fráze „schváleno“ znamená:",
+      "options": [
+        "povolení pro požadovaný úkon je schváleno",
+        "zpráva byla v pořádku doručena",
+        "můžete zahájit vysílání"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "77. Fráze „negativ“ znamená:",
+      "options": [
+        "povolení není potvrzeno – to není správné – ne",
+        "vysílání je rušeno",
+        "nemám žádné informace"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "78. Fráze „opakujte“ znamená:",
+      "options": [
+        "opakujte vše nebo následující část Vašeho posledního vysílání",
+        "potvrďte příjem zprávy",
+        "zopakujte volací značku letadla"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "79. Fráze „správně“ znamená:",
+      "options": [
+        "to je správné",
+        "příkaz byl proveden",
+        "rozumím a provedu"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "80. Fráze „vzlet schválen“:",
+      "options": [
+        "není přípustná",
+        "se používá na neřízených letištích",
+        "se používá výhradně v české frazeologii"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "81. Simplexní provoz je způsob provozu rádiové stanice, který:",
+      "options": [
+        "využívá jeden nebo dva kmitočty a umožňuje přenos zpráv střídavě v obou směrech, např. pomocí ručního ovládání, přičemž během vysílání zpráv není možný současný příjem zpráv",
+        "umožňuje současný přenos zpráv oběma směry na dvou kmitočtech",
+        "slouží výhradně pro vysílání bez možnosti příjmu"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "82. Duplexní provoz je způsob provozu rádiové stanice, který:",
+      "options": [
+        "umožňuje současný přenos zpráv oběma směry a vyžaduje současné využívání dvou kmitočtů (kanálů)",
+        "využívá jeden kmitočet a neumožňuje současný příjem při vysílání",
+        "se v letecké dopravě nesmí používat"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "83. Při frázi MEZERA MEZERA pro dvě letadlové stanice, pořadí pro odpovědi volaných stanic je následující:",
+      "options": [
+        "odpovídá druhá oslovená stanice",
+        "odpovídá první oslovená stanice",
+        "odpovídají obě stanice současně"
+      ],
+      "answer": 0
+    }
+  ]
+}
