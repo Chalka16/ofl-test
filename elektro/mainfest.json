@@ -1,0 +1,8 @@
+{
+  "short_name": "OFL Elektro",
+  "name": "OFL Elektrotechnika a radiotechnika",
+  "start_url": "./index.html",
+  "background_color": "#f2f2f7",
+  "theme_color": "#007aff",
+  "display": "standalone"
+}
