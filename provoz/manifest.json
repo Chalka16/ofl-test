@@ -1,0 +1,8 @@
+{
+  "short_name": "OFL Provoz",
+  "name": "OFL Radiokomunikační provoz",
+  "start_url": "./index.html",
+  "background_color": "#f2f2f7",
+  "theme_color": "#007aff",
+  "display": "standalone"
+}
