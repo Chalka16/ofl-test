@@ -1,9 +1,17 @@
 {
-  "short_name": "OFL Elektro",
-  "name": "OFL Elektrotechnika a radiotechnika",
+  "short_name": "OFL Test",
+  "name": "OFL Radiokomunikace Test",
   "start_url": "./index.html",
   "background_color": "#f2f2f7",
   "theme_color": "#007aff",
-  "display": "standalone"
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
 
