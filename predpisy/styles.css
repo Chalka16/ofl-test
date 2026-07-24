@@ -36,7 +36,6 @@ header h1 {
     box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
-.question-title,
 .card h3 {
     margin-top: 0;
     margin-bottom: 15px;
@@ -50,7 +49,6 @@ header h1 {
     gap: 10px;
 }
 
-.option-btn,
 .option {
     display: flex;
     align-items: center;
@@ -70,12 +68,6 @@ header h1 {
 .option input[type="radio"] {
     transform: scale(1.2);
     accent-color: #007aff;
-}
-
-.option-btn.selected,
-.option.selected {
-    border-color: #007aff;
-    background: #e5f1ff;
 }
 
 /* Správná odpověď */
@@ -115,11 +107,11 @@ header h1 {
 }
 
 .btn-secondary {
-    background: #8e8e93;
+    background: #5856d6;
 }
 
 .btn-secondary:hover {
-    background: #6f6f74;
+    background: #4a48b8;
 }
 
 .result-box {
@@ -141,96 +133,13 @@ header h1 {
     font-weight: bold;
 }
 
-/* Po vyhodnocení už nelze odpovědi měnit */
 .option.disabled {
     pointer-events: none;
     opacity: 0.95;
 }
 
-/* Plynulé zvýraznění */
-.option.correct,
-.option.incorrect {
-    transition: background-color .25s ease,
-                border-color .25s ease,
-                transform .15s ease;
-}
-
-.option.correct {
-    transform: scale(1.01);
-}\}\
-\
-.card \{\
-    background: #ffffff;\
-    padding: 16px;\
-    margin-bottom: 14px;\
-    border-radius: 12px;\
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);\
-\}\
-\
-.question-title \{\
-    font-weight: 600;\
-    margin-bottom: 12px;\
-    font-size: 0.95em;\
-    line-height: 1.4;\
-\}\
-\
-.options \{\
-    display: flex;\
-    flex-direction: column;\
-    gap: 8px;\
-\}\
-\
-.option-btn \{\
-    padding: 12px;\
-    border: 1px solid #e5e5ea;\
-    background: #f8f8f8;\
-    border-radius: 8px;\
-    cursor: pointer;\
-    text-align: left;\
-    font-size: 0.9em;\
-\}\
-\
-.option-btn.selected \{\
-    border-color: #007aff;\
-    background: #e5f1ff;\
-    font-weight: 600;\
-\}\
-\
-.option-btn.correct \{\
-    background: #d4edda !important;\
-    border-color: #28a745 !important;\
-    color: #155724;\
-    font-weight: bold;\
-\}\
-\
-.option-btn.incorrect \{\
-    background: #f8d7da !important;\
-    border-color: #dc3545 !important;\
-    color: #721c24;\
-\}\
-\
-.action-btn \{\
-    display: block;\
-    width: 100%;\
-    padding: 15px;\
-    background: #007aff;\
-    color: white;\
-    border: none;\
-    border-radius: 12px;\
-    font-size: 1em;\
-    font-weight: 600;\
-    cursor: pointer;\
-    margin-top: 15px;\
-\}\
-\
-.result-box \{\
-    background: white;\
-    padding: 20px;\
-    border-radius: 12px;\
-    text-align: center;\
-    margin-bottom: 20px;\
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);\
-\}\
-.pass \{ color: #34c759; \}\
-.fail \{ color: #ff3b30; \}\
+.actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
