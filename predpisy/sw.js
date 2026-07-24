@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ofl-quiz-v1';
+const CACHE_NAME = 'ofl-quiz-v3';
 const ASSETS = [
   './',
   './index.html',
