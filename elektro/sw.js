@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ofl-quiz-v2';
+const CACHE_NAME = 'ofl-quiz-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -19,3 +19,4 @@ self.addEventListener('fetch', (e) => {
     caches.match(e.request).then((res) => res || fetch(e.request))
   );
 });
+
