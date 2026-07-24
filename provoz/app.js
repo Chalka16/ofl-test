@@ -45,10 +45,8 @@ function startNewTest(onlyIncorrect = false) {
         }
     }
 
-    // Náhodné pořadí otázek
     const shuffledQuestions = shuffleArray(sourceQuestions);
 
-    // Náhodné pořadí odpovědí pro každou otázku
     activeQuestions = shuffledQuestions.map(q => {
         let optionsWithIndex = q.options.map((opt, idx) => ({ text: opt, originalIndex: idx }));
         let shuffledOptions = shuffleArray(optionsWithIndex);
@@ -149,10 +147,8 @@ function evaluateQuiz() {
             option.classList.add("disabled");
         });
 
-        // Správná odpověď vždy zeleně
         document.getElementById(`q-${index}-o-${correct}`).classList.add("correct");
 
-        // Špatně vybraná odpověď uživatelem červeně
         if (selected !== undefined && selected !== correct) {
             document.getElementById(`q-${index}-o-${selected}`).classList.add("incorrect");
         }
@@ -201,3 +197,4 @@ function evaluateQuiz() {
         behavior: "smooth"
     });
 }
+
