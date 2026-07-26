@@ -1,249 +1,98 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Meta tagy pro iPhone (chování jako aplikace) -->
+    <title>OFL Radiotelefonie</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0D47A1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Aero Studium">
-    <title>Letecká Frazeologie</title>
-    <style>
-        :root {
-            --bg-color: #f4f4f6;
-            --text-color: #1d1d1f;
-            --primary-color: #007aff;
-            --card-bg: #ffffff;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-        header {
-            background-color: var(--card-bg);
-            padding: 20px 15px;
-            text-align: center;
-            font-size: 22px;
-            font-weight: 600;
-            border-bottom: 1px solid #e5e5ea;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        .back-btn {
-            position: absolute;
-            left: 15px;
-            top: 22px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            display: none;
-        }
-        .container {
-            padding: 20px 15px;
-        }
-        /* Menu styl */
-        .menu-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .menu-list li {
-            border-bottom: 1px solid #e5e5ea;
-        }
-        .menu-list li:last-child {
-            border-bottom: none;
-        }
-        .menu-list button {
-            width: 100%;
-            padding: 16px 20px;
-            text-align: left;
-            background: none;
-            border: none;
-            font-size: 17px;
-            color: var(--text-color);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .menu-list button:active {
-            background-color: #e5e5ea;
-        }
-        .menu-list button::after {
-            content: "›";
-            font-size: 24px;
-            color: #c7c7cc;
-        }
-        /* Obsah tématu */
-        #content-view {
-            display: none;
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        h2 { font-size: 20px; margin-top: 0; }
-        h3 { font-size: 18px; color: var(--primary-color); }
-        .highlight { font-weight: bold; color: var(--primary-color); }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border-bottom: 1px solid #e5e5ea; padding: 10px 5px; text-align: left; }
-    </style>
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
+    <div class="app-container">
+        <header class="header-main">
+            <h1>OFL Radiotelefonie</h1>
+            <p class="subtitle">Studijní materiály pro zkoušku všeobecného omezeného průkazu radiotelefonisty letecké pohyblivé služby.</p>
+        </header>
 
-    <header>
-        <span class="back-btn" id="backBtn" onclick="showMenu()">‹ Zpět</span>
-        <span id="header-title">Letecká Frazeologie</span>
-    </header>
+        <main class="card-grid">
+            <a href="abeceda.html" class="nav-card">
+                <div class="card-icon">🅰️</div>
+                <div class="card-content">
+                    <div class="card-title">Hláskovací abeceda</div>
+                    <div class="card-desc">Česká a ICAO abeceda</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
 
-    <div class="container">
-        <!-- Hlavní Menu -->
-        <div id="menu-view">
-            <ul class="menu-list">
-                <li><button onclick="showTopic('abeceda')">1. Hláskovací abecedy</button></li>
-                <li><button onclick="showTopic('cisla')">2. Výslovnost čísel</button></li>
-                <li><button onclick="showTopic('fraze')">3. Standardní výrazy a fráze</button></li>
-                <li><button onclick="showTopic('volacky')">4. Volací znaky</button></li>
-            </ul>
-        </div>
+            <a href="radio.html" class="nav-card">
+                <div class="card-icon">📻</div>
+                <div class="card-content">
+                    <div class="card-title">Zkouška rádia</div>
+                    <div class="card-desc">Srozumitelnost a čitelnost</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
 
-        <!-- Zobrazení obsahu -->
-        <div id="content-view">
-            <div id="topic-content"></div>
-        </div>
+            <a href="cisla.html" class="nav-card">
+                <div class="card-icon">🔢</div>
+                <div class="card-content">
+                    <div class="card-title">Čísla</div>
+                    <div class="card-desc">Pravidla výslovnosti číslic</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
+
+            <a href="poradi.html" class="nav-card">
+                <div class="card-icon">📑</div>
+                <div class="card-content">
+                    <div class="card-title">Pořadí zpráv</div>
+                    <div class="card-desc">Struktura komunikace</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
+
+            <a href="frazeologie.html" class="nav-card">
+                <div class="card-icon">🎙</div>
+                <div class="card-content">
+                    <div class="card-title">Standardní fráze</div>
+                    <div class="card-desc">Běžné výrazy a jejich význam</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
+
+            <a href="tisnova.html" class="nav-card">
+                <div class="card-icon">🚨</div>
+                <div class="card-content">
+                    <div class="card-title">Tísňové a pilnostní zprávy</div>
+                    <div class="card-desc">Nouzové situace</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
+
+            <a href="spojeni.html" class="nav-card">
+                <div class="card-icon">📡</div>
+                <div class="card-content">
+                    <div class="card-title">Navázání spojení</div>
+                    <div class="card-desc">Volací znaky a postupy</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
+
+            <a href="#" class="nav-card" id="testy-card">
+                <div class="card-icon">📝</div>
+                <div class="card-content">
+                    <div class="card-title">Testy</div>
+                    <div class="card-desc">Ověření znalostí</div>
+                </div>
+                <div class="card-arrow">&gt;</div>
+            </a>
+        </main>
     </div>
-
-    <script>
-        const materials = {
-            'abeceda': `
-                <h2>Hláskovací abecedy</h2>
-                <p>Tato hláskovací abeceda se musí použít vždy, když je nutné označit písmena, s výjimkou určité skupiny písmen, které jsou používány denně a nemohou být zaměnitelné (např. ILS, QNH)[span_0](start_span)[span_0](end_span).</p>
-                
-                <h3>Česká hláskovací abeceda</h3>
-                <p><i>(Doplněno dle požadavku na zaměření na češtinu)</i></p>
-                <p>A - Adam, B - Božena, C - Cyril, Č - Čeněk, D - David, Ď - Ďáblice, E - Emil, F - František, G - Gustav, H - Helena, Ch - Chrudim, I - Ivan, J - Josef, K - Karel, L - Ludvík, M - Marie, N - Norbert, Ň - Nina, O - Oto, P - Petr, Q - Quido, R - Rudolf, Ř - Řehoř, S - Svatopluk, Š - Šimon, T - Tomáš, Ť - Těšnov, U - Urban, V - Václav, W - Dvojité V, X - Xaver, Y - Ypsilon, Z - Zuzana, Ž - Žofie.</p>
-                
-                <h3>Mezinárodní hláskovací abeceda[span_1](start_span)[span_1](end_span)</h3>
-                <table>
-                    <tr><th>Písmeno</th><th>Slovo</th></tr>
-                    <tr><td>A</td><td>Alfa[span_2](start_span)[span_2](end_span)</td></tr>
-                    <tr><td>B</td><td>Bravo[span_3](start_span)[span_3](end_span)</td></tr>
-                    <tr><td>C</td><td>Charlie[span_4](start_span)[span_4](end_span)</td></tr>
-                    <tr><td>D</td><td>Delta[span_5](start_span)[span_5](end_span)</td></tr>
-                    <tr><td>E</td><td>Echo[span_6](start_span)[span_6](end_span)</td></tr>
-                    <tr><td>F</td><td>Foxtrot[span_7](start_span)[span_7](end_span)</td></tr>
-                    <tr><td>G</td><td>Golf[span_8](start_span)[span_8](end_span)</td></tr>
-                    <tr><td>H</td><td>Hotel[span_9](start_span)[span_9](end_span)</td></tr>
-                    <tr><td>I</td><td>India[span_10](start_span)[span_10](end_span)</td></tr>
-                    <tr><td>J</td><td>Juliett[span_11](start_span)[span_11](end_span)</td></tr>
-                    <tr><td>K</td><td>Kilo[span_12](start_span)[span_12](end_span)</td></tr>
-                    <tr><td>L</td><td>Lima[span_13](start_span)[span_13](end_span)</td></tr>
-                    <tr><td>M</td><td>Mike[span_14](start_span)[span_14](end_span)</td></tr>
-                    <tr><td>N</td><td>November[span_15](start_span)[span_15](end_span)</td></tr>
-                    <tr><td>O</td><td>Oscar[span_16](start_span)[span_16](end_span)</td></tr>
-                    <tr><td>P</td><td>Papa[span_17](start_span)[span_17](end_span)</td></tr>
-                    <tr><td>Q</td><td>Quebec[span_18](start_span)[span_18](end_span)</td></tr>
-                    <tr><td>R</td><td>Romeo[span_19](start_span)[span_19](end_span)</td></tr>
-                    <tr><td>S</td><td>Sierra[span_20](start_span)[span_20](end_span)</td></tr>
-                    <tr><td>T</td><td>Tango[span_21](start_span)[span_21](end_span)</td></tr>
-                    <tr><td>U</td><td>Uniform[span_22](start_span)[span_22](end_span)</td></tr>
-                    <tr><td>V</td><td>Victor[span_23](start_span)[span_23](end_span)</td></tr>
-                    <tr><td>W</td><td>Whiskey[span_24](start_span)[span_24](end_span)</td></tr>
-                    <tr><td>X</td><td>X-ray[span_25](start_span)[span_25](end_span)</td></tr>
-                    <tr><td>Y</td><td>Yankee[span_26](start_span)[span_26](end_span)</td></tr>
-                    <tr><td>Z</td><td>Zulu[span_27](start_span)[span_27](end_span)</td></tr>
-                </table>
-            `,
-            'cisla': `
-                <h2>Výslovnost čísel v radiotelefonii</h2>
-                <p>Všechna čísla související s vysíláním volacího znaku letadla, kurzu, dráhy v používání a směru a síly větru se vysílají vyslovováním každé číslice odděleně[span_28](start_span)[span_28](end_span).</p>
-                <h3>Česká výslovnost čísel[span_29](start_span)[span_29](end_span):</h3>
-                <ul>
-                    <li>0 = NULA[span_30](start_span)[span_30](end_span)</li>
-                    <li>1 = JEDNA[span_31](start_span)[span_31](end_span)</li>
-                    <li>2 = DVA[span_32](start_span)[span_32](end_span)</li>
-                    <li>3 = TŘI[span_33](start_span)[span_33](end_span)</li>
-                    <li>4 = ČTYRY[span_34](start_span)[span_34](end_span)</li>
-                    <li>5 = PĚT[span_35](start_span)[span_35](end_span)</li>
-                    <li>6 = ŠEST[span_36](start_span)[span_36](end_span)</li>
-                    <li>7 = SEDUM[span_37](start_span)[span_37](end_span)</li>
-                    <li>8 = OSUM[span_38](start_span)[span_38](end_span)</li>
-                    <li>9 = DEVĚT[span_39](start_span)[span_39](end_span)</li>
-                    <li>10 = DESET[span_40](start_span)[span_40](end_span)</li>
-                    <li>Desetinná čárka = ČÁRKA[span_41](start_span)[span_41](end_span)</li>
-                    <li>100 = STO[span_42](start_span)[span_42](end_span)</li>
-                    <li>1000 = TISÍC[span_43](start_span)[span_43](end_span)</li>
-                </ul>
-                <h3>Specifická pravidla:</h3>
-                <ul>
-                    <li><b>Letové hladiny:</b> Vysílají se odděleně, s výjimkou hladin v celých stovkách. Např. FL 200 = <span class="highlight">letová hladina DVA STA</span>[span_44](start_span)[span_44](end_span).</li>
-                    <li><b>Nastavení výškoměru:</b> Vysílá se odděleně. Výjimkou je 1000 hPa = <span class="highlight">QNH JEDEN TISÍC</span>[span_45](start_span)[span_45](end_span).</li>
-                    <li><b>Relativní zaměření:</b> Informace z hlediska 12hodinového ciferníku se předává vyslovováním číslic společně, např. <span class="highlight">DESET HODIN</span>[span_46](start_span)[span_46](end_span).</li>
-                </ul>
-            `,
-            'fraze': `
-                <h2>Standardní výrazy a fráze</h2>
-                <p>Při radiotelefonním spojení se dle vhodnosti musí užívat následujících slov a frází[span_47](start_span)[span_47](end_span):</p>
-                <table>
-                    <tr><th>Fráze[span_48](start_span)[span_48](end_span)</th><th>Význam[span_49](start_span)[span_49](end_span)</th></tr>
-                    <tr><td><span class="highlight">POTVRZUJI</span></td><td>Ano[span_50](start_span)[span_50](end_span)</td></tr>
-                    <tr><td><span class="highlight">NEGATIV</span></td><td>Ne, nebo Povolení není uděleno, nebo To není správné[span_51](start_span)[span_51](end_span)</td></tr>
-                    <tr><td><span class="highlight">ROZUMÍM</span></td><td>Přijal jsem vše z vašeho posledního vysílání. (Nesmí být použito jako odpověď na otázku)[span_52](start_span)[span_52](end_span)</td></tr>
-                    <tr><td><span class="highlight">PROVEDU</span></td><td>Rozumím Vaší zprávě a budu podle ní postupovat[span_53](start_span)[span_53](end_span)</td></tr>
-                    <tr><td><span class="highlight">ČEKEJTE</span></td><td>Čekejte, zavolám vás[span_54](start_span)[span_54](end_span)</td></tr>
-                    <tr><td><span class="highlight">JAK SLYŠÍTE</span></td><td>Jaká je čitelnost / srozumitelnost mého vysílání?[span_55](start_span)[span_55](end_span)</td></tr>
-                    <tr><td><span class="highlight">OPAKUJTE</span></td><td>Opakujte vše, nebo následující část vašeho posledního vysílání[span_56](start_span)[span_56](end_span)</td></tr>
-                    <tr><td><span class="highlight">OPAKUJTE ZPRÁVU</span></td><td>Opakujte zpět vše, nebo určitou část zprávy přesně tak, jak byla přijata[span_57](start_span)[span_57](end_span)</td></tr>
-                    <tr><td><span class="highlight">SCHVÁLENO</span></td><td>Povolení pro požadovaný úkon je uděleno[span_58](start_span)[span_58](end_span)</td></tr>
-                    <tr><td><span class="highlight">POVOLENO</span></td><td>Oprávněn pokračovat za určitých podmínek[span_59](start_span)[span_59](end_span)</td></tr>
-                </table>
-            `,
-            'volacky': `
-                <h2>Volací znaky letadel</h2>
-                <p>Radiotelefonní volací znak se nesmí měnit za letu, s výjimkou dočasné změny nařízené stanovištěm ATC v zájmu bezpečnosti[span_60](start_span)[span_60](end_span).</p>
-                
-                <h3>Úplné volací znaky[span_61](start_span)[span_61](end_span)</h3>
-                <ul>
-                    <li>Skupina písmen a/nebo číslic odpovídající poznávací značce letadla[span_62](start_span)[span_62](end_span).</li>
-                    <li>Radiotelefonní označení provozovatele + poslední čtyři znaky poznávací značky[span_63](start_span)[span_63](end_span).</li>
-                    <li>Radiotelefonní označení provozovatele + označení letu (např. ČSA 123)[span_64](start_span)[span_64](end_span).</li>
-                </ul>
-
-                <h3>Zkrácené volací znaky[span_65](start_span)[span_65](end_span)</h3>
-                <p>Mohou být použity jedině po navázání spolehlivého spojení a za předpokladu, že nemůže vzniknout možnost omylu[span_66](start_span)[span_66](end_span). Letadlo použije zkrácený znak pouze tehdy, když tak bylo osloveno leteckou stanicí[span_67](start_span)[span_67](end_span).</p>
-                <ul>
-                    <li>Prvé písmeno/číslice + nejméně poslední dvě písmena/číslice poznávací značky[span_68](start_span)[span_68](end_span).</li>
-                    <li>Radiotelefonní označení provozovatele + nejméně poslední dvě písmena volacího znaku[span_69](start_span)[span_69](end_span).</li>
-                </ul>
-                <p><i>Poznámka pro vydávání povolení:</i> Při vydávání letových povolení musí řídící i piloti při opakování vždy připojit volací znak letadla, jemuž je povolení určeno[span_70](start_span)[span_70](end_span).</p>
-            `
-        };
-
-        function showTopic(topicId) {
-            document.getElementById('menu-view').style.display = 'none';
-            document.getElementById('content-view').style.display = 'block';
-            document.getElementById('backBtn').style.display = 'inline';
-            document.getElementById('header-title').innerText = 'Studijní materiál';
-            document.getElementById('topic-content').innerHTML = materials[topicId];
-            window.scrollTo(0, 0);
-        }
-
-        function showMenu() {
-            document.getElementById('menu-view').style.display = 'block';
-            document.getElementById('content-view').style.display = 'none';
-            document.getElementById('backBtn').style.display = 'none';
-            document.getElementById('header-title').innerText = 'Letecká Frazeologie';
-        }
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
