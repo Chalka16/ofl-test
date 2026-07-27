@@ -18,7 +18,7 @@ const ASSETS = [
     "./frazeologie.html",
     "./tisnova.html",
     "./spojeni.html",
-    "./testy.html",
+    
 
     "./styles.css",
     "./study.css",
