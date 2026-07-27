@@ -2,7 +2,7 @@
   "name": "OFL Radiotelefonie",
   "short_name": "OFL",
   "description": "Studijní materiály pro zkoušku omezeného průkazu radiotelefonisty.",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F8F9FA",
   "theme_color": "#0D47A1",
