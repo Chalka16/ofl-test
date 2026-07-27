@@ -1,658 +1,202 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Hláskovací abeceda</title>
-
-<link rel="stylesheet" href="styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0D47A1">
+    <title>Hláskovací abeceda | OFL Příprava</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
 </head>
-
 <body>
-
-<div class="page">
-
-<header class="page-header">
-
-<a href="index.html" class="back-button">←</a>
-
-<div>
-
-<h1>Hláskovací abeceda</h1>
-
-<p>Nauč se českou i ICAO hláskovací abecedu.</p>
-
-</div>
-
-</header>
-
-<section class="info-card">
-
-<h2>📚 Jak stránka funguje?</h2>
-
-<p>
-
-Tato kapitola nabízí tři režimy učení.
-
-Nejdříve si můžeš abecedu projít.
-
-Poté si můžeš slova skrýt a zkusit si je vybavit.
-
-Nakonec můžeš přejít do procvičování, kde budeš odpovědi psát.
-
-</p>
-
-</section>
-
-<div class="mode-selector">
-
-<button
-class="mode-btn active"
-id="studyBtn"
-onclick="setMode('study')">
-
-📖 Studium
-
-</button>
-
-<button
-class="mode-btn"
-id="hideBtn"
-onclick="setMode('hide')">
-
-👁️ Skrýt slova
-
-</button>
-
-<button
-class="mode-btn"
-id="practiceBtn"
-onclick="setMode('practice')">
-
-✍️ Procvičování
-
-</button>
-
-</div>
-
-<section id="studyMode">
-
-<h2>🇨🇿 Česká hláskovací abeceda</h2>
-
-<div id="czechAlphabet" class="alphabet-list">
-
-<!-- vytvoří app.js -->
-
-</div>
-
-<br>
-
-<h2>🌍 ICAO hláskovací abeceda</h2>
-
-<div id="icaoAlphabet" class="alphabet-list">
-
-<!-- vytvoří app.js -->
-
-</div>
-
-</section>
-
-<section
-id="practiceMode"
-style="display:none;">
-
-<div class="practice-card">
-
-<h2>✍️ Procvičování</h2>
-
-<p>
-
-Napiš správné hláskovací slovo.
-
-</p>
-
-<div class="practice-letter"
-
-id="practiceLetter">
-
-A
-
-</div>
-
-<input
-
-type="text"
-
-id="practiceInput"
-
-autocomplete="off"
-
-placeholder="Napiš správné slovo">
-
-<div class="practice-buttons">
-
-<button
-class="primary-btn"
-onclick="checkPractice()">
-
-Ověřit
-
-</button>
-
-<button
-class="secondary-btn"
-onclick="nextLetter()">
-
-Další
-
-</button>
-
-</div>
-
-<div id="practiceResult"></div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- STUDIJNÍ REŽIM -->
-<!-- ========================= -->
-
-<section class="study-section">
-
-<div class="section-header">
-
-<h2>🇨🇿 Česká hláskovací abeceda</h2>
-
-<p>
-Klikni na písmeno a zobraz správné hláskovací slovo.
-</p>
-
-</div>
-
-<div
-id="czechAlphabet"
-class="alphabet-container">
-
-<!-- Generuje app.js -->
-
-</div>
-
-</section>
-
-
-
-<section class="study-section">
-
-<div class="section-header">
-
-<h2>🌍 ICAO hláskovací abeceda</h2>
-
-<p>
-Stejným způsobem procvič i mezinárodní ICAO abecedu.
-</p>
-
-</div>
-
-<div
-id="icaoAlphabet"
-class="alphabet-container">
-
-<!-- Generuje app.js -->
-
-</div>
-
-</section>
-
-
-
-<section class="tips-card">
-
-<h2>💡 Tip ke studiu</h2>
-
-<p>
-
-Nejprve si projdi celou abecedu.
-
-Poté přepni na režim
-<strong>👁 Skrýt slova</strong>
-a zkus si každé slovo vybavit dříve,
-než na písmeno klepneš.
-
-</p>
-
-</section>
-
-
-
-<section class="exam-card">
-
-<h2>🎓 U zkoušky OFL</h2>
-
-<p>
-
-Zkoušející většinou nechce odříkat celou abecedu.
-
-Mnohem častěji dostaneš registraci letadla nebo skupinu
-písmen, kterou musíš správně vyhláskovat.
-
-</p>
-
-<div class="exam-example">
-
-<strong>Například:</strong>
-
-<div class="example-register">
-
-OK-LKM
-
-</div>
-
-<div class="example-answer">
-
-Oscar Kilo Lima Kilo Mike
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="remember-card">
-
-<h2>🧠 Zapamatuj si</h2>
-
-<div class="remember-list">
-
-<div class="remember-item">
-
-✅ Každé písmeno má právě jedno správné hláskovací slovo.
-
-</div>
-
-<div class="remember-item">
-
-✅ Nevymýšlej vlastní názvy.
-
-</div>
-
-<div class="remember-item">
-
-✅ Mluv pomalu a zřetelně.
-
-</div>
-
-<div class="remember-item">
-
-✅ Důležitější než rychlost je srozumitelnost.
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================================== -->
-<!-- PROCVIČOVÁNÍ -->
-<!-- ===================================== -->
-
-<section id="practiceMode" class="practice-section" style="display:none;">
-
-<div class="practice-card">
-
-<div class="practice-progress">
-
-<div>
-
-<h2>✍️ Procvičování</h2>
-
-<p>
-Napiš správné hláskovací slovo.
-</p>
-
-</div>
-
-<div class="score-box">
-
-<div>
-
-<span id="correctCount">0</span>
-
-<small>Správně</small>
-
-</div>
-
-<div>
-
-<span id="wrongCount">0</span>
-
-<small>Špatně</small>
-
-</div>
-
-</div>
-
-</div>
-
-<hr>
-
-<div class="practice-question">
-
-<p class="question-title">
-
-Jaké hláskovací slovo patří k písmenu?
-
-</p>
-
-<div
-id="practiceLetter"
-class="practice-letter">
-
-A
-
-</div>
-
-</div>
-
-<div class="practice-input-group">
-
-<input
-type="text"
-id="practiceInput"
-placeholder="Napiš správné slovo..."
-autocomplete="off"
-autocapitalize="words">
-
-</div>
-
-<div class="practice-buttons">
-
-<button
-class="primary-btn"
-onclick="checkPractice()">
-
-✔ Ověřit
-
-</button>
-
-<button
-class="secondary-btn"
-onclick="nextLetter()">
-
-➡ Další
-
-</button>
-
-</div>
-
-<div
-id="practiceResult"
-class="practice-result">
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ===================================== -->
-<!-- VÝSLEDKY -->
-<!-- ===================================== -->
-
-<section
-id="resultSection"
-style="display:none;">
-
-<div class="result-card">
-
-<h2>
-
-🏆 Procvičování dokončeno
-
-</h2>
-
-<div class="final-score">
-
-<div class="score-circle">
-
-<span id="finalPercent">
-
-100%
-
-</span>
-
-</div>
-
-</div>
-
-<div class="result-grid">
-
-<div class="result-item">
-
-<span id="resultCorrect">
-
-0
-
-</span>
-
-<p>
-
-Správně
-
-</p>
-
-</div>
-
-<div class="result-item">
-
-<span id="resultWrong">
-
-0
-
-</span>
-
-<p>
-
-Špatně
-
-</p>
-
-</div>
-
-<div class="result-item">
-
-<span id="resultTotal">
-
-26
-
-</span>
-
-<p>
-
-Celkem
-
-</p>
-
-</div>
-
-</div>
-
-<button
-
-class="primary-btn full"
-
-onclick="restartPractice()">
-
-🔄 Procvičit znovu
-
-</button>
-
-</div>
-
-</section>
-
-
-
-<!-- ===================================== -->
-<!-- TIPY -->
-<!-- ===================================== -->
-
-<section class="info-card">
-
-<h2>
-
-🎯 Jak se učit?
-
-</h2>
-
-<ul class="study-tips">
-
-<li>
-
-Nejdříve projdi studijní režim.
-
-</li>
-
-<li>
-
-Poté zapni režim
-<strong>Skrýt slova</strong>.
-
-</li>
-
-<li>
-
-Až budeš odpovídat bez přemýšlení,
-přepni na
-<strong>Procvičování</strong>.
-
-</li>
-
-<li>
-
-Neboj se chyby.
-
-Aplikace ti vždy ukáže správnou odpověď.
-
-</li>
-
-</ul>
-
-</section>
-
-
-
-<section class="motivation-card">
-
-<h2>
-
-🚀 Cíl kapitoly
-
-</h2>
-
-<p>
-
-Na konci této kapitoly bys měl bez zaváhání vyhláskovat
-jakoukoli registraci letadla pomocí české i ICAO
-hláskovací abecedy.
-
-</p>
-
-</section>
-
-<!-- ===================================== -->
-<!-- NAVIGACE -->
-<!-- ===================================== -->
-
-<section class="navigation-section">
-
-<div class="navigation-buttons">
-
-<a
-href="index.html"
-class="secondary-btn">
-
-🏠 Hlavní menu
-
-</a>
-
-<a
-href="radio.html"
-class="primary-btn">
-
-➡ Další kapitola
-
-</a>
-
-</div>
-
-</section>
-
-
-
-<!-- ===================================== -->
-<!-- DOKONČENÍ KAPITOLY -->
-<!-- ===================================== -->
-
-<section class="chapter-complete">
-
-<div class="complete-card">
-
-<div class="complete-icon">
-
-🎉
-
-</div>
-
-<h2>
-
-Kapitola dokončena
-
-</h2>
-
-<p>
-
-Gratulujeme!
-
-Dokončil jsi první kapitolu studijní aplikace OFL.
-
-Pokračuj na další kapitolu nebo si tuto znovu procvič.
-
-</p>
-
-</div>
-
-</section>
-
-
-
-</main>
-
-</div>
-
-
-
-<script src="app.js"></script>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-
-initAlphabetPage();
-
-});
-
-</script>
-
+    <div class="app-container">
+        
+        <!-- HORNÍ NAVIGACE -->
+        <nav class="top-nav" aria-label="Hlavní navigace">
+            <a href="index.html" class="btn-back" aria-label="Zpět na hlavní stránku">
+                <span aria-hidden="true">←</span> Zpět
+            </a>
+            <a href="index.html" class="btn-home">Domů</a>
+        </nav>
+
+        <!-- JEDINÝ HLAVNÍ OBSAH APLIKACE -->
+        <main id="main-content">
+            
+            <!-- HLAVIČKA KAPITOLY -->
+            <header class="chapter-header">
+                <h1 class="chapter-title">Hláskovací abeceda</h1>
+                <p class="chapter-subtitle">
+                    Hláskovací abeceda slouží k jednoznačnému předávání písmen při radiotelefonním provozu. Používá se při situacích, kdy by mohlo dojít k záměně jednotlivých písmen. Běžně používané zkratky (QNH, ETA, ILS...) se zpravidla nehláskují.
+                </p>
+            </header>
+
+            <!-- PŘEPÍNAČ ABECEDY (ICAO / ČESKÁ) -->
+            <div class="mode-nav" id="alphabet-type-nav" role="tablist" aria-label="Výběr typu abecedy">
+                <button type="button" class="btn-mode active" role="tab" aria-selected="true" aria-controls="view-cards" id="tab-icao" data-alphabet="icao">
+                    ICAO
+                </button>
+                <button type="button" class="btn-mode" role="tab" aria-selected="false" aria-controls="view-cards" id="tab-cz" data-alphabet="cz">
+                    Česká
+                </button>
+            </div>
+
+            <!-- PŘEPÍNAČ REŽIMU (STUDIUM / SKRYTÁ SLOVA / PROCVIČOVÁNÍ) -->
+            <div class="mode-nav" id="learning-mode-nav" role="tablist" aria-label="Výběr režimu studia">
+                <button type="button" class="btn-mode active" role="tab" aria-selected="true" aria-controls="view-cards" id="mode-study" data-mode="study">
+                    Studium
+                </button>
+                <button type="button" class="btn-mode" role="tab" aria-selected="false" aria-controls="view-cards" id="mode-hidden" data-mode="hidden">
+                    Skrytá slova
+                </button>
+                <button type="button" class="btn-mode" role="tab" aria-selected="false" aria-controls="view-practice" id="mode-practice" data-mode="practice">
+                    Procvičování
+                </button>
+            </div>
+
+            <!-- REŽIM 1 & 2: DYNAMICKÝ KONTEJNER KARET (PLNĚNO PŘES JS) -->
+            <section id="view-cards" class="learning-grid" role="tabpanel" aria-labelledby="mode-study" aria-live="polite">
+                <!-- KARTY GENERUJE JAVASCRIPT -->
+            </section>
+
+            <!-- REŽIM 3: PROCVIČOVÁNÍ -->
+            <section id="view-practice" class="practice-container" role="tabpanel" aria-labelledby="mode-practice" aria-live="polite" hidden>
+                <article class="practice-card">
+                    <div class="progress-top">
+                        <span class="practice-prompt">Napiš odpovídající slovo:</span>
+                        <span id="practice-progress" class="highlight">1 / 26</span>
+                    </div>
+                    
+                    <span class="practice-target-letter" id="practice-target">A</span>
+                    
+                    <form id="practice-form" autocomplete="off">
+                        <input type="text" 
+                               id="practice-input" 
+                               class="practice-input" 
+                               placeholder="Napiš hláskovací slovo..." 
+                               autocorrect="off" 
+                               autocapitalize="off" 
+                               spellcheck="false"
+                               required>
+                        
+                        <div id="practice-feedback" class="practice-feedback" aria-live="assertive"></div>
+                        
+                        <button type="submit" id="btn-practice-submit" class="btn">Vyhodnotit</button>
+                        <button type="button" id="btn-practice-next" class="btn btn-next" hidden>Další písmeno →</button>
+                        <button type="button" id="btn-practice-repeat-wrong" class="btn btn-secondary" hidden>Opakovat chyby</button>
+                    </form>
+                </article>
+
+                <!-- STATISTIKY PROCVIČOVÁNÍ -->
+                <div class="practice-stats" aria-label="Statistiky procvičování">
+                    <div class="stat-card correct">
+                        <span class="stat-card-label">Správně</span>
+                        <span class="stat-card-value" id="stat-correct">0</span>
+                    </div>
+                    <div class="stat-card wrong">
+                        <span class="stat-card-label">Špatně</span>
+                        <span class="stat-card-value" id="stat-wrong">0</span>
+                    </div>
+                    <div class="stat-card percentage">
+                        <span class="stat-card-label">Úspěšnost</span>
+                        <span class="stat-card-value" id="stat-percent">0 %</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- STUDIJNÍ TIP KE ZKOUŠCE -->
+            <aside class="remember-box">
+                <strong>💡 Tip ke zkoušce OFL</strong>
+                <p>Nejčastější chyby studentů u zkoušky:</p>
+                <ul>
+                    <li><strong>Alfa × Alpha:</strong> V mezinárodní ICAO radiokomunikaci se píše výhradně <em>Alfa</em>.</li>
+                    <li><strong>Juliett:</strong> Obsahuje dvě písmena <em>T</em> na konci (Juliett).</li>
+                    <li><strong>Whiskey:</strong> Obsahuje písmeno <em>E</em> (Whiskey, ne Whisky).</li>
+                    <li><strong>Výslovnost:</strong> ICAO slova vyslovuj vždy správnou předepsanou výslovností.</li>
+                </ul>
+            </aside>
+
+        </main>
+
+        <!-- DOLNÍ NAVIGACE -->
+        <nav class="bottom-nav" aria-label="Dolní navigace">
+            <a href="index.html" class="btn btn-secondary">← Domů</a>
+            <a href="otazky.html" class="btn">Testové otázky →</a>
+        </nav>
+
+        <!-- PATIČKA -->
+        <footer class="footer">
+            <p>Příprava ke zkoušce OFL • Radiotelefonní provoz</p>
+            <small>Formátováno dle předpisů ŘLP a ČTÚ</small>
+        </footer>
+
+    </div>
+
+    <!-- JEDINÁ DATABÁZE ABECEDY PRO JAVASCRIPT -->
+    <script id="alphabet-database" type="application/json">
+    {
+        "icao": [
+            {"letter": "A", "word": "ALFA", "desc": "AL FAH"},
+            {"letter": "B", "word": "BRAVO", "desc": "BRAH VOH"},
+            {"letter": "C", "word": "CHARLIE", "desc": "CHAR LEE"},
+            {"letter": "D", "word": "DELTA", "desc": "DELL TAH"},
+            {"letter": "E", "word": "ECHO", "desc": "ECK OH"},
+            {"letter": "F", "word": "FOXTROT", "desc": "FOKS TROT"},
+            {"letter": "G", "word": "GOLF", "desc": "GOLF"},
+            {"letter": "H", "word": "HOTEL", "desc": "HO TTEL"},
+            {"letter": "I", "word": "INDIA", "desc": "IN DEE AH"},
+            {"letter": "J", "word": "JULIETT", "desc": "JEW LEE ETT"},
+            {"letter": "K", "word": "KILO", "desc": "KEY LOH"},
+            {"letter": "L", "word": "LIMA", "desc": "LEE MAH"},
+            {"letter": "M", "word": "MIKE", "desc": "MIKE"},
+            {"letter": "N", "word": "NOVEMBER", "desc": "NO VEM BER"},
+            {"letter": "O", "word": "OSCAR", "desc": "OSS CAH"},
+            {"letter": "P", "word": "PAPA", "desc": "PAH PAH"},
+            {"letter": "Q", "word": "QUEBEC", "desc": "KEH BECK"},
+            {"letter": "R", "word": "ROMEO", "desc": "ROW ME OH"},
+            {"letter": "S", "word": "SIERRA", "desc": "SEE AIR RAH"},
+            {"letter": "T", "word": "TANGO", "desc": "TANG GO"},
+            {"letter": "U", "word": "UNIFORM", "desc": "YOU NEE FORM"},
+            {"letter": "V", "word": "VICTOR", "desc": "VIK TAH"},
+            {"letter": "W", "word": "WHISKEY", "desc": "WISS KEY"},
+            {"letter": "X", "word": "X-RAY", "desc": "ECKS RAY"},
+            {"letter": "Y", "word": "YANKEE", "desc": "YANG KEY"},
+            {"letter": "Z", "word": "ZULU", "desc": "ZOO LOO"}
+        ],
+        "cz": [
+            {"letter": "A", "word": "Adam", "desc": "česká abeceda"},
+            {"letter": "B", "word": "Božena", "desc": "česká abeceda"},
+            {"letter": "C", "word": "Cyril", "desc": "česká abeceda"},
+            {"letter": "D", "word": "David", "desc": "česká abeceda"},
+            {"letter": "E", "word": "Emil", "desc": "česká abeceda"},
+            {"letter": "F", "word": "František", "desc": "česká abeceda"},
+            {"letter": "G", "word": "Gustav", "desc": "česká abeceda"},
+            {"letter": "H", "word": "Helena", "desc": "česká abeceda"},
+            {"letter": "I", "word": "Ivan", "desc": "česká abeceda"},
+            {"letter": "J", "word": "Josef", "desc": "česká abeceda"},
+            {"letter": "K", "word": "Karel", "desc": "česká abeceda"},
+            {"letter": "L", "word": "Ludvík", "desc": "česká abeceda"},
+            {"letter": "M", "word": "Marie", "desc": "česká abeceda"},
+            {"letter": "N", "word": "Norbert", "desc": "česká abeceda"},
+            {"letter": "O", "word": "Otakar", "desc": "česká abeceda"},
+            {"letter": "P", "word": "Petr", "desc": "česká abeceda"},
+            {"letter": "Q", "word": "Quido", "desc": "česká abeceda"},
+            {"letter": "R", "word": "Rudolf", "desc": "česká abeceda"},
+            {"letter": "S", "word": "Svatopluk", "desc": "česká abeceda"},
+            {"letter": "T", "word": "Tomáš", "desc": "česká abeceda"},
+            {"letter": "U", "word": "Urban", "desc": "česká abeceda"},
+            {"letter": "V", "word": "Václav", "desc": "česká abeceda"},
+            {"letter": "W", "word": "Dvojité V", "desc": "česká abeceda"},
+            {"letter": "X", "word": "Xaver", "desc": "česká abeceda"},
+            {"letter": "Y", "word": "Ypsilon", "desc": "česká abeceda"},
+            {"letter": "Z", "word": "Zuzana", "desc": "česká abeceda"}
+        ]
+    }
+    </script>
+
+    <!-- JS SKRIPT APLIKACE -->
+    <script src="app.js"></script>
 </body>
-
 </html>
