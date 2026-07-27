@@ -347,3 +347,32 @@
     line-height:1.6;
     color:var(--text);
 }
+.readability-header-row{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    margin:0 0 14px;
+    padding:10px 18px;
+    background:#eaf2ff;
+    border-radius:12px;
+    font-weight:700;
+    color:#1d4fa8;
+}
+
+.readability-col-number{
+    text-align:center;
+}
+
+.readability-col-info{
+    padding-left:18px;
+}
+
+.readability-header{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    align-items:center;
+}
+
+.readability-number{
+    display:flex;
+    justify-content:center;
+}
