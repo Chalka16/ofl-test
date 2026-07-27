@@ -21,6 +21,7 @@ const ASSETS = [
     "./testy.html",
 
     "./styles.css",
+    "./study.css",
     "./app.js",
     "./manifest.json",
 
