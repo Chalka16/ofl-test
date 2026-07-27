@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewCards = document.getElementById('view-cards');
     const viewPractice = document.getElementById('view-practice');
     const chapterTitle = document.querySelector('.chapter-title');
+    const studyDivider = document.getElementById('study-divider');
+    const studyTip = document.getElementById('study-tip');
 
     const alphabetNav = document.getElementById('alphabet-type-nav');
     const learningModeNav = document.getElementById('learning-mode-nav');
@@ -58,14 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const normalizeAnswer = (str) => {
         if (!str) return '';
-        return str.trim().toLowerCase();
+        return str
+            .trim()
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
     };
 
     const saveSettings = (key, value) => {
         try {
             localStorage.setItem(key, value);
         } catch (e) {
-            // Ignorujeme chyby způsobené nedostupností localStorage
+            // Ignorujeme chyby localStorage
         }
     };
 
@@ -119,6 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderCards = () => {
         if (!viewCards || !database || !database[currentAlphabet]) return;
 
+        if (currentMode === 'practice') {
+            viewCards.hidden = true;
+            return;
+        }
+
+        viewCards.hidden = false;
         viewCards.textContent = '';
         const fragment = document.createDocumentFragment();
 
@@ -135,31 +147,23 @@ document.addEventListener('DOMContentLoaded', () => {
             wordSpan.className = 'learning-card-word';
             wordSpan.textContent = item.word;
 
-            const descSpan = document.createElement('span');
-
-descSpan.className = 'learning-card-desc';
-
-if (currentAlphabet === 'icao' && item.desc) {
-
-    descSpan.textContent = item.desc;
-
-} else {
-
-    descSpan.hidden = true;
-
-}
-
-          if (currentMode === 'hidden') {
-    wordSpan.classList.add('is-hidden');
-
-    if (currentAlphabet === 'icao') {
-        descSpan.classList.add('is-hidden');
-    }
-}
-
             card.appendChild(letterSpan);
             card.appendChild(wordSpan);
-            card.appendChild(descSpan);
+
+            // Výslovnost zobrazovat pouze u ICAO abecedy
+            if (currentAlphabet === 'icao' && item.desc) {
+                const descSpan = document.createElement('span');
+                descSpan.className = 'learning-card-desc';
+                descSpan.textContent = item.desc;
+                if (currentMode === 'hidden') {
+                    descSpan.classList.add('is-hidden');
+                }
+                card.appendChild(descSpan);
+            }
+
+            if (currentMode === 'hidden') {
+                wordSpan.classList.add('is-hidden');
+            }
 
             fragment.appendChild(card);
         });
@@ -173,20 +177,24 @@ if (currentAlphabet === 'icao' && item.desc) {
         const word = card.querySelector('.learning-card-word');
         const desc = card.querySelector('.learning-card-desc');
 
-        if (!word || !desc) return;
+        if (word) {
+            if (word.classList.contains('is-revealed')) {
+                word.classList.remove('is-revealed');
+                word.classList.add('is-hidden');
+            } else {
+                word.classList.remove('is-hidden');
+                word.classList.add('is-revealed');
+            }
+        }
 
-        const isHidden = word.classList.contains('is-hidden');
-
-        if (isHidden) {
-            word.classList.remove('is-hidden');
-            word.classList.add('is-revealed');
-            desc.classList.remove('is-hidden');
-            desc.classList.add('is-revealed');
-        } else {
-            word.classList.remove('is-revealed');
-            word.classList.add('is-hidden');
-            desc.classList.remove('is-revealed');
-            desc.classList.add('is-hidden');
+        if (desc) {
+            if (desc.classList.contains('is-revealed')) {
+                desc.classList.remove('is-revealed');
+                desc.classList.add('is-hidden');
+            } else {
+                desc.classList.remove('is-hidden');
+                desc.classList.add('is-revealed');
+            }
         }
     };
 
@@ -315,7 +323,7 @@ if (currentAlphabet === 'icao' && item.desc) {
                     btnNext.focus();
                 }
                 if (practiceFeedback) {
-                    const congratsMsg = 'Gratulujeme! Procvičování bylo úspěšně dokončeno.';
+                    const congratsMsg = 'Gratulujeme! Všechny odpovědi byly správně.';
                     if (isCorrect) {
                         practiceFeedback.textContent = `✔ Správně. ${congratsMsg}`;
                     } else {
@@ -362,11 +370,14 @@ if (currentAlphabet === 'icao' && item.desc) {
         if (modeType === 'practice') {
             if (viewCards) viewCards.hidden = true;
             if (viewPractice) viewPractice.hidden = false;
+            if (studyTip) studyTip.hidden = true;
+            if (studyDivider) studyDivider.hidden = true;
             startPractice();
-            if (practiceInput) practiceInput.focus();
         } else {
             if (viewCards) viewCards.hidden = false;
             if (viewPractice) viewPractice.hidden = true;
+            if (studyTip) studyTip.hidden = false;
+            if (studyDivider) studyDivider.hidden = false;
             renderCards();
         }
 
