@@ -136,13 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
             wordSpan.textContent = item.word;
 
             const descSpan = document.createElement('span');
-            descSpan.className = 'learning-card-desc';
-            descSpan.textContent = item.desc;
 
-            if (currentMode === 'hidden') {
-                wordSpan.classList.add('is-hidden');
-                descSpan.classList.add('is-hidden');
-            }
+descSpan.className = 'learning-card-desc';
+
+if (currentAlphabet === 'icao' && item.desc) {
+
+    descSpan.textContent = item.desc;
+
+} else {
+
+    descSpan.hidden = true;
+
+}
+
+          if (currentMode === 'hidden') {
+    wordSpan.classList.add('is-hidden');
+
+    if (currentAlphabet === 'icao') {
+        descSpan.classList.add('is-hidden');
+    }
+}
 
             card.appendChild(letterSpan);
             card.appendChild(wordSpan);
