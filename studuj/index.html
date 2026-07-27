@@ -1,98 +1,163 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>OFL Radiotelefonie</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#0D47A1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="icons/icon-192.png">
-</head>
-<body>
-    <div class="app-container">
-        <header class="header-main">
-            <h1>OFL Radiotelefonie</h1>
-            <p class="subtitle">Studijní materiály pro zkoušku všeobecného omezeného průkazu radiotelefonisty letecké pohyblivé služby.</p>
-        </header>
+    <meta name="format-detection" content="telephone=no">
 
-        <main class="card-grid">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OFL">
+
+    <title>OFL Radiotelefonie</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <header class="hero">
+
+        <img src="icons/icon-192.png"
+             alt="OFL"
+             class="hero-logo">
+
+        <h1>OFL Radiotelefonie</h1>
+
+        <p class="subtitle">
+            Studijní materiály pro zkoušku omezeného průkazu radiotelefonisty
+            letecké pohyblivé služby.
+        </p>
+
+        <section class="progress-card">
+
+            <div class="progress-top">
+                <span>Průběh studia</span>
+                <span id="progressText">0 / 7 kapitol</span>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+        </section>
+
+    </header>
+
+    <main>
+
+        <section class="card-grid">
+
             <a href="abeceda.html" class="nav-card">
                 <div class="card-icon">🅰️</div>
+
                 <div class="card-content">
-                    <div class="card-title">Hláskovací abeceda</div>
-                    <div class="card-desc">Česká a ICAO abeceda</div>
+                    <h2>Hláskovací abeceda</h2>
+                    <p>Česká a ICAO hláskovací abeceda</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
             </a>
 
             <a href="radio.html" class="nav-card">
                 <div class="card-icon">📻</div>
+
                 <div class="card-content">
-                    <div class="card-title">Zkouška rádia</div>
-                    <div class="card-desc">Srozumitelnost a čitelnost</div>
+                    <h2>Zkouška rádia</h2>
+                    <p>Stupně čitelnosti a zkouška spojení</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
             </a>
 
             <a href="cisla.html" class="nav-card">
                 <div class="card-icon">🔢</div>
+
                 <div class="card-content">
-                    <div class="card-title">Čísla</div>
-                    <div class="card-desc">Pravidla výslovnosti číslic</div>
+                    <h2>Čísla</h2>
+                    <p>Výslovnost číslic a frekvencí</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
             </a>
 
             <a href="poradi.html" class="nav-card">
                 <div class="card-icon">📑</div>
+
                 <div class="card-content">
-                    <div class="card-title">Pořadí zpráv</div>
-                    <div class="card-desc">Struktura komunikace</div>
+                    <h2>Pořadí zpráv</h2>
+                    <p>Pořadí podle důležitosti</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
             </a>
 
             <a href="frazeologie.html" class="nav-card">
-                <div class="card-icon">🎙</div>
+                <div class="card-icon">🎙️</div>
+
                 <div class="card-content">
-                    <div class="card-title">Standardní fráze</div>
-                    <div class="card-desc">Běžné výrazy a jejich význam</div>
+                    <h2>Frazeologie</h2>
+                    <p>Standardní letecké fráze</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
             </a>
 
             <a href="tisnova.html" class="nav-card">
                 <div class="card-icon">🚨</div>
+
                 <div class="card-content">
-                    <div class="card-title">Tísňové a pilnostní zprávy</div>
-                    <div class="card-desc">Nouzové situace</div>
+                    <h2>Tísňové zprávy</h2>
+                    <p>MAYDAY • PAN PAN</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
             </a>
 
             <a href="spojeni.html" class="nav-card">
                 <div class="card-icon">📡</div>
+
                 <div class="card-content">
-                    <div class="card-title">Navázání spojení</div>
-                    <div class="card-desc">Volací znaky a postupy</div>
+                    <h2>Navázání spojení</h2>
+                    <p>Volací znaky a komunikace</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
             </a>
 
-            <a href="#" class="nav-card" id="testy-card">
+            <a href="testy.html" class="nav-card card-test">
+
                 <div class="card-icon">📝</div>
+
                 <div class="card-content">
-                    <div class="card-title">Testy</div>
-                    <div class="card-desc">Ověření znalostí</div>
+                    <h2>Testy</h2>
+                    <p>Procvičení znalostí</p>
                 </div>
-                <div class="card-arrow">&gt;</div>
+
+                <span class="card-arrow">›</span>
+
             </a>
-        </main>
-    </div>
-    <script src="app.js"></script>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <p>OFL Radiotelefonie</p>
+
+        <small>Verze 1.0</small>
+
+    </footer>
+
+</div>
+
+<script src="app.js"></script>
+
 </body>
 </html>
