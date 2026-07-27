@@ -212,3 +212,23 @@
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+/* --- tlacitko zpet --- */
+.btn-back{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 18px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:12px;
+    background:#0D47A1;
+    color:#fff;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.btn-back:hover{
+    opacity:.9;
+}
