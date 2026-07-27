@@ -3,6 +3,12 @@
    Soubor: styles.css
    ========================================================= */
 
+/* ---------- 0. UTILITY SKRÝVÁNÍ ---------- */
+
+[hidden] {
+    display: none !important;
+}
+
 /* ---------- 1. RESET ---------- */
 
 *,
@@ -262,10 +268,6 @@ img {
     font-size: 28px;
     font-weight: 700;
     transition: transform var(--transition);
-}
-
-.card-test {
-    border: 2px solid var(--primary-light);
 }
 
 /* ---------- 8. NAVIGATION ---------- */
@@ -561,88 +563,7 @@ tbody tr:nth-child(even) {
     color: var(--primary);
 }
 
-/* ---------- 14. QUIZ ---------- */
-
-.question-card {
-    background: var(--surface);
-    border-radius: var(--radius-md);
-    padding: 24px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border);
-    margin-bottom: 24px;
-}
-
-.question-number {
-    color: var(--primary);
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.question-text {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.answers {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.answer {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px;
-    min-height: 48px;
-    border: 2px solid var(--border);
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    transition: border-color var(--transition), background-color var(--transition);
-    background: var(--surface);
-}
-
-.answer.selected {
-    border-color: var(--primary);
-    background: var(--primary-light);
-}
-
-.answer.correct {
-    border-color: var(--success);
-    background: #F0FFF4;
-}
-
-.answer.wrong {
-    border-color: var(--danger);
-    background: #FFF5F5;
-}
-
-/* ---------- 15. RESULTS ---------- */
-
-.result-card {
-    background: var(--surface);
-    border-radius: var(--radius-md);
-    padding: 28px;
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border);
-}
-
-.result-score {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 12px;
-}
-
-.result-text {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-/* ---------- 16. LEARNING MODULE ---------- */
+/* ---------- 14. LEARNING MODULE ---------- */
 
 .mode-nav {
     display: flex;
@@ -896,7 +817,14 @@ tbody tr:nth-child(even) {
     margin: 30px auto;
 }
 
-/* ---------- 17. ACCESSIBILITY ---------- */
+.error-message {
+    color: var(--danger);
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* ---------- 15. ACCESSIBILITY ---------- */
 
 button:focus-visible,
 a:focus-visible,
@@ -905,13 +833,12 @@ select:focus-visible,
 textarea:focus-visible,
 .btn-mode:focus-visible,
 .nav-card:focus-visible,
-.answer:focus-visible,
 .practice-input:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
-/* ---------- 18. ANIMATIONS ---------- */
+/* ---------- 16. ANIMATIONS ---------- */
 
 @keyframes spin {
     to {
@@ -952,7 +879,7 @@ textarea:focus-visible,
     }
 }
 
-/* ---------- 19. HOVER ---------- */
+/* ---------- 17. HOVER ---------- */
 
 @media (hover: hover) {
     .nav-card:hover {
@@ -969,10 +896,6 @@ textarea:focus-visible,
         box-shadow: var(--shadow-sm);
     }
 
-    .answer:hover {
-        border-color: var(--primary);
-    }
-
     .learning-card:hover,
     .alpha-card:hover {
         border-color: var(--primary);
@@ -984,7 +907,7 @@ textarea:focus-visible,
     }
 }
 
-/* ---------- 20. RESPONSIVE ---------- */
+/* ---------- 18. RESPONSIVE ---------- */
 
 @media (max-width: 600px) {
     .app-container {
@@ -1049,7 +972,7 @@ textarea:focus-visible,
     }
 }
 
-/* ---------- 21. DARK MODE ---------- */
+/* ---------- 19. DARK MODE ---------- */
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -1077,8 +1000,6 @@ textarea:focus-visible,
     .nav-card,
     .content-card,
     .progress-card,
-    .question-card,
-    .result-card,
     .stat-card,
     .practice-card,
     .learning-card,
@@ -1099,21 +1020,13 @@ textarea:focus-visible,
         border-color: var(--border);
     }
 
-    .answer.correct {
-        background: rgba(46, 125, 50, 0.2);
-    }
-
-    .answer.wrong {
-        background: rgba(211, 47, 47, 0.2);
-    }
-
     .btn-mode.active {
         background: var(--primary);
         color: #0F172A;
     }
 }
 
-/* ---------- 22. REDUCED MOTION ---------- */
+/* ---------- 20. REDUCED MOTION ---------- */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1126,7 +1039,7 @@ textarea:focus-visible,
     }
 }
 
-/* ---------- 23. PRINT ---------- */
+/* ---------- 21. PRINT ---------- */
 
 @media print {
     body {
