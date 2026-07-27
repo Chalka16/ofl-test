@@ -1,0 +1,214 @@
+/* ==========================================================================
+   STUDY.CSS - Komponenty pro studijní kapitoly OFL
+   Rozšíření pro styles.css (bez duplicit)
+   ========================================================================== */
+
+/* --- Dialogy (Pilot vs ATC) --- */
+.study-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.study-dialog-msg {
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 85%;
+  line-height: 1.4;
+  font-size: 1rem;
+}
+
+.study-dialog-pilot {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.study-dialog-atc {
+  align-self: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+
+/* --- Paměťové kartičky --- */
+.study-memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+@media (min-width: 768px) {
+  .study-memory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+.study-memory-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  min-height: 88px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.study-memory-card:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+.study-memory-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* --- Výukové postupy (Kroky) --- */
+.study-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.study-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.study-step-num {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.study-step-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 32px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* --- Definice pojmů --- */
+.study-term-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.study-term-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+/* --- Výpis klíčových bodů --- */
+.study-key-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.study-key-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.study-key-points li::before {
+  content: "•";
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+/* --- Obrázky s popisky --- */
+.study-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.study-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.study-caption {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* --- Blok statických studijních otázek --- */
+.study-question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 24px 0 16px 0;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.study-option {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  min-height: 44px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.study-option:active {
+  opacity: 0.6;
+}
+
+.study-option:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
