@@ -451,7 +451,120 @@ document.addEventListener('DOMContentLoaded', () => {
 
         switchAlphabet(initialAlphabet);
         switchMode(initialMode);
+        setupStudyNavigation();
     };
+// =====================================================
+// STUDIJNÍ KAPITOLY
+// =====================================================
 
+const studyContainer = document.getElementById("study-content");
+const cardGrid = document.querySelector(".card-grid");
+
+async function loadStudyPage(page) {
+
+    if (!studyContainer || !cardGrid) return;
+
+    try {
+
+        const response = await fetch(`${page}.html`);
+
+        if (!response.ok) {
+            throw new Error("Soubor nenalezen");
+        }
+
+        const html = await response.text();
+
+        studyContainer.innerHTML = `
+            <button class="btn-back" id="btn-back">
+                ← Zpět na přehled
+            </button>
+
+            ${html}
+        `;
+
+        cardGrid.hidden = true;
+        studyContainer.hidden = false;
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        history.pushState(
+            {
+                page: page
+            },
+            "",
+            `#${page}`
+        );
+
+        document
+            .getElementById("btn-back")
+            .addEventListener("click", showHome);
+
+    } catch (err) {
+
+        studyContainer.innerHTML = `
+            <div class="content-card">
+                <h2>Chyba</h2>
+                <p>Nepodařilo se načíst studijní kapitolu.</p>
+            </div>
+        `;
+
+        cardGrid.hidden = true;
+        studyContainer.hidden = false;
+    }
+
+}
+
+function showHome() {
+
+    if (!studyContainer || !cardGrid) return;
+
+    studyContainer.hidden = true;
+    studyContainer.innerHTML = "";
+
+    cardGrid.hidden = false;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    history.pushState({}, "", "index.html");
+
+}
+
+function setupStudyNavigation() {
+
+    document.querySelectorAll(".nav-card[data-page]").forEach(card => {
+
+        card.addEventListener("click", e => {
+
+            e.preventDefault();
+
+            loadStudyPage(card.dataset.page);
+
+        });
+
+    });
+
+}
+
+window.addEventListener("popstate", () => {
+
+    const page = location.hash.replace("#", "");
+
+    if (page) {
+
+        loadStudyPage(page);
+
+    } else {
+
+        showHome();
+
+    }
+
+});
     init();
 });
