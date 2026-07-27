@@ -4,770 +4,260 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0D47A1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Hláskovací abeceda | OFL</title>
+<title>Hláskovací abeceda</title>
 
 <link rel="stylesheet" href="styles.css">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="OFL">
 
 </head>
 
 <body>
 
-<div class="app-container">
+<div class="page">
 
-<nav class="top-nav">
+<header class="page-header">
 
-<a href="index.html" class="btn-back">← Zpět</a>
+<a href="index.html" class="back-button">←</a>
 
-<a href="index.html" class="btn-home">🏠 Domů</a>
+<div>
 
-</nav>
+<h1>Hláskovací abeceda</h1>
 
-<header class="chapter-header fade-up">
+<p>Nauč se českou i ICAO hláskovací abecedu.</p>
 
-<h1>🅰️ Národní a mezinárodní hláskovací abeceda</h1>
-
-<p class="chapter-subtitle">
-
-Kapitola 1 • OFL Radiotelefonie
-
-</p>
+</div>
 
 </header>
 
-<main>
+<section class="info-card">
 
-<section class="content-card fade-up">
+<h2>📚 Jak stránka funguje?</h2>
 
-<h2>🎯 Co se v této kapitole naučíš</h2>
+<p>
 
-<ul class="study-list">
+Tato kapitola nabízí tři režimy učení.
 
-<li>kdy se používá hláskovací abeceda</li>
+Nejdříve si můžeš abecedu projít.
 
-<li>rozdíl mezi českou a ICAO abecedou</li>
+Poté si můžeš slova skrýt a zkusit si je vybavit.
 
-<li>správnou výslovnost ICAO slov</li>
+Nakonec můžeš přejít do procvičování, kde budeš odpovědi psát.
 
-<li>jak správně vyhláskovat registraci letadla</li>
-
-<li>co se u OFL zkoušky nejčastěji zkouší</li>
-
-</ul>
+</p>
 
 </section>
 
-<section class="remember-box fade-up">
+<div class="mode-selector">
 
-<h2>📌 Co musíš umět ke zkoušce</h2>
+<button
+class="mode-btn active"
+id="studyBtn"
+onclick="setMode('study')">
 
-<p>
+📖 Studium
 
-Zkoušející očekává, že budeš bez zaváhání ovládat:
+</button>
 
-</p>
+<button
+class="mode-btn"
+id="hideBtn"
+onclick="setMode('hide')">
 
-<ul>
+👁️ Skrýt slova
 
-<li>českou hláskovací abecedu,</li>
+</button>
 
-<li>ICAO hláskovací abecedu,</li>
+<button
+class="mode-btn"
+id="practiceBtn"
+onclick="setMode('practice')">
 
-<li>správnou výslovnost jednotlivých slov,</li>
+✍️ Procvičování
 
-<li>praktické hláskování registrací letadel,</li>
+</button>
 
-<li>rozeznat, kdy se hláskuje a kdy není potřeba hláskovat.</li>
+</div>
 
-</ul>
+<section id="studyMode">
 
-</section>
+<h2>🇨🇿 Česká hláskovací abeceda</h2>
 
-<section class="content-card fade-up">
+<div id="czechAlphabet" class="alphabet-list">
 
-<h2>📖 Co je hláskovací abeceda?</h2>
+<!-- vytvoří app.js -->
 
-<p>
+</div>
 
-Hláskovací abeceda je soubor předem stanovených slov,
-která nahrazují jednotlivá písmena při radiotelefonní komunikaci.
+<br>
 
-</p>
+<h2>🌍 ICAO hláskovací abeceda</h2>
 
-<p>
+<div id="icaoAlphabet" class="alphabet-list">
 
-Jejím hlavním účelem je zabránit nedorozumění,
-které může vzniknout špatnou kvalitou spojení,
-hlukem v kabině nebo rozdílnou výslovností.
-
-</p>
-
-<p>
-
-Místo vyslovení samotného písmene se vysloví celé slovo.
-
-</p>
-
-<div class="example-box">
-
-<h3>✈️ Příklad</h3>
-
-<p>
-
-Místo:
-
-<strong>OKABC</strong>
-
-</p>
-
-<p>
-
-pilot vysloví:
-
-</p>
-
-<p class="example-text">
-
-Oscar Kilo Alfa Bravo Charlie
-
-</p>
+<!-- vytvoří app.js -->
 
 </div>
 
 </section>
 
-<section class="info-box fade-up">
+<section
+id="practiceMode"
+style="display:none;">
 
-<h2>💡 Proč se nepoužívají pouze písmena?</h2>
+<div class="practice-card">
 
-<p>
-
-Písmena jako
-
-<strong>B</strong>,
-
-<strong>D</strong>,
-
-<strong>P</strong>
-
-nebo
-
-<strong>T</strong>
-
-mohou při špatném spojení znít velmi podobně.
-
-Použitím slov
-
-<strong>Bravo</strong>,
-
-<strong>Delta</strong>,
-
-<strong>Papa</strong>
-
-a
-
-<strong>Tango</strong>
-
-je riziko záměny výrazně menší.
-
-</p>
-
-</section>
-
-<section class="remember-box fade-up">
-
-<h2>🧠 Zapamatuj si</h2>
-
-<ul>
-
-<li>Každé písmeno má přesně jedno předepsané slovo.</li>
-
-<li>Nevymýšlej vlastní slova.</li>
-
-<li>Výslovnost musí být co nejbližší ICAO standardu.</li>
-
-<li>Při zkoušce se často chce vyhláskovat registrace letadla.</li>
-
-</ul>
-
-</section>
-
-<section class="warning-box fade-up">
-
-<h2>⚠️ Důležité</h2>
+<h2>✍️ Procvičování</h2>
 
 <p>
 
-ICAO hláskovací abeceda se používá vždy,
-když je potřeba jednoznačně označit jednotlivá písmena.
-
-Výjimkou jsou některé všeobecně známé zkratky,
-které jsou v letectví běžně používány
-(například QNH, ILS nebo ETA). Frazeologie_cely.pdf
+Napiš správné hláskovací slovo.
 
 </p>
 
+<div class="practice-letter"
+
+id="practiceLetter">
+
+A
+
+</div>
+
+<input
+
+type="text"
+
+id="practiceInput"
+
+autocomplete="off"
+
+placeholder="Napiš správné slovo">
+
+<div class="practice-buttons">
+
+<button
+class="primary-btn"
+onclick="checkPractice()">
+
+Ověřit
+
+</button>
+
+<button
+class="secondary-btn"
+onclick="nextLetter()">
+
+Další
+
+</button>
+
+</div>
+
+<div id="practiceResult"></div>
+
+</div>
+
 </section>
 
-<section class="content-card fade-up">
+<!-- ========================= -->
+<!-- STUDIJNÍ REŽIM -->
+<!-- ========================= -->
+
+<section class="study-section">
+
+<div class="section-header">
 
 <h2>🇨🇿 Česká hláskovací abeceda</h2>
 
 <p>
-
-Česká hláskovací abeceda se používá při radiotelefonní
-komunikaci vedené v českém jazyce.
-
-Pro zkoušku OFL musíš znát všechna slova bez váhání.
-
+Klikni na písmeno a zobraz správné hláskovací slovo.
 </p>
 
-<div class="table-responsive">
+</div>
 
-<table>
+<div
+id="czechAlphabet"
+class="alphabet-container">
 
-<thead>
-
-<tr>
-
-<th>Písmeno</th>
-
-<th>Slovo</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr><td>A</td><td>Adam</td></tr>
-<tr><td>B</td><td>Božena</td></tr>
-<tr><td>C</td><td>Cyril</td></tr>
-<tr><td>D</td><td>David</td></tr>
-<tr><td>E</td><td>Emil</td></tr>
-<tr><td>F</td><td>František</td></tr>
-<tr><td>G</td><td>Gustav</td></tr>
-<tr><td>H</td><td>Helena</td></tr>
-<tr><td>I</td><td>Ivan</td></tr>
-<tr><td>J</td><td>Josef</td></tr>
-<tr><td>K</td><td>Karel</td></tr>
-<tr><td>L</td><td>Ludvík</td></tr>
-<tr><td>M</td><td>Marie</td></tr>
-<tr><td>N</td><td>Norbert</td></tr>
-<tr><td>O</td><td>Otakar</td></tr>
-<tr><td>P</td><td>Petr</td></tr>
-<tr><td>Q</td><td>Quido</td></tr>
-<tr><td>R</td><td>Rudolf</td></tr>
-<tr><td>S</td><td>Svatopluk</td></tr>
-<tr><td>T</td><td>Tomáš</td></tr>
-<tr><td>U</td><td>Urban</td></tr>
-<tr><td>V</td><td>Václav</td></tr>
-<tr><td>W</td><td>Dvojité Vé</td></tr>
-<tr><td>X</td><td>Xaver</td></tr>
-<tr><td>Y</td><td>Ypsilon</td></tr>
-<tr><td>Z</td><td>Zuzana</td></tr>
-
-</tbody>
-
-</table>
+<!-- Generuje app.js -->
 
 </div>
 
 </section>
 
-<section class="remember-box fade-up">
 
-<h2>📝 Tip ke zkoušce</h2>
 
-<p>
+<section class="study-section">
 
-Zkoušející často nevyžaduje odříkat celou českou abecedu
-zpaměti.
-
-Mnohem častěji dostaneš registraci letadla nebo skupinu
-písmen a budeš je muset správně vyhláskovat.
-
-</p>
-
-<div class="example-box">
-
-<strong>OK-LUL</strong>
-
-<br><br>
-
-Otakar Karel — Ludvík Urban Ludvík
-
-</div>
-
-</section>
-
-<section class="content-card fade-up">
+<div class="section-header">
 
 <h2>🌍 ICAO hláskovací abeceda</h2>
 
 <p>
-
-Při mezinárodní radiotelefonní komunikaci se používá
-výhradně ICAO hláskovací abeceda.
-
-Každé písmeno má předepsané slovo a doporučenou
-výslovnost. Frazeologie_cely.pdf
-
-</p>
-
-<div class="table-responsive">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Písmeno</th>
-
-<th>ICAO</th>
-
-<th>Výslovnost</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr><td>A</td><td>Alfa</td><td>AL FAH</td></tr>
-<tr><td>B</td><td>Bravo</td><td>BRAH VOH</td></tr>
-<tr><td>C</td><td>Charlie</td><td>CHAR LEE</td></tr>
-<tr><td>D</td><td>Delta</td><td>DELL TAH</td></tr>
-<tr><td>E</td><td>Echo</td><td>ECK OH</td></tr>
-<tr><td>F</td><td>Foxtrot</td><td>FOKS TROT</td></tr>
-<tr><td>G</td><td>Golf</td><td>GOLF</td></tr>
-<tr><td>H</td><td>Hotel</td><td>HO TELL</td></tr>
-<tr><td>I</td><td>India</td><td>IN DEE AH</td></tr>
-<tr><td>J</td><td>Juliett</td><td>JEW LEE ETT</td></tr>
-<tr><td>K</td><td>Kilo</td><td>KEY LOH</td></tr>
-<tr><td>L</td><td>Lima</td><td>LEE MAH</td></tr>
-<tr><td>M</td><td>Mike</td><td>MIKE</td></tr>
-<tr><td>N</td><td>November</td><td>NO VEM BER</td></tr>
-<tr><td>O</td><td>Oscar</td><td>OSS CAH</td></tr>
-<tr><td>P</td><td>Papa</td><td>PAH PAH</td></tr>
-<tr><td>Q</td><td>Quebec</td><td>KEH BECK</td></tr>
-<tr><td>R</td><td>Romeo</td><td>ROW ME OH</td></tr>
-<tr><td>S</td><td>Sierra</td><td>SEE AIR RAH</td></tr>
-<tr><td>T</td><td>Tango</td><td>TANG GO</td></tr>
-<tr><td>U</td><td>Uniform</td><td>YOU NEE FORM</td></tr>
-<tr><td>V</td><td>Victor</td><td>VIK TAH</td></tr>
-<tr><td>W</td><td>Whiskey</td><td>WISS KEY</td></tr>
-<tr><td>X</td><td>X-Ray</td><td>ECKS RAY</td></tr>
-<tr><td>Y</td><td>Yankee</td><td>YANG KEY</td></tr>
-<tr><td>Z</td><td>Zulu</td><td>ZOO LOO</td></tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-<section class="info-box fade-up">
-
-<h2>🎙️ Jak se učit výslovnost?</h2>
-
-<p>
-
-Nemusíš mluvit perfektní angličtinou.
-
-Důležité je vyslovovat jednotlivá slova jasně,
-pomalu a vždy stejně.
-
-Ve zkoušce je důležitější srozumitelnost než
-britský nebo americký přízvuk.
-
-</p>
-
-</section>
-
-<section class="content-card fade-up">
-
-<h2>✈️ Praktické příklady hláskování</h2>
-
-<p>
-
-Samotné zapamatování tabulky nestačí. Ve skutečné radiové komunikaci
-budeš hláskovat především imatrikulace letadel, označení letišť
-nebo jednotlivé skupiny písmen.
-
-</p>
-
-<div class="example-box">
-
-<h3>🛩️ Příklad 1</h3>
-
-<p><strong>OK-ABC</strong></p>
-
-<p class="example-text">
-
-Oscar Kilo Alfa Bravo Charlie
-
+Stejným způsobem procvič i mezinárodní ICAO abecedu.
 </p>
 
 </div>
 
-<div class="example-box">
+<div
+id="icaoAlphabet"
+class="alphabet-container">
 
-<h3>🛩️ Příklad 2</h3>
-
-<p><strong>OK-LUL</strong></p>
-
-<p class="example-text">
-
-Oscar Kilo Lima Uniform Lima
-
-</p>
-
-</div>
-
-<div class="example-box">
-
-<h3>🛩️ Příklad 3</h3>
-
-<p><strong>LKMT</strong></p>
-
-<p class="example-text">
-
-Lima Kilo Mike Tango
-
-</p>
-
-</div>
-
-<div class="example-box">
-
-<h3>🛩️ Příklad 4</h3>
-
-<p><strong>OK-RAD</strong></p>
-
-<p class="example-text">
-
-Oscar Kilo Romeo Alfa Delta
-
-</p>
+<!-- Generuje app.js -->
 
 </div>
 
 </section>
 
 
-<section class="content-card fade-up">
 
-<h2>📻 Jak může vypadat otázka u zkoušky?</h2>
+<section class="tips-card">
 
-<p>
-
-Zkoušející většinou nebude chtít odříkat celou abecedu.
-Mnohem častěji dostaneš konkrétní označení.
-
-</p>
-
-<div class="question-card">
+<h2>💡 Tip ke studiu</h2>
 
 <p>
 
-👨‍✈️ <strong>Zkoušející:</strong>
+Nejprve si projdi celou abecedu.
 
-Vyhláskujte registraci <strong>OK-MAX</strong>.
-
-</p>
-
-</div>
-
-<div class="answer-card">
-
-<p>
-
-✅ <strong>Správná odpověď:</strong>
-
-</p>
-
-<p class="example-text">
-
-Oscar Kilo Mike Alfa X-Ray
-
-</p>
-
-</div>
-
-</section>
-
-
-<section class="content-card fade-up">
-
-<h2>💬 Další typické otázky</h2>
-
-<div class="quiz-list">
-
-<div class="quiz-item">
-
-<strong>Jak se hláskuje LKPR?</strong>
-
-<p>Lima Kilo Papa Romeo</p>
-
-</div>
-
-<div class="quiz-item">
-
-<strong>Jak se hláskuje OK-ZUL?</strong>
-
-<p>Oscar Kilo Zulu Uniform Lima</p>
-
-</div>
-
-<div class="quiz-item">
-
-<strong>Jak se hláskuje OK-FOX?</strong>
-
-<p>Oscar Kilo Foxtrot Oscar X-Ray</p>
-
-</div>
-
-<div class="quiz-item">
-
-<strong>Jak se hláskuje OK-JET?</strong>
-
-<p>Oscar Kilo Juliett Echo Tango</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="warning-box fade-up">
-
-<h2>❌ Nejčastější chyby</h2>
-
-<ul>
-
-<li>❌ Alpha → ✅ Alfa</li>
-
-<li>❌ Juliet → ✅ Juliett</li>
-
-<li>❌ Xray → ✅ X-Ray</li>
-
-<li>❌ Quebec vyslovené česky</li>
-
-<li>❌ Sierra jako "Siera"</li>
-
-<li>❌ Whiskey jako "Visky"</li>
-
-<li>❌ Vymýšlení vlastních slov místo ICAO.</li>
-
-<li>❌ Přeskakování pomlčky v registraci.</li>
-
-</ul>
-
-<p>
-
-U zkoušky používej vždy pouze předepsaná ICAO slova. Frazeologie_cely.pdf
+Poté přepni na režim
+<strong>👁 Skrýt slova</strong>
+a zkus si každé slovo vybavit dříve,
+než na písmeno klepneš.
 
 </p>
 
 </section>
 
 
-<section class="remember-box fade-up">
 
-<h2>🎓 Tip ke zkoušce</h2>
+<section class="exam-card">
 
-<p>
-
-Pokud si nejsi jistý výslovností,
-mluv raději pomaleji.
-
-Srozumitelnost je při radiotelefonii důležitější
-než rychlost.
-
-</p>
-
-</section>
-
-
-<section class="content-card fade-up">
-
-<h2>🧠 Mnemotechnické pomůcky</h2>
-
-<div class="memory-grid">
-
-<div class="memory-item">
-
-<h3>Q</h3>
+<h2>🎓 U zkoušky OFL</h2>
 
 <p>
 
-Quebec bývá jedno z nejčastěji zapomínaných slov.
+Zkoušející většinou nechce odříkat celou abecedu.
+
+Mnohem častěji dostaneš registraci letadla nebo skupinu
+písmen, kterou musíš správně vyhláskovat.
 
 </p>
+
+<div class="exam-example">
+
+<strong>Například:</strong>
+
+<div class="example-register">
+
+OK-LKM
 
 </div>
 
-<div class="memory-item">
+<div class="example-answer">
 
-<h3>J</h3>
-
-<p>
-
-Juliett má dvě písmena <strong>t</strong>.
-V ICAO se píše právě takto.
-
-</p>
-
-</div>
-
-<div class="memory-item">
-
-<h3>X</h3>
-
-<p>
-
-Nepoužívej pouze "X".
-
-Správně vždy:
-
-<strong>X-Ray</strong>.
-
-</p>
-
-</div>
-
-<div class="memory-item">
-
-<h3>W</h3>
-
-<p>
-
-Whiskey není "Whisky".
-
-Oficiální ICAO slovo je
-
-<strong>Whiskey</strong>.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="info-box fade-up">
-
-<h2>💡 Shrnutí kapitoly</h2>
-
-<ul>
-
-<li>✔ českou abecedu používáš v české komunikaci,</li>
-
-<li>✔ ICAO abecedu používáš při mezinárodní komunikaci,</li>
-
-<li>✔ každé písmeno má přesně jedno předepsané slovo,</li>
-
-<li>✔ registrace letadel musíš umět bez přemýšlení vyhláskovat,</li>
-
-<li>✔ nejdůležitější je jednoznačnost a srozumitelnost.</li>
-
-</ul>
-
-</section>
-
-<section class="content-card fade-up">
-
-<h2>📝 Ověř si své znalosti</h2>
-
-<p>
-
-Zkus odpovědět bez nahlížení do tabulek.
-
-Pokud si nebudeš jistý, vrať se k předchozí části kapitoly.
-
-</p>
-
-<div class="quiz-card">
-
-<h3>Otázka 1</h3>
-
-<p>Jak se hláskuje registrace <strong>OK-LKM</strong>?</p>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,false)">
-Oscar Kilo Ludvík Karel Marie
-</button>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,true)">
 Oscar Kilo Lima Kilo Mike
-</button>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,false)">
-Oscar Kilo Lima Karel Mike
-</button>
 
 </div>
-
-
-<div class="quiz-card">
-
-<h3>Otázka 2</h3>
-
-<p>Které ICAO slovo patří písmenu Q?</p>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,false)">
-Queen
-</button>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,true)">
-Quebec
-</button>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,false)">
-Quarter
-</button>
-
-</div>
-
-
-<div class="quiz-card">
-
-<h3>Otázka 3</h3>
-
-<p>Které slovo je správně podle ICAO?</p>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,false)">
-Alpha
-</button>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,true)">
-Alfa
-</button>
-
-<button class="quiz-btn"
-onclick="checkAnswer(this,false)">
-Alfaa
-</button>
 
 </div>
 
@@ -775,51 +265,329 @@ Alfaa
 
 
 
-<section class="remember-box fade-up">
+<section class="remember-card">
 
-<h2>📌 Co si musíš odnést z této kapitoly</h2>
+<h2>🧠 Zapamatuj si</h2>
 
-<ul>
+<div class="remember-list">
 
-<li>✔ Znáš českou i ICAO hláskovací abecedu.</li>
+<div class="remember-item">
 
-<li>✔ Umíš vyhláskovat registraci letadla.</li>
+✅ Každé písmeno má právě jedno správné hláskovací slovo.
 
-<li>✔ Víš, kdy použít ICAO hláskování.</li>
+</div>
 
-<li>✔ Rozpoznáš nejčastější chyby.</li>
+<div class="remember-item">
 
-<li>✔ Jsi připraven na otázky u ústní zkoušky.</li>
+✅ Nevymýšlej vlastní názvy.
 
-</ul>
+</div>
+
+<div class="remember-item">
+
+✅ Mluv pomalu a zřetelně.
+
+</div>
+
+<div class="remember-item">
+
+✅ Důležitější než rychlost je srozumitelnost.
+
+</div>
+
+</div>
 
 </section>
 
+<!-- ===================================== -->
+<!-- PROCVIČOVÁNÍ -->
+<!-- ===================================== -->
 
+<section id="practiceMode" class="practice-section" style="display:none;">
 
-<section class="chapter-finish fade-up">
+<div class="practice-card">
 
-<h2>🎉 Kapitola dokončena</h2>
+<div class="practice-progress">
+
+<div>
+
+<h2>✍️ Procvičování</h2>
 
 <p>
+Napiš správné hláskovací slovo.
+</p>
 
-Gratulujeme!
+</div>
 
-Dokončil jsi první kapitolu studijní aplikace OFL.
+<div class="score-box">
 
-Nyní pokračuj na další téma.
+<div>
+
+<span id="correctCount">0</span>
+
+<small>Správně</small>
+
+</div>
+
+<div>
+
+<span id="wrongCount">0</span>
+
+<small>Špatně</small>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="practice-question">
+
+<p class="question-title">
+
+Jaké hláskovací slovo patří k písmenu?
 
 </p>
 
-<div class="chapter-buttons">
+<div
+id="practiceLetter"
+class="practice-letter">
 
-<a href="abeceda.html" class="primary-btn">
+A
+
+</div>
+
+</div>
+
+<div class="practice-input-group">
+
+<input
+type="text"
+id="practiceInput"
+placeholder="Napiš správné slovo..."
+autocomplete="off"
+autocapitalize="words">
+
+</div>
+
+<div class="practice-buttons">
+
+<button
+class="primary-btn"
+onclick="checkPractice()">
+
+✔ Ověřit
+
+</button>
+
+<button
+class="secondary-btn"
+onclick="nextLetter()">
+
+➡ Další
+
+</button>
+
+</div>
+
+<div
+id="practiceResult"
+class="practice-result">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================== -->
+<!-- VÝSLEDKY -->
+<!-- ===================================== -->
+
+<section
+id="resultSection"
+style="display:none;">
+
+<div class="result-card">
+
+<h2>
+
+🏆 Procvičování dokončeno
+
+</h2>
+
+<div class="final-score">
+
+<div class="score-circle">
+
+<span id="finalPercent">
+
+100%
+
+</span>
+
+</div>
+
+</div>
+
+<div class="result-grid">
+
+<div class="result-item">
+
+<span id="resultCorrect">
+
+0
+
+</span>
+
+<p>
+
+Správně
+
+</p>
+
+</div>
+
+<div class="result-item">
+
+<span id="resultWrong">
+
+0
+
+</span>
+
+<p>
+
+Špatně
+
+</p>
+
+</div>
+
+<div class="result-item">
+
+<span id="resultTotal">
+
+26
+
+</span>
+
+<p>
+
+Celkem
+
+</p>
+
+</div>
+
+</div>
+
+<button
+
+class="primary-btn full"
+
+onclick="restartPractice()">
 
 🔄 Procvičit znovu
 
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================== -->
+<!-- TIPY -->
+<!-- ===================================== -->
+
+<section class="info-card">
+
+<h2>
+
+🎯 Jak se učit?
+
+</h2>
+
+<ul class="study-tips">
+
+<li>
+
+Nejdříve projdi studijní režim.
+
+</li>
+
+<li>
+
+Poté zapni režim
+<strong>Skrýt slova</strong>.
+
+</li>
+
+<li>
+
+Až budeš odpovídat bez přemýšlení,
+přepni na
+<strong>Procvičování</strong>.
+
+</li>
+
+<li>
+
+Neboj se chyby.
+
+Aplikace ti vždy ukáže správnou odpověď.
+
+</li>
+
+</ul>
+
+</section>
+
+
+
+<section class="motivation-card">
+
+<h2>
+
+🚀 Cíl kapitoly
+
+</h2>
+
+<p>
+
+Na konci této kapitoly bys měl bez zaváhání vyhláskovat
+jakoukoli registraci letadla pomocí české i ICAO
+hláskovací abecedy.
+
+</p>
+
+</section>
+
+<!-- ===================================== -->
+<!-- NAVIGACE -->
+<!-- ===================================== -->
+
+<section class="navigation-section">
+
+<div class="navigation-buttons">
+
+<a
+href="index.html"
+class="secondary-btn">
+
+🏠 Hlavní menu
+
 </a>
 
-<a href="radio.html" class="secondary-btn">
+<a
+href="radio.html"
+class="primary-btn">
 
 ➡ Další kapitola
 
@@ -829,55 +597,57 @@ Nyní pokračuj na další téma.
 
 </section>
 
+
+
+<!-- ===================================== -->
+<!-- DOKONČENÍ KAPITOLY -->
+<!-- ===================================== -->
+
+<section class="chapter-complete">
+
+<div class="complete-card">
+
+<div class="complete-icon">
+
+🎉
+
+</div>
+
+<h2>
+
+Kapitola dokončena
+
+</h2>
+
+<p>
+
+Gratulujeme!
+
+Dokončil jsi první kapitolu studijní aplikace OFL.
+
+Pokračuj na další kapitolu nebo si tuto znovu procvič.
+
+</p>
+
+</div>
+
+</section>
+
+
+
 </main>
 
 </div>
+
+
 
 <script src="app.js"></script>
 
 <script>
 
-function checkAnswer(button, correct){
+document.addEventListener("DOMContentLoaded", () => {
 
-const parent = button.parentElement;
-
-const buttons = parent.querySelectorAll(".quiz-btn");
-
-buttons.forEach(btn=>{
-
-btn.disabled=true;
-
-});
-
-if(correct){
-
-button.classList.add("correct");
-
-}else{
-
-button.classList.add("wrong");
-
-buttons.forEach(btn=>{
-
-if(btn.getAttribute("onclick").includes("true")){
-
-btn.classList.add("correct");
-
-}
-
-});
-
-}
-
-}
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-if(typeof completeChapter==="function"){
-
-completeChapter("abeceda");
-
-}
+initAlphabetPage();
 
 });
 
