@@ -620,3 +620,33 @@ document.addEventListener("click", (e) => {
     }
 
 });
+
+/* ===============================
+
+   Skupiny standardních výrazů
+
+================================ */
+
+function toggleGroup(header) {
+
+    const groups = document.querySelectorAll(".phrase-group-body");
+
+    groups.forEach(group => {
+
+        if (group !== header.nextElementSibling) {
+            group.classList.remove("open");
+
+            const otherIcon =
+                group.previousElementSibling.querySelector(".group-icon");
+
+            otherIcon.textContent = "▼";
+        }
+
+    });
+
+    const body = header.nextElementSibling;
+    const icon = header.querySelector(".group-icon");
+
+    body.classList.toggle("open");
+    icon.textContent = body.classList.contains("open") ? "▲" : "▼";
+}
