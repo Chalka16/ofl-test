@@ -569,14 +569,54 @@ window.addEventListener("popstate", () => {
     init();
 });
 
-function togglePhrase(header){
+function togglePhrase(header) {
+
+    if (!practiceMode) return;
 
     const body = header.nextElementSibling;
-
     const icon = header.querySelector(".phrase-icon");
 
     body.classList.toggle("hidden-meaning");
-
     icon.classList.toggle("rotated");
 
 }
+let practiceMode = false;
+
+document.addEventListener("click", (e) => {
+
+    if (e.target.id !== "togglePractice") return;
+
+    practiceMode = !practiceMode;
+
+    const button = e.target;
+
+    const bodies = document.querySelectorAll(".phrase-body");
+    const icons = document.querySelectorAll(".phrase-icon");
+
+    if (practiceMode) {
+
+        button.textContent = "📖 Ukončit procvičování";
+
+        bodies.forEach(body => {
+            body.classList.add("hidden-meaning");
+        });
+
+        icons.forEach(icon => {
+            icon.classList.remove("rotated");
+        });
+
+    } else {
+
+        button.textContent = "🧠 Zapnout procvičování";
+
+        bodies.forEach(body => {
+            body.classList.remove("hidden-meaning");
+        });
+
+        icons.forEach(icon => {
+            icon.classList.add("rotated");
+        });
+
+    }
+
+});
