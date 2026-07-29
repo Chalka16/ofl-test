@@ -1,58 +1,73 @@
-<!-- frazeologie.html  -->
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Standardní fráze - OFL</title>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="theme-color" content="#0D47A1">
-</head>
-<body>
-    <div class="app-container">
-        <nav class="top-nav">
-            <a href="poradi.html" class="btn-back">← Zpět</a>
-            <a href="index.html" class="btn-home">Domů</a>
-        </nav>
+<section class="content-card">
 
-        <header class="chapter-header">
-            <h1 class="chapter-title">🎙 Standardní fráze</h1>
-        </header>
+    <h2>📞 Ustálené fráze (standardní výrazy)</h2>
 
-        <main>
-            <div class="info-box">
-                Při radiotelefonním spojení se dle vhodnosti musí užívat následujících standardních slov a frází <span class="citation">[span_42](start_span)[span_42](end_span)</span>.
+    <div class="info-box">
+        <p>
+            Ustálené fráze jsou standardní výrazy používané při radiotelefonní komunikaci.
+            Jejich význam je přesně stanoven předpisem L – Frazeologie.
+        </p>
+    </div>
+
+    <button id="togglePractice" class="practice-btn">
+        🧠 Zapnout procvičování
+    </button>
+
+    <!-- POTVRZUJI -->
+
+    <div class="phrase-card">
+
+        <div class="phrase-header" onclick="togglePhrase(this)">
+            <div>
+                <div class="phrase-title">POTVRZUJI</div>
+                <div class="phrase-subtitle">AFFIRMATIVE</div>
             </div>
 
-            <section class="content-card slide-up-animation">
-                <h2>Základní fráze a jejich význam</h2>
-                <div class="table-responsive">
-                    <table>
-                        <tr><th>Fráze <span class="citation">[span_43](start_span)[span_43](end_span)</span></th><th>Význam <span class="citation">[span_44](start_span)[span_44](end_span)</span></th></tr>
-                        <tr><td><span class="highlight">POTVRZUJI</span></td><td>„Ano“</td></tr>
-                        <tr><td><span class="highlight">NEGATIV</span></td><td>„Ne“ nebo „Povolení není uděleno“</td></tr>
-                        <tr><td><span class="highlight">PROVEDU</span></td><td>„Rozumím Vaší zprávě a budu podle ní postupovat.“</td></tr>
-                        <tr><td><span class="highlight">ROZUMÍM</span></td><td>„Přijal jsem vše z vašeho posledního vysílání.“</td></tr>
-                        <tr><td><span class="highlight">ČEKEJTE</span></td><td>„Čekejte, zavolám vás.“</td></tr>
-                        <tr><td><span class="highlight">JAK SLYŠÍTE</span></td><td>„Jaká je čitelnost / srozumitelnost mého vysílání?“</td></tr>
-                        <tr><td><span class="highlight">OPAKUJI</span></td><td>„Opakuji pro objasnění nebo zdůraznění.“</td></tr>
-                        <tr><td><span class="highlight">OPRAVA</span></td><td>„V tomto vysílání byla učiněna chyba, správné znění je ...“</td></tr>
-                        <tr><td><span class="highlight">SCHVÁLENO</span></td><td>„Povolení pro požadovaný úkon je uděleno.“</td></tr>
-                        <tr><td><span class="highlight">MLUVTE POMALEJI</span></td><td>„Snižte rychlost vaší řeči.“</td></tr>
-                        <tr><td><span class="highlight">ZRUŠTE</span></td><td>„Anulujte předcházející vyslané povolení.“</td></tr>
-                    </table>
-                </div>
-                
-                <div class="warning-box">
-                    <strong>Pozor na záměnu:</strong> ROZUMÍM (Roger) nesmí být použito jako odpověď na otázku vyžadující potvrzení ANO/NE. V takovém případě použijte POTVRZUJI nebo NEGATIV <span class="citation">[span_45](start_span)[span_45](end_span)</span>.
-                </div>
-            </section>
-        </main>
+            <span class="phrase-icon">▼</span>
+        </div>
 
-        <nav class="bottom-nav">
-            <a href="tisnova.html" class="btn-next">Další kapitola →</a>
-        </nav>
+        <div class="phrase-body">
+            To, co bylo vysláno, je správné.
+        </div>
+
     </div>
-    <script src="app.js"></script>
-</body>
-</html>
+
+    <!-- NEGATIV -->
+
+    <div class="phrase-card">
+
+        <div class="phrase-header" onclick="togglePhrase(this)">
+            <div>
+                <div class="phrase-title">NEGATIV</div>
+                <div class="phrase-subtitle">NEGATIVE</div>
+            </div>
+
+            <span class="phrase-icon">▼</span>
+        </div>
+
+        <div class="phrase-body">
+            Znamená NE.
+        </div>
+
+    </div>
+
+    <!-- ROZUMÍM -->
+
+    <div class="phrase-card">
+
+        <div class="phrase-header" onclick="togglePhrase(this)">
+            <div>
+                <div class="phrase-title">ROZUMÍM</div>
+                <div class="phrase-subtitle">ROGER</div>
+            </div>
+
+            <span class="phrase-icon">▼</span>
+        </div>
+
+        <div class="phrase-body">
+            Vaši zprávu jsem zdárně přijal.
+        </div>
+
+    </div>
+
+</section>
