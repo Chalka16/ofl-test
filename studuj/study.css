@@ -465,3 +465,98 @@
 .priority-6 .priority-number{
     background:#616161;
 }
+
+/* ===== USTÁLENÉ FRÁZE ===== */
+
+.practice-btn{
+    width:100%;
+    padding:14px;
+    margin:18px 0;
+    border:none;
+    border-radius:12px;
+    background:#1976d2;
+    color:#fff;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.phrase-card{
+
+    margin:16px 0;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+}
+
+.phrase-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px;
+
+    cursor:pointer;
+
+}
+
+.phrase-title{
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    color:#1565c0;
+
+}
+
+.phrase-subtitle{
+
+    margin-top:3px;
+
+    color:#888;
+
+    font-size:.9rem;
+
+    letter-spacing:1px;
+
+}
+
+.phrase-icon{
+
+    font-size:1.2rem;
+
+    transition:.25s;
+
+}
+
+.phrase-body{
+
+    padding:16px;
+
+    border-top:1px solid #eee;
+
+    line-height:1.6;
+
+}
+
+.hidden-meaning{
+
+    display:none;
+
+}
+
+.rotated{
+
+    transform:rotate(180deg);
+
+}
