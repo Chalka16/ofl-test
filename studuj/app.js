@@ -568,3 +568,15 @@ window.addEventListener("popstate", () => {
 });
     init();
 });
+
+function togglePhrase(header){
+
+    const body = header.nextElementSibling;
+
+    const icon = header.querySelector(".phrase-icon");
+
+    body.classList.toggle("hidden-meaning");
+
+    icon.classList.toggle("rotated");
+
+}
