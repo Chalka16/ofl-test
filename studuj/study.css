@@ -376,3 +376,92 @@
     display:flex;
     justify-content:center;
 }
+/* ===== POŘADÍ ZPRÁV ===== */
+
+.priority-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:16px;
+    margin:14px 0;
+    border-radius:14px;
+    background:#fff;
+    border-left:8px solid #1976d2;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.priority-number{
+    width:54px;
+    height:54px;
+    flex-shrink:0;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.priority-content h3{
+    margin:0 0 6px;
+    font-size:1.05rem;
+}
+
+.priority-content p{
+    margin:0;
+    color:#555;
+    line-height:1.45;
+}
+
+.priority-arrow{
+    text-align:center;
+    font-size:1.7rem;
+    color:#999;
+    margin:2px 0;
+}
+
+/* Barvy */
+
+.priority-1{
+    border-left-color:#d32f2f;
+}
+.priority-1 .priority-number{
+    background:#d32f2f;
+}
+
+.priority-2{
+    border-left-color:#f57c00;
+}
+.priority-2 .priority-number{
+    background:#f57c00;
+}
+
+.priority-3{
+    border-left-color:#fbc02d;
+}
+.priority-3 .priority-number{
+    background:#fbc02d;
+    color:#222;
+}
+
+.priority-4{
+    border-left-color:#388e3c;
+}
+.priority-4 .priority-number{
+    background:#388e3c;
+}
+
+.priority-5{
+    border-left-color:#1976d2;
+}
+.priority-5 .priority-number{
+    background:#1976d2;
+}
+
+.priority-6{
+    border-left-color:#616161;
+}
+.priority-6 .priority-number{
+    background:#616161;
+}
