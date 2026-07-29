@@ -1,73 +1,1231 @@
 <section class="content-card">
 
-    <h2>📞 Ustálené fráze (standardní výrazy)</h2>
+    <h2>🗣️ Standardní výrazy</h2>
+
+    <p>
+        Standardní výrazy slouží ke zjednodušení a sjednocení radiotelefonní
+        komunikace. Používají se při komunikaci mezi pilotem a stanovišti
+        letových provozních služeb.
+    </p>
 
     <div class="info-box">
-        <p>
-            Ustálené fráze jsou standardní výrazy používané při radiotelefonní komunikaci.
-            Jejich význam je přesně stanoven předpisem L – Frazeologie.
-        </p>
+        <strong>💡 Tip ke studiu</strong><br>
+        Nejprve si projděte význam jednotlivých výrazů. Poté zapněte režim
+        <strong>Procvičování</strong> a zkuste si vybavit jejich význam pouze
+        podle českého nebo anglického názvu.
     </div>
 
     <button id="togglePractice" class="practice-btn">
         🧠 Zapnout procvičování
     </button>
 
-    <!-- POTVRZUJI -->
+    <div class="divider"></div>
 
-    <div class="phrase-card">
+    <!-- ================================= -->
+    <!-- POTVRZENÍ A ODPOVĚDI -->
+    <!-- ================================= -->
 
-        <div class="phrase-header" onclick="togglePhrase(this)">
-            <div>
-                <div class="phrase-title">POTVRZUJI</div>
-                <div class="phrase-subtitle">AFFIRMATIVE</div>
+    <div class="phrase-group">
+
+        <div class="phrase-group-header" onclick="toggleGroup(this)">
+
+            <span>🟢 Potvrzení a odpovědi</span>
+
+            <span class="group-icon">▼</span>
+
+        </div>
+
+        <div class="phrase-group-body">
+
+            <!-- POTVRZUJI -->
+
+            <div class="phrase-card">
+
+                <div class="phrase-header" onclick="togglePhrase(this)">
+
+                    <div>
+
+                        <div class="phrase-title">
+                            POTVRZUJI
+                        </div>
+
+                        <div class="phrase-subtitle">
+                            AFFIRM
+                        </div>
+
+                    </div>
+
+                    <span class="phrase-icon">▼</span>
+
+                </div>
+
+                <div class="phrase-body">
+
+                    „Ano.“
+
+                </div>
+
             </div>
 
-            <span class="phrase-icon">▼</span>
-        </div>
+            <!-- NEGATIV -->
 
-        <div class="phrase-body">
-            To, co bylo vysláno, je správné.
-        </div>
+            <div class="phrase-card">
 
-    </div>
+                <div class="phrase-header" onclick="togglePhrase(this)">
 
-    <!-- NEGATIV -->
+                    <div>
 
-    <div class="phrase-card">
+                        <div class="phrase-title">
+                            NEGATIV
+                        </div>
 
-        <div class="phrase-header" onclick="togglePhrase(this)">
-            <div>
-                <div class="phrase-title">NEGATIV</div>
-                <div class="phrase-subtitle">NEGATIVE</div>
+                        <div class="phrase-subtitle">
+                            NEGATIVE
+                        </div>
+
+                    </div>
+
+                    <span class="phrase-icon">▼</span>
+
+                </div>
+
+                <div class="phrase-body">
+
+                    „Ne“ nebo „Povolení není uděleno“
+                    nebo „To není správné“
+                    nebo „Neschopen“.
+
+                </div>
+
             </div>
 
-            <span class="phrase-icon">▼</span>
-        </div>
+            <!-- ROZUMÍM -->
 
-        <div class="phrase-body">
-            Znamená NE.
-        </div>
+            <div class="phrase-card">
 
-    </div>
+                <div class="phrase-header" onclick="togglePhrase(this)">
 
-    <!-- ROZUMÍM -->
+                    <div>
 
-    <div class="phrase-card">
+                        <div class="phrase-title">
+                            ROZUMÍM
+                        </div>
 
-        <div class="phrase-header" onclick="togglePhrase(this)">
-            <div>
-                <div class="phrase-title">ROZUMÍM</div>
-                <div class="phrase-subtitle">ROGER</div>
+                        <div class="phrase-subtitle">
+                            ROGER
+                        </div>
+
+                    </div>
+
+                    <span class="phrase-icon">▼</span>
+
+                </div>
+
+                <div class="phrase-body">
+
+                    Přijal jsem vše z vašeho posledního vysílání.
+
+                    <div class="note">
+
+                        <strong>Poznámka:</strong><br>
+
+                        Za žádných okolností nesmí být použito jako odpověď na frázi
+                        <strong>„OPAKUJTE ZPRÁVU“</strong>,
+                        ani jako přímá odpověď na
+                        <strong>„POTVRZUJI“</strong>
+                        nebo
+                        <strong>„NEGATIV“</strong>.
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <span class="phrase-icon">▼</span>
-        </div>
+            <!-- PROVEDU -->
 
-        <div class="phrase-body">
-            Vaši zprávu jsem zdárně přijal.
+            <div class="phrase-card">
+
+                <div class="phrase-header" onclick="togglePhrase(this)">
+
+                    <div>
+
+                        <div class="phrase-title">
+                            PROVEDU
+                        </div>
+
+                        <div class="phrase-subtitle">
+                            WILCO
+                        </div>
+
+                    </div>
+
+                    <span class="phrase-icon">▼</span>
+
+                </div>
+
+                <div class="phrase-body">
+
+                    Rozumím Vaší zprávě
+                    a budu podle ní postupovat.
+
+                </div>
+
+            </div>
+
+            <!-- POVOLENO -->
+
+            <div class="phrase-card">
+
+                <div class="phrase-header" onclick="togglePhrase(this)">
+
+                    <div>
+
+                        <div class="phrase-title">
+                            POVOLENO
+                        </div>
+
+                        <div class="phrase-subtitle">
+                            CLEARED
+                        </div>
+
+                    </div>
+
+                    <span class="phrase-icon">▼</span>
+
+                </div>
+
+                <div class="phrase-body">
+
+                    Oprávněn pokračovat
+                    za určitých podmínek.
+
+                </div>
+
+            </div>
+
+            <!-- SCHVÁLENO -->
+
+            <div class="phrase-card">
+
+                <div class="phrase-header" onclick="togglePhrase(this)">
+
+                    <div>
+
+                        <div class="phrase-title">
+                            SCHVÁLENO
+                        </div>
+
+                        <div class="phrase-subtitle">
+                            APPROVED
+                        </div>
+
+                    </div>
+
+                    <span class="phrase-icon">▼</span>
+
+                </div>
+
+                <div class="phrase-body">
+
+                    Povolení pro požadovaný úkon
+                    je uděleno.
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
+<!-- ================================= -->
+<!-- OPAKOVÁNÍ A OPRAVY -->
+<!-- ================================= -->
+
+<div class="phrase-group">
+
+    <div class="phrase-group-header" onclick="toggleGroup(this)">
+
+        <span>🔁 Opakování a opravy</span>
+
+        <span class="group-icon">▼</span>
+
+    </div>
+
+    <div class="phrase-group-body">
+
+        <!-- OPAKUJI -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        OPAKUJI
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        I SAY AGAIN
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Opakuji pro objasnění nebo zdůraznění.“
+
+            </div>
+
+        </div>
+
+        <!-- OPAKUJTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        OPAKUJTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        SAY AGAIN
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Opakujte vše“ nebo „Opakujte následující část vašeho posledního vysílání.“
+
+            </div>
+
+        </div>
+
+        <!-- OPAKUJTE VŠE PŘED / MEZI / PO -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        OPAKUJTE VŠE PŘED / MEZI / PO
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        SAY AGAIN ALL BEFORE / BETWEEN / AFTER
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Opakujte část této zprávy před / mezi / po přesně tak, jak byla přijata.“
+
+            </div>
+
+        </div>
+
+        <!-- OPAKUJTE ZPRÁVU -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        OPAKUJTE ZPRÁVU
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        READ BACK
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Opakujte zpět vše“ nebo „Opakujte určitou část této zprávy přesně tak, jak byla přijata.“
+
+            </div>
+
+        </div>
+
+        <!-- OPRAVA -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        OPRAVA
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        CORRECTION
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „V tomto vysílání (nebo v označené zprávě) byla učiněna chyba, správné znění je …“
+
+            </div>
+
+        </div>
+
+        <!-- SPRÁVNĚ -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        SPRÁVNĚ
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        CORRECT
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „To je správně.“ nebo „To je správné.“
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================= -->
+<!-- SPOJENÍ -->
+<!-- ================================= -->
+
+<div class="phrase-group">
+
+    <div class="phrase-group-header" onclick="toggleGroup(this)">
+
+        <span>📡 Spojení</span>
+
+        <span class="group-icon">▼</span>
+
+    </div>
+
+    <div class="phrase-group-body">
+
+        <!-- ČEKEJTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        ČEKEJTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        STANDBY
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Čekejte, zavolám vás.“
+
+                <div class="note">
+
+                    <strong>Poznámka:</strong><br>
+
+                    Volající obvykle znovu navazuje spojení,
+                    jestliže prodleva je delší.
+                    <strong>ČEKEJTE</strong> není schválení
+                    ani odmítnutí.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- JAK SLYŠÍTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        JAK SLYŠÍTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        HOW DO YOU READ
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Jaká je čitelnost mého vysílání?“
+
+            </div>
+
+        </div>
+
+        <!-- KONEC -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        KONEC
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        OUT
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Tato výměna zpráv je ukončena
+                a neočekávám odpověď.“
+
+                <div class="note">
+
+                    <strong>Poznámka:</strong><br>
+
+                    Normálně se při VKV spojení
+                    nebo družicové hlasové komunikaci
+                    nepoužívá.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MONITORUJTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        MONITORUJTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        MONITOR
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Poslouchejte na (kmitočtu).“
+
+            </div>
+
+        </div>
+
+        <!-- PŘEJDĚTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        PŘEJDĚTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        CONTACT
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Navažte radiové spojení s …“
+
+            </div>
+
+        </div>
+
+        <!-- PŘÍJEM -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        PŘÍJEM
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        OVER
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Moje vysílání skončilo,
+                očekávám vaši odpověď.“
+
+                <div class="note">
+
+                    <strong>Poznámka:</strong><br>
+
+                    Normálně se při VKV spojení
+                    nebo družicové hlasové komunikaci
+                    nepoužívá.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================= -->
+<!-- POKYNY -->
+<!-- ================================= -->
+
+<div class="phrase-group">
+
+    <div class="phrase-group-header" onclick="toggleGroup(this)">
+
+        <span>🛫 Pokyny</span>
+
+        <span class="group-icon">▼</span>
+
+    </div>
+
+    <div class="phrase-group-body">
+
+        <!-- MLUVTE POMALEJI -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        MLUVTE POMALEJI
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        SPEAK SLOWER
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Snižte rychlost vaší řeči.“
+
+                <div class="note">
+
+                    <strong>Poznámka:</strong><br>
+
+                    Pro normální rychlost řeči viz
+                    ustanovení <strong>Technika řeči</strong>.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- OHLASTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        OHLASTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        REPORT
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Předejte mi následující informaci ….“
+
+            </div>
+
+        </div>
+
+        <!-- UDRŽUJTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        UDRŽUJTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        MAINTAIN
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Pokračujte v souladu s danými podmínkami“
+                nebo v přesném významu,
+                např. „Udržujte VFR.“
+
+            </div>
+
+        </div>
+
+        <!-- ZKONTROLUJTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        ZKONTROLUJTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        CHECK
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Prověřte systém nebo postup.“
+
+                <div class="note">
+
+                    <strong>Poznámka:</strong><br>
+
+                    Nesmí se používat v žádném jiném
+                    kontextu. Obvykle se neočekává
+                    odpověď.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ŽÁDÁM -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        ŽÁDÁM
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        REQUEST
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Rád bych věděl“
+                nebo
+                „Přeji si obdržet.“
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================= -->
+<!-- ZMĚNY A VÝJIMKY -->
+<!-- ================================= -->
+
+<div class="phrase-group">
+
+    <div class="phrase-group-header" onclick="toggleGroup(this)">
+
+        <span>⚠️ Změny a výjimky</span>
+
+        <span class="group-icon">▼</span>
+
+    </div>
+
+    <div class="phrase-group-body">
+
+        <!-- NEBERTE V ÚVAHU -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        NEBERTE V ÚVAHU
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        DISREGARD
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Považujte toto vysílání,
+                jako kdyby nebylo vysláno.“
+
+            </div>
+
+        </div>
+
+        <!-- NEJSEM SCHOPEN -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        NEJSEM SCHOPEN
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        UNABLE
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Nemohu splnit vaši žádost,
+                instrukci nebo povolení.“
+
+                <div class="note">
+
+                    <strong>Poznámka:</strong><br>
+
+                    Za frází
+                    <strong>NEJSEM SCHOPEN</strong>
+                    je běžně uveden důvod.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- POKUD NEJSTE SCHOPEN ... A OZNAMTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        POKUD NEJSTE SCHOPEN ... A OZNAMTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        IF UNABLE ... AND ADVISE
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Pokud nejste schopen,
+                dodržujte náhradní instrukce
+                a oznamte.“
+
+            </div>
+
+        </div>
+
+        <!-- POTVRĎTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        POTVRĎTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        ACKNOWLEDGE
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Potvrďte, že jste zprávu přijal
+                a rozuměl jí.“
+
+            </div>
+
+        </div>
+
+        <!-- POTVRĎTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        POTVRĎTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        CONFIRM
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Požaduji ověření:
+                (povolení, instrukce,
+                opatření, informace).“
+
+            </div>
+
+        </div>
+
+        <!-- ZNOVU POVOLENO -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        ZNOVU POVOLENO
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        RECLEARED
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Vaše předcházející povolení
+                bylo změněno a toto nové
+                povolení nahrazuje vaše
+                předcházející povolení
+                nebo jeho část.“
+
+            </div>
+
+        </div>
+
+        <!-- ZRUŠTE -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        ZRUŠTE
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        CANCEL
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Anulujte předcházející
+                vyslané povolení.“
+
+            </div>
+
+        </div>
+
+        <!-- MEZERA -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        MEZERA
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        BREAK
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Tímto vyznačuji oddělení
+                dvou částí zprávy.“
+
+                <div class="note">
+
+                    <strong>Poznámka:</strong><br>
+
+                    Používá se jen tehdy,
+                    není-li text zřetelně
+                    oddělen od dalších částí zprávy.
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MEZERA MEZERA -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        MEZERA MEZERA
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        BREAK BREAK
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                „Tímto vyznačuji oddělení
+                dvou zpráv vysílaných
+                různým letadlům
+                při velmi hustém provozu.“
+
+            </div>
+
+        </div>
+
+        <!-- SLOVA DVAKRÁT -->
+
+        <div class="phrase-card">
+
+            <div class="phrase-header" onclick="togglePhrase(this)">
+
+                <div>
+
+                    <div class="phrase-title">
+                        SLOVA DVAKRÁT
+                    </div>
+
+                    <div class="phrase-subtitle">
+                        WORDS TWICE
+                    </div>
+
+                </div>
+
+                <span class="phrase-icon">▼</span>
+
+            </div>
+
+            <div class="phrase-body">
+
+                <strong>a) Jako žádost:</strong><br>
+                „Spojení je obtížné.
+                Prosím, vysílejte každé slovo
+                nebo skupinu slov dvakrát.“<br><br>
+
+                <strong>b) Jako informace:</strong><br>
+                „Jelikož spojení je obtížné,
+                vysílám v této zprávě každé slovo
+                nebo skupinu slov dvakrát.“
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
