@@ -636,9 +636,13 @@ function toggleGroup(header) {
 
             group.classList.remove("open");
 
-            // Schovej všechny významy ve skupině
+            // Významy schovej pouze v režimu procvičování
             group.querySelectorAll(".phrase-body").forEach(body => {
-                body.classList.add("hidden-meaning");
+                if (practiceMode) {
+                    body.classList.add("hidden-meaning");
+                } else {
+                    body.classList.remove("hidden-meaning");
+                }
             });
 
             // Reset ikon frází
@@ -660,4 +664,11 @@ function toggleGroup(header) {
 
     body.classList.toggle("open");
     icon.textContent = body.classList.contains("open") ? "▲" : "▼";
+
+    // Pokud není procvičování zapnuté, zobraz všechny významy
+    if (!practiceMode) {
+        body.querySelectorAll(".phrase-body").forEach(item => {
+            item.classList.remove("hidden-meaning");
+        });
+    }
 }
