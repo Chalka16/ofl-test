@@ -4,7 +4,7 @@
 // Verze 1.0
 // =========================================================
 
-const CACHE_NAME = "ofl-v1.2.4";
+const CACHE_NAME = "ofl-v1.2.5";
 
 const ASSETS = [
 
