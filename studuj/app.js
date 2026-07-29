@@ -626,7 +626,6 @@ document.addEventListener("click", (e) => {
    Skupiny standardních výrazů
 
 ================================ */
-
 function toggleGroup(header) {
 
     const groups = document.querySelectorAll(".phrase-group-body");
@@ -634,8 +633,20 @@ function toggleGroup(header) {
     groups.forEach(group => {
 
         if (group !== header.nextElementSibling) {
+
             group.classList.remove("open");
 
+            // Schovej všechny významy ve skupině
+            group.querySelectorAll(".phrase-body").forEach(body => {
+                body.classList.add("hidden-meaning");
+            });
+
+            // Reset ikon frází
+            group.querySelectorAll(".phrase-icon").forEach(icon => {
+                icon.classList.remove("rotated");
+            });
+
+            // Reset ikony skupiny
             const otherIcon =
                 group.previousElementSibling.querySelector(".group-icon");
 
