@@ -560,44 +560,41 @@
     transform:rotate(180deg);
 
 }
-
 /* ===============================
    Skupiny standardních výrazů
 ================================ */
 
-.phrase-group {
-    margin-bottom: 18px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--card-bg);
+.phrase-group{
+    margin-bottom:18px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    background:var(--surface);
 }
 
-.phrase-group-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 16px;
-    cursor: pointer;
-    font-weight: 700;
-    background: var(--surface-color);
-    transition: background .2s;
+.phrase-group-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 16px;
+    cursor:pointer;
+    font-weight:700;
+    background:var(--surface);
 }
 
-.phrase-group-header:hover {
-    background: rgba(255,255,255,.05);
+.phrase-group-header:active{
+    opacity:.8;
 }
 
-.group-icon {
-    transition: transform .25s;
-    font-size: 14px;
+.group-icon{
+    font-size:14px;
 }
 
-.phrase-group-body {
-    display: none;
-    padding: 14px;
+.phrase-group-body{
+    display:none;
+    padding:14px;
 }
 
-.phrase-group-body.open {
-    display: block;
+.phrase-group-body.open{
+    display:block;
 }
