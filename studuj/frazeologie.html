@@ -15,7 +15,7 @@
         podle českého nebo anglického názvu.
     </div>
 
-  <button id="togglePractice" class="practice-btn">
+  <button id="phraseMode" class="practice-btn">
     🧠 Procvičování frází
 </button>
 
@@ -28,7 +28,7 @@
     🧠 Spustit test
 </button>
 
-<section id="practiceSection" class="practice-container" hidden>
+<section id="phrasePracticeSection" class="practice-container" hidden>
 
     <article class="practice-card">
 
@@ -38,7 +38,7 @@
                 Význam:
             </span>
 
-            <span id="practice-progress" class="highlight">
+            <span id="phrase-progress" class="highlight">
                 1 / 1
             </span>
 
@@ -53,12 +53,12 @@
         </div>
 
         <form
-            id="practice-form"
+            id="phrase-form"
             autocomplete="off">
 
             <input
                 type="text"
-                id="practice-input"
+                id="phrase-input"
                 class="practice-input"
                 placeholder="Napiš správnou frázi"
                 autocomplete="off"
@@ -67,13 +67,13 @@
                 spellcheck="false">
 
             <div
-                id="practice-feedback"
+                id="phrase-feedback"
                 class="practice-feedback">
             </div>
 
             <button
                 type="submit"
-                id="btn-check"
+                id="phrase-btn-check"
                 class="btn">
 
                 Vyhodnotit
@@ -82,7 +82,7 @@
 
             <button
                 type="button"
-                id="btn-next"
+                id="phrase-btn-next"
                 class="btn btn-next"
                 hidden>
 
@@ -92,7 +92,7 @@
 
             <button
                 type="button"
-                id="btn-repeat"
+                id="phrase-btn-repeat"
                 class="btn btn-secondary"
                 hidden>
 
@@ -113,7 +113,7 @@
             </span>
 
             <span
-                id="stat-correct"
+                id="phrase-stat-correct"
                 class="stat-card-value">
 
                 0
@@ -129,7 +129,7 @@
             </span>
 
             <span
-                id="stat-wrong"
+                id="phrase-stat-wrong"
                 class="stat-card-value">
 
                 0
@@ -145,7 +145,7 @@
             </span>
 
             <span
-                id="stat-percent"
+                id="phrade-stat-percent"
                 class="stat-card-value">
 
                 0 %
