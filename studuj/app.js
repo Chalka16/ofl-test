@@ -481,7 +481,7 @@ async function loadStudyPage(page) {
 
             ${html}
         `;
-
+initializePhrasePractice();
         cardGrid.hidden = true;
         studyContainer.hidden = false;
 
