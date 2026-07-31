@@ -15,9 +15,138 @@
         podle českého nebo anglického názvu.
     </div>
 
-    <button id="togglePractice" class="practice-btn">
-        🧠 Zapnout procvičování
-    </button>
+  <button id="togglePractice" class="practice-btn">
+    🧠 Procvičování frází
+</button>
+
+<!-- PROCVIČOVÁNÍ -->
+
+<section id="practiceSection" class="practice-container" hidden>
+
+    <article class="practice-card">
+
+        <div class="progress-top">
+
+            <span class="practice-prompt">
+                Napiš správnou frázi
+            </span>
+
+            <span id="practice-progress" class="highlight">
+                1 / 1
+            </span>
+
+        </div>
+
+        <div
+            id="practice-question"
+            class="practice-question">
+
+            Otázka
+
+        </div>
+
+        <form id="practice-form">
+
+            <input
+                type="text"
+                id="practice-input"
+                class="practice-input"
+                placeholder="Sem napiš správnou frázi"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="characters"
+                spellcheck="false">
+
+            <div
+                id="practice-feedback"
+                class="practice-feedback">
+            </div>
+
+            <button
+                type="submit"
+                class="btn">
+
+                Vyhodnotit
+
+            </button>
+
+            <button
+                type="button"
+                id="btn-next"
+                class="btn btn-next"
+                hidden>
+
+                Další →
+
+            </button>
+
+            <button
+                type="button"
+                id="btn-repeat"
+                class="btn btn-secondary"
+                hidden>
+
+                Opakovat chyby
+
+            </button>
+
+        </form>
+
+    </article>
+
+    <div class="practice-stats">
+
+        <div class="stat-card correct">
+
+            <span class="stat-card-label">
+                Správně
+            </span>
+
+            <span
+                id="stat-correct"
+                class="stat-card-value">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="stat-card wrong">
+
+            <span class="stat-card-label">
+                Špatně
+            </span>
+
+            <span
+                id="stat-wrong"
+                class="stat-card-value">
+
+                0
+
+            </span>
+
+        </div>
+
+        <div class="stat-card percentage">
+
+            <span class="stat-card-label">
+                Úspěšnost
+            </span>
+
+            <span
+                id="stat-percent"
+                class="stat-card-value">
+
+                0 %
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
 
     <div class="divider"></div>
 
