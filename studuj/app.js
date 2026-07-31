@@ -1017,9 +1017,27 @@ document.addEventListener("click", function (e) {
 
 function initializePhrasePractice() {
 
+    practiceSection = document.getElementById("phrasePracticeSection");
+    practiceQuestion = document.getElementById("phrase-question");
+    practiceProgress = document.getElementById("phrase-progress");
+    practiceInput = document.getElementById("phrase-input");
+    practiceFeedback = document.getElementById("phrase-feedback");
+
+    statCorrect = document.getElementById("phrase-stat-correct");
+    statWrong = document.getElementById("phrase-stat-wrong");
+    statPercent = document.getElementById("phrase-stat-percent");
+
+    btnCheck = document.getElementById("phrase-btn-check");
+    btnNext = document.getElementById("phrase-btn-next");
+    btnRepeat = document.getElementById("phrase-btn-repeat");
+
     const startButton = document.getElementById("startPractice");
 
-    if (!startButton) return;
+    if (
+        !startButton ||
+        !practiceSection ||
+        !practiceInput
+    ) return;
 
     startButton.onclick = function () {
 
