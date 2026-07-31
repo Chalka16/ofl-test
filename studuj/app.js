@@ -909,39 +909,7 @@ function nextPhraseQuestion() {
 // TLAČÍTKA
 // ======================================
 
-btnCheck.addEventListener("click", function(e) {
 
-    e.preventDefault();
-
-    checkPhraseAnswer();
-
-});
-
-
-btnNext.addEventListener("click", function() {
-
-    nextPhraseQuestion();
-
-});
-
-
-practiceInput.addEventListener("keydown", function(e) {
-
-    if (e.key !== "Enter") return;
-
-    e.preventDefault();
-
-    if (!btnCheck.hidden) {
-
-        checkPhraseAnswer();
-
-    } else {
-
-        nextPhraseQuestion();
-
-    }
-
-});
 
 // ======================================
 // KONEC TESTU
@@ -980,15 +948,7 @@ function finishPhrasePractice() {
 // OPAKOVÁNÍ CHYB
 // ======================================
 
-btnRepeat.addEventListener("click", function () {
 
-    practiceInput.hidden = false;
-
-    btnRepeat.hidden = true;
-
-    startPhrasePractice(true);
-
-});
 
 
 // ======================================
@@ -1052,7 +1012,42 @@ function initializePhrasePractice() {
         startPhrasePractice(false);
 
     };
+    btnCheck.addEventListener("click", function (e) {
 
+        e.preventDefault();
+        checkPhraseAnswer();
+
+    });
+
+    btnNext.addEventListener("click", function () {
+
+        nextPhraseQuestion();
+
+    });
+
+    btnRepeat.addEventListener("click", function () {
+
+        practiceInput.hidden = false;
+
+        btnRepeat.hidden = true;
+
+        startPhrasePractice(true);
+
+    });
+
+    practiceInput.addEventListener("keydown", function (e) {
+
+        if (e.key !== "Enter") return;
+
+        e.preventDefault();
+
+        if (!btnCheck.hidden) {
+            checkPhraseAnswer();
+        } else {
+            nextPhraseQuestion();
+        }
+
+    });
 }
 
 // Po načtení celé stránky
