@@ -20,6 +20,13 @@
 </button>
 
 <!-- PROCVIČOVÁNÍ -->
+<button id="togglePractice" class="practice-btn">
+    👁 Skrýt významy
+</button>
+
+<button id="startPractice" class="practice-btn">
+    🧠 Spustit test
+</button>
 
 <section id="practiceSection" class="practice-container" hidden>
 
@@ -28,7 +35,7 @@
         <div class="progress-top">
 
             <span class="practice-prompt">
-                Napiš správnou frázi
+                Význam:
             </span>
 
             <span id="practice-progress" class="highlight">
@@ -45,16 +52,18 @@
 
         </div>
 
-        <form id="practice-form">
+        <form
+            id="practice-form"
+            autocomplete="off">
 
             <input
                 type="text"
                 id="practice-input"
                 class="practice-input"
-                placeholder="Sem napiš správnou frázi"
+                placeholder="Napiš správnou frázi"
                 autocomplete="off"
                 autocorrect="off"
-                autocapitalize="characters"
+                autocapitalize="off"
                 spellcheck="false">
 
             <div
@@ -64,6 +73,7 @@
 
             <button
                 type="submit"
+                id="btn-check"
                 class="btn">
 
                 Vyhodnotit
