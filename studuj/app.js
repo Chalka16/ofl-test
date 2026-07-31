@@ -767,14 +767,17 @@ function startPhrasePractice(repeatWrong = false) {
 
             if (!title) return;
 
-            phraseQuestions.push({
+           const meaning = card.querySelector(".phrase-body");
 
-                answer: title.innerText.trim(),
+phraseQuestions.push({
 
-                question: subtitle
-                    ? subtitle.innerText.trim()
-                    : "Napiš správnou frázi"
+    answer: title.textContent.trim(),
 
+    question: meaning
+
+        ? meaning.textContent.trim()
+
+        : "Jaká je správná fráze?"
             });
 
         });
