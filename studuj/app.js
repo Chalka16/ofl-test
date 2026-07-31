@@ -979,8 +979,10 @@ function initializePhrasePractice() {
 
     practiceSection = document.getElementById("phrasePracticeSection");
     practiceQuestion = document.getElementById("phrase-question");
+    console.log(practiceQuestion);
     practiceProgress = document.getElementById("phrase-progress");
     practiceInput = document.getElementById("phrase-input");
+    console.log(practiceInput);
     practiceFeedback = document.getElementById("phrase-feedback");
 
     statCorrect = document.getElementById("phrase-stat-correct");
