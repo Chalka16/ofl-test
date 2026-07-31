@@ -773,7 +773,7 @@ function showPhraseQuestion() {
     document.getElementById("btn-repeat").hidden = true;
 
 }
-"use strict";
+
 
 // ======================================
 // PROCVIČOVÁNÍ STANDARDNÍCH FRÁZÍ
