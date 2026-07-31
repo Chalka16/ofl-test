@@ -352,3 +352,44 @@ document.addEventListener("click", function (e) {
     startPhrasePractice(false);
 
 });
+
+// ======================================
+// INICIALIZACE PROCVIČOVÁNÍ
+// ======================================
+
+function initializePhrasePractice() {
+
+    const startButton = document.getElementById("startPractice");
+
+    if (!startButton) return;
+
+    startButton.onclick = function () {
+
+        practiceInput.hidden = false;
+
+        btnRepeat.hidden = true;
+
+        btnNext.hidden = true;
+
+        btnCheck.hidden = false;
+
+        startPhrasePractice(false);
+
+    };
+
+}
+
+// Po načtení celé stránky
+document.addEventListener("DOMContentLoaded", initializePhrasePractice);
+
+// Po každém načtení nové kapitoly
+const observer = new MutationObserver(() => {
+
+    initializePhrasePractice();
+
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
