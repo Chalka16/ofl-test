@@ -951,25 +951,7 @@ function finishPhrasePractice() {
 
 
 
-// ======================================
-// SPUŠTĚNÍ TESTU
-// ======================================
 
-document.addEventListener("click", function (e) {
-
-    if (e.target.id !== "startPractice") return;
-
-    practiceInput.hidden = false;
-
-    btnRepeat.hidden = true;
-
-    btnNext.hidden = true;
-
-    btnCheck.hidden = false;
-
-    startPhrasePractice(false);
-
-});
 
 // ======================================
 // INICIALIZACE PROCVIČOVÁNÍ
@@ -1052,15 +1034,8 @@ function initializePhrasePractice() {
     });
 }
 
-// Po načtení celé stránky
-document.addEventListener("DOMContentLoaded", initializePhrasePractice);
 
-// Po každém načtení nové kapitoly
-const observer = new MutationObserver(() => {
 
-    initializePhrasePractice();
-
-});
 
 observer.observe(document.body, {
     childList: true,
