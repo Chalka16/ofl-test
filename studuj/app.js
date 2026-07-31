@@ -672,219 +672,109 @@ function toggleGroup(header) {
         });
     }
 }
-/* ===========================================
-   PROCVIČOVÁNÍ FRÁZÍ
-=========================================== */
+document.addEventListener("click", (e) => {
 
-const togglePracticeBtn = document.getElementById("togglePractice");
+    if (e.target.id !== "togglePractice") return;
 
-if (togglePracticeBtn) {
+    ...
+});
+// =====================================
+// TEST STANDARDNÍCH FRÁZÍ
+// =====================================
 
-    const practiceSection = document.getElementById("practiceSection");
+const practiceSection = document.getElementById("practiceSection");
 
-    const phraseGroups = document.querySelectorAll(".phrase-group");
+document.addEventListener("click", (e) => {
 
-    const question = document.getElementById("practice-question");
-    const progress = document.getElementById("practice-progress");
-    const input = document.getElementById("practice-input");
-    const feedback = document.getElementById("practice-feedback");
+    if (e.target.id !== "startPractice") return;
 
-    const form = document.getElementById("practice-form");
+    if (!practiceSection) return;
 
-    const btnNext = document.getElementById("btn-next");
-    const btnRepeat = document.getElementById("btn-repeat");
+    practiceSection.hidden = false;
 
-    const statCorrect = document.getElementById("stat-correct");
-    const statWrong = document.getElementById("stat-wrong");
-    const statPercent = document.getElementById("stat-percent");
+    practiceSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
-    let questions = [];
-    let wrongQuestions = [];
+    startPhrasePractice();
 
-    let current = 0;
-    let correct = 0;
-    let wrong = 0;
+});
 
-    let practiceStarted = false;
+let phraseQuestions = [];
+let phraseIndex = 0;
+let phraseCorrect = 0;
+let phraseWrong = 0;
+let phraseMistakes = [];
 
-    togglePracticeBtn.addEventListener("click", startPractice);
+function startPhrasePractice(repeatWrong = false) {
 
-    function startPractice() {
-
-        phraseGroups.forEach(group => group.style.display = "none");
-
-        practiceSection.hidden = false;
-
-        loadQuestions();
-
-    }
-
-    function loadQuestions() {
-
-        questions = [];
+    if (!repeatWrong) {
+        phraseQuestions = [];
+        phraseCorrect = 0;
+        phraseWrong = 0;
+        phraseMistakes = [];
 
         document.querySelectorAll(".phrase-card").forEach(card => {
 
-            const phrase =
-                card.querySelector(".phrase-title")?.innerText.trim();
+            const title = card.querySelector(".phrase-title")?.innerText.trim();
+            const subtitle = card.querySelector(".phrase-subtitle")?.innerText.trim();
+            const body = card.querySelector(".phrase-body")?.cloneNode(true);
 
-            const meaning =
-                card.querySelector(".phrase-body")?.innerText.trim();
+            if (!title || !body) return;
 
-            if (phrase && meaning) {
+            // odstraníme poznámky
+            body.querySelectorAll(".note").forEach(n => n.remove());
 
-                questions.push({
-                    phrase,
-                    meaning
-                });
-
-            }
+            phraseQuestions.push({
+                question: subtitle || "Napiš správnou frázi",
+                answer: title,
+                meaning: body.innerText.trim()
+            });
 
         });
 
-        questions.sort(() => Math.random() - 0.5);
+        // Zamíchání
+        phraseQuestions.sort(() => Math.random() - 0.5);
 
-        current = 0;
-        correct = 0;
-        wrong = 0;
-        wrongQuestions = [];
+    } else {
 
-        updateStats();
-
-        showQuestion();
+        phraseQuestions = [...phraseMistakes];
+        phraseMistakes = [];
+        phraseQuestions.sort(() => Math.random() - 0.5);
 
     }
 
-    function showQuestion() {
+    phraseIndex = 0;
 
-        input.value = "";
-        feedback.innerHTML = "";
+    document.getElementById("stat-correct").textContent = phraseCorrect;
+    document.getElementById("stat-wrong").textContent = phraseWrong;
+    document.getElementById("stat-percent").textContent = "0 %";
 
-        btnNext.hidden = true;
-
-        progress.innerText =
-            `${current + 1} / ${questions.length}`;
-
-        question.innerText =
-            questions[current].meaning;
-
-        input.focus();
-
-    }
-
-    form.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        checkAnswer();
-
-    });
-
-    function checkAnswer(){
-
-        const answer =
-            input.value.trim().toUpperCase();
-
-        const correctAnswer =
-            questions[current].phrase.toUpperCase();
-
-        if(answer === correctAnswer){
-
-            correct++;
-
-            feedback.innerHTML =
-            `✅ Správně<br><strong>${questions[current].phrase}</strong>`;
-
-        }
-
-        else{
-
-            wrong++;
-
-            wrongQuestions.push(questions[current]);
-
-            feedback.innerHTML =
-            `❌ Špatně<br><br>
-             Správná odpověď:<br>
-             <strong>${questions[current].phrase}</strong>`;
-
-        }
-
-        updateStats();
-
-        btnNext.hidden = false;
-
-    }
-
-    btnNext.addEventListener("click", nextQuestion);
-
-    function nextQuestion(){
-
-        current++;
-
-        if(current >= questions.length){
-
-            finishPractice();
-
-            return;
-
-        }
-
-        showQuestion();
-
-    }
-
-    function finishPractice(){
-
-        question.innerHTML =
-        "🎉 Procvičování dokončeno";
-
-        input.style.display="none";
-
-        form.querySelector("button[type=submit]").hidden=true;
-
-        btnNext.hidden=true;
-
-        if(wrongQuestions.length){
-
-            btnRepeat.hidden=false;
-
-        }
-
-    }
-
-    btnRepeat.addEventListener("click", function(){
-
-        questions=[...wrongQuestions];
-
-        wrongQuestions=[];
-
-        current=0;
-
-        input.style.display="";
-
-        form.querySelector("button[type=submit]").hidden=false;
-
-        btnRepeat.hidden=true;
-
-        showQuestion();
-
-    });
-
-    function updateStats(){
-
-        statCorrect.innerText=correct;
-
-        statWrong.innerText=wrong;
-
-        const total=correct+wrong;
-
-        statPercent.innerText=
-        total
-        ? Math.round(correct/total*100)+" %"
-        : "0 %";
-
-    }
+    showPhraseQuestion();
 
 }
+function showPhraseQuestion() {
 
+    if (phraseIndex >= phraseQuestions.length) {
+        finishPhrasePractice();
+        return;
+    }
+
+    const question = phraseQuestions[phraseIndex];
+
+    document.getElementById("practice-question").textContent = question.meaning;
+
+    document.getElementById("practice-progress").textContent =
+        `${phraseIndex + 1} / ${phraseQuestions.length}`;
+
+    document.getElementById("practice-input").value = "";
+    document.getElementById("practice-input").focus();
+
+    document.getElementById("practice-feedback").textContent = "";
+
+    document.getElementById("btn-check").hidden = false;
+    document.getElementById("btn-next").hidden = true;
+    document.getElementById("btn-repeat").hidden = true;
+
+}
