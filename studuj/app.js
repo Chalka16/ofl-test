@@ -687,37 +687,19 @@ let phraseIndex = 0;
 let phraseCorrect = 0;
 let phraseWrong = 0;
 
-const practiceSection = document.getElementById("practiceSection");
+let practiceSection;
+let practiceQuestion;
+let practiceProgress;
+let practiceInput;
+let practiceFeedback;
 
-const practiceQuestion =
-    document.getElementById("practice-question");
+let statCorrect;
+let statWrong;
+let statPercent;
 
-const practiceProgress =
-    document.getElementById("practice-progress");
-
-const practiceInput =
-    document.getElementById("practice-input");
-
-const practiceFeedback =
-    document.getElementById("practice-feedback");
-
-const statCorrect =
-    document.getElementById("stat-correct");
-
-const statWrong =
-    document.getElementById("stat-wrong");
-
-const statPercent =
-    document.getElementById("stat-percent");
-
-const btnCheck =
-    document.getElementById("btn-check");
-
-const btnNext =
-    document.getElementById("btn-next");
-
-const btnRepeat =
-    document.getElementById("btn-repeat");
+let btnCheck;
+let btnNext;
+let btnRepeat;
 
 
 // ======================================
