@@ -767,19 +767,25 @@ function startPhrasePractice(repeatWrong = false) {
 
             if (!title) return;
 
-           const meaning = card.querySelector(".phrase-body");
+          const body = card.querySelector(".phrase-body")?.cloneNode(true);
+
+if (body) {
+
+    body.querySelectorAll(".note").forEach(n => n.remove());
+
+}
 
 phraseQuestions.push({
 
     answer: title.textContent.trim(),
 
-    question: meaning
+    question: body
 
-        ? meaning.textContent.trim()
+        ? body.textContent.trim()
 
         : "Jaká je správná fráze?"
-            });
 
+});
         });
 
         shuffle(phraseQuestions);
@@ -865,7 +871,11 @@ function checkPhraseAnswer() {
 
         phraseWrong++;
 
-        phraseMistakes.push(item);
+       if (!phraseMistakes.some(q => q.answer === item.answer)) {
+
+    phraseMistakes.push(item);
+
+}
 
         practiceFeedback.innerHTML = `
             ❌ Správná odpověď:<br>
@@ -959,15 +969,12 @@ function finishPhrasePractice() {
 // ======================================
 // INICIALIZACE PROCVIČOVÁNÍ
 // ======================================
-
 function initializePhrasePractice() {
 
     practiceSection = document.getElementById("phrasePracticeSection");
     practiceQuestion = document.getElementById("phrase-question");
-    console.log(practiceQuestion);
     practiceProgress = document.getElementById("phrase-progress");
     practiceInput = document.getElementById("phrase-input");
-    console.log(practiceInput);
     practiceFeedback = document.getElementById("phrase-feedback");
 
     statCorrect = document.getElementById("phrase-stat-correct");
@@ -978,15 +985,31 @@ function initializePhrasePractice() {
     btnNext = document.getElementById("phrase-btn-next");
     btnRepeat = document.getElementById("phrase-btn-repeat");
 
+    const phraseForm = document.getElementById("phrase-form");
     const startButton = document.getElementById("startPractice");
 
     if (
         !startButton ||
         !practiceSection ||
-        !practiceInput
-    ) return;
+        !practiceInput ||
+        !btnCheck ||
+        !btnNext ||
+        !btnRepeat ||
+        !phraseForm
+    ) {
+        return;
+    }
+
+    // odstranění starých obsluh
+    startButton.onclick = null;
+    btnCheck.onclick = null;
+    btnNext.onclick = null;
+    btnRepeat.onclick = null;
+    phraseForm.onsubmit = null;
 
     startButton.onclick = function () {
+
+        practiceSection.hidden = false;
 
         practiceInput.hidden = false;
 
@@ -999,20 +1022,22 @@ function initializePhrasePractice() {
         startPhrasePractice(false);
 
     };
-    btnCheck.addEventListener("click", function (e) {
+
+    btnCheck.onclick = function (e) {
 
         e.preventDefault();
+
         checkPhraseAnswer();
 
-    });
+    };
 
-    btnNext.addEventListener("click", function () {
+    btnNext.onclick = function () {
 
         nextPhraseQuestion();
 
-    });
+    };
 
-    btnRepeat.addEventListener("click", function () {
+    btnRepeat.onclick = function () {
 
         practiceInput.hidden = false;
 
@@ -1020,27 +1045,21 @@ function initializePhrasePractice() {
 
         startPhrasePractice(true);
 
-    });
+    };
 
-    practiceInput.addEventListener("keydown", function (e) {
-
-        if (e.key !== "Enter") return;
+    phraseForm.onsubmit = function (e) {
 
         e.preventDefault();
 
         if (!btnCheck.hidden) {
             checkPhraseAnswer();
-        } else {
+        } else if (!btnNext.hidden) {
             nextPhraseQuestion();
         }
 
-    });
+    };
+
 }
 
 
 
-
-observer.observe(document.body, {
-    childList: true,
-    subtree: true
-});
