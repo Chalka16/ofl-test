@@ -1,8 +1,7 @@
 /*
-  Zkušební Téma 1
-  Otázky převzaté pouze z přiložených obrázků.
-  V obrázcích nejsou uvedeny konkrétní částky,
-  proto se v této prototypové verzi částka nevyhodnocuje.
+  Účetnictví – Téma 1
+  Účetní operace jsou převzaté z přiložených obrázků.
+  Účetní osnova je načtena z accounts.json, vytvořeného z nahraného PDF.
 */
 
 const questions = [
@@ -43,7 +42,32 @@ const questions = [
 const questionsContainer = document.getElementById("questions");
 const form = document.getElementById("testForm");
 const result = document.getElementById("result");
+
 let currentQuestions = [...questions];
+let accounts = [];
+
+async function loadAccounts() {
+  try {
+    const response = await fetch("accounts.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Nelze načíst účtovou osnovu.");
+    accounts = await response.json();
+  } catch (error) {
+    console.error(error);
+    accounts = [];
+  }
+}
+
+function normalizeText(value) {
+  return value
+    .toLocaleLowerCase("cs-CZ")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function normalizeAccount(value) {
+  return value.trim().replace(/\s+/g, "");
+}
 
 function renderQuestions(list = questions) {
   currentQuestions = [...list];
@@ -74,26 +98,40 @@ function renderQuestions(list = questions) {
 
         <div class="answer-cell">
           <label for="md-${question.id}">MD</label>
-          <input
-            class="answer-input md-input"
-            id="md-${question.id}"
-            name="md-${question.id}"
-            type="text"
-            inputmode="numeric"
-            autocomplete="off"
-          >
+          <div class="account-field">
+            <input
+              class="answer-input md-input account-input"
+              id="md-${question.id}"
+              name="md-${question.id}"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-autocomplete="list"
+              aria-expanded="false"
+            >
+            <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů MD"></div>
+          </div>
         </div>
 
         <div class="answer-cell">
           <label for="d-${question.id}">D</label>
-          <input
-            class="answer-input d-input"
-            id="d-${question.id}"
-            name="d-${question.id}"
-            type="text"
-            inputmode="numeric"
-            autocomplete="off"
-          >
+          <div class="account-field">
+            <input
+              class="answer-input d-input account-input"
+              id="d-${question.id}"
+              name="d-${question.id}"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-autocomplete="list"
+              aria-expanded="false"
+            >
+            <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů D"></div>
+          </div>
         </div>
       </div>
 
@@ -105,15 +143,168 @@ function renderQuestions(list = questions) {
 
     questionsContainer.appendChild(card);
   });
+
+  attachAccountAutocomplete();
 }
 
-function normalizeAccount(value) {
-  return value.trim().replace(/\s+/g, "");
+function findAccounts(query) {
+  const q = normalizeText(query);
+
+  if (!q) return [];
+
+  return accounts
+    .filter(account => {
+      const code = account.code.toLowerCase();
+      const name = normalizeText(account.name);
+      return code.includes(q) || name.includes(q);
+    })
+    .sort((a, b) => {
+      const ac = a.code.toLowerCase();
+      const bc = b.code.toLowerCase();
+      const an = normalizeText(a.name);
+      const bn = normalizeText(b.name);
+
+      const aCodeExact = ac === q;
+      const bCodeExact = bc === q;
+      if (aCodeExact !== bCodeExact) return aCodeExact ? -1 : 1;
+
+      const aCodeStart = ac.startsWith(q);
+      const bCodeStart = bc.startsWith(q);
+      if (aCodeStart !== bCodeStart) return aCodeStart ? -1 : 1;
+
+      const aNameStart = an.startsWith(q);
+      const bNameStart = bn.startsWith(q);
+      if (aNameStart !== bNameStart) return aNameStart ? -1 : 1;
+
+      return a.code.localeCompare(b.code);
+    })
+    .slice(0, 8);
+}
+
+function closeSuggestions(container) {
+  const suggestions = container.querySelector(".account-suggestions");
+  const input = container.querySelector(".account-input");
+
+  if (!suggestions) return;
+
+  suggestions.classList.remove("open");
+  input?.setAttribute("aria-expanded", "false");
+}
+
+function closeAllSuggestions(except = null) {
+  document.querySelectorAll(".account-field").forEach(field => {
+    if (field !== except) closeSuggestions(field);
+  });
+}
+
+function selectAccount(input, account) {
+  input.value = account.code;
+
+  const field = input.closest(".account-field");
+  closeSuggestions(field);
+
+  // Po výběru účtu v MD přejdeme rovnou do D.
+  if (input.classList.contains("md-input")) {
+    const card = input.closest(".question-card");
+    const dInput = card?.querySelector(".d-input");
+    dInput?.focus();
+  }
+}
+
+function showSuggestions(input) {
+  const field = input.closest(".account-field");
+  const suggestions = field?.querySelector(".account-suggestions");
+
+  if (!field || !suggestions) return;
+
+  closeAllSuggestions(field);
+
+  const matches = findAccounts(input.value);
+
+  if (!input.value.trim()) {
+    closeSuggestions(field);
+    return;
+  }
+
+  if (matches.length === 0) {
+    suggestions.innerHTML = `<div class="account-empty">Účet nebyl nalezen.</div>`;
+    suggestions.classList.add("open");
+    input.setAttribute("aria-expanded", "true");
+    return;
+  }
+
+  suggestions.innerHTML = matches.map(account => `
+    <button class="account-option" type="button" data-code="${account.code}">
+      <span class="account-code">${account.code}</span>
+      <span class="account-name">${account.name}</span>
+    </button>
+  `).join("");
+
+  suggestions.querySelectorAll(".account-option").forEach(option => {
+    option.addEventListener("mousedown", event => {
+      event.preventDefault();
+      const account = accounts.find(item => item.code === option.dataset.code);
+      if (account) selectAccount(input, account);
+    });
+  });
+
+  suggestions.classList.add("open");
+  input.setAttribute("aria-expanded", "true");
+}
+
+function attachAccountAutocomplete() {
+  document.querySelectorAll(".account-input").forEach(input => {
+    input.addEventListener("input", () => {
+      showSuggestions(input);
+
+      // Pokud uživatel zadá přesně tři číslice do MD a jde o existující účet,
+      // účet se potvrdí a kurzor přejde do D.
+      const digits = input.value.replace(/\D/g, "");
+
+      if (input.classList.contains("md-input") && digits.length === 3 && /^\d{3}$/.test(input.value.trim())) {
+        const account = accounts.find(item => item.code === digits);
+
+        if (account) {
+          input.value = account.code;
+          const field = input.closest(".account-field");
+          closeSuggestions(field);
+
+          const card = input.closest(".question-card");
+          card?.querySelector(".d-input")?.focus();
+        }
+      }
+    });
+
+    input.addEventListener("focus", () => {
+      if (input.value.trim()) showSuggestions(input);
+    });
+
+    input.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeSuggestions(input.closest(".account-field"));
+      }
+    });
+  });
+}
+
+function normalizeAndCheckAccount(value) {
+  const normalized = normalizeAccount(value);
+
+  // Hodnotíme číslo účtu; název je pouze pomocná forma zadávání.
+  if (/^\d{3}$/.test(normalized)) {
+    return normalized;
+  }
+
+  const found = accounts.find(account =>
+    normalizeText(account.name) === normalizeText(value)
+  );
+
+  return found ? found.code : normalized;
 }
 
 function evaluateQuestion(card, question) {
-  const md = normalizeAccount(card.querySelector(".md-input").value);
-  const d = normalizeAccount(card.querySelector(".d-input").value);
+  const md = normalizeAndCheckAccount(card.querySelector(".md-input").value);
+  const d = normalizeAndCheckAccount(card.querySelector(".d-input").value);
 
   const correct = md === question.md && d === question.d;
 
@@ -139,7 +330,10 @@ function evaluateQuestion(card, question) {
 
 function saveResult(score, total) {
   const key = "ucetnictvi_stats";
-  const old = JSON.parse(localStorage.getItem(key) || '{"tests":0,"correct":0,"questions":0,"wrong":0}');
+  const old = JSON.parse(
+    localStorage.getItem(key) ||
+    '{"tests":0,"correct":0,"questions":0,"wrong":0}'
+  );
 
   old.tests += 1;
   old.correct += score;
@@ -198,15 +392,15 @@ function showResult(score, total) {
   result.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", event => {
   event.preventDefault();
 
   let score = 0;
 
-  // Vyhodnocujeme pouze otázky, které jsou právě zobrazené.
-  // To je důležité hlavně při režimu „Opakovat chybné“.
-  currentQuestions.forEach((question) => {
-    const card = document.querySelector(`.question-card[data-id="${question.id}"]`);
+  currentQuestions.forEach(question => {
+    const card = document.querySelector(
+      `.question-card[data-id="${question.id}"]`
+    );
 
     if (!card) return;
 
@@ -219,26 +413,13 @@ form.addEventListener("submit", (event) => {
   showResult(score, currentQuestions.length);
 });
 
-
-// Mobilní UX: po zadání tří číslic do MD se kurzor automaticky přesune do D.
-document.addEventListener("input", (event) => {
-  const input = event.target;
-
-  if (!input.classList.contains("md-input")) {
-    return;
-  }
-
-  const digits = input.value.replace(/\D/g, "");
-
-  if (digits.length === 3) {
-    const card = input.closest(".question-card");
-    const dInput = card?.querySelector(".d-input");
-
-    if (dInput) {
-      dInput.focus();
-      dInput.select();
-    }
+document.addEventListener("click", event => {
+  if (!event.target.closest(".account-field")) {
+    closeAllSuggestions();
   }
 });
 
-renderQuestions();
+(async function init() {
+  await loadAccounts();
+  renderQuestions();
+})();

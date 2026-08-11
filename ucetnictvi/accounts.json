@@ -1,0 +1,982 @@
+[
+  {
+    "code": "012",
+    "name": "Nehmotné výsledky vývoje"
+  },
+  {
+    "code": "013",
+    "name": "Software"
+  },
+  {
+    "code": "014",
+    "name": "Ostatní ocenitelná práva"
+  },
+  {
+    "code": "017",
+    "name": "Goodwill"
+  },
+  {
+    "code": "019",
+    "name": "Ostatní dlouhodobý nehmotný majetek"
+  },
+  {
+    "code": "021",
+    "name": "Stavby"
+  },
+  {
+    "code": "022",
+    "name": "Hmotné movité věci a jejich soubory"
+  },
+  {
+    "code": "025",
+    "name": "Pěstitelské celky trvalých porostů"
+  },
+  {
+    "code": "026",
+    "name": "Dospělá zvířata a jejich skupiny"
+  },
+  {
+    "code": "029",
+    "name": "Jiný dlouhodobý hmotný majetek"
+  },
+  {
+    "code": "031",
+    "name": "Pozemky"
+  },
+  {
+    "code": "032",
+    "name": "Umělecká díla a sbírky"
+  },
+  {
+    "code": "041",
+    "name": "Nedokončený dlouhodobý nehmotný majetek"
+  },
+  {
+    "code": "042",
+    "name": "Nedokončený dlouhodobý hmotný majetek"
+  },
+  {
+    "code": "043",
+    "name": "Pořízení dlouhodobého finančního majetku"
+  },
+  {
+    "code": "051",
+    "name": "Poskytnuté zálohy a závdavky na DNM"
+  },
+  {
+    "code": "052",
+    "name": "Poskytnuté zálohy a závdavky na DHM"
+  },
+  {
+    "code": "053",
+    "name": "Poskytnuté zálohy a závdavky na DFM"
+  },
+  {
+    "code": "061",
+    "name": "Podíly - ovládaná nebo ovládající osoba"
+  },
+  {
+    "code": "062",
+    "name": "Podíly – podstatný vliv"
+  },
+  {
+    "code": "063",
+    "name": "Ostatní dlouhodobé cenné papíry a podíly"
+  },
+  {
+    "code": "065",
+    "name": "Dluhové cenné papíry držené do splatnosti"
+  },
+  {
+    "code": "066",
+    "name": "Zápůjčky a úvěry - ovládaná nebo ovládající osoba"
+  },
+  {
+    "code": "067",
+    "name": "Zápůjčky a úvěry – podstatný vliv"
+  },
+  {
+    "code": "068",
+    "name": "Zápůjčky a úvěry - ostatní"
+  },
+  {
+    "code": "069",
+    "name": "Jiný dlouhodobý finanční majetek"
+  },
+  {
+    "code": "072",
+    "name": "Oprávky k nehmotným výsledkům vývoje"
+  },
+  {
+    "code": "073",
+    "name": "Oprávky k software"
+  },
+  {
+    "code": "074",
+    "name": "Oprávky k ostatním ocenitelným právům"
+  },
+  {
+    "code": "077",
+    "name": "Oprávky ke goodwillu"
+  },
+  {
+    "code": "079",
+    "name": "Oprávky k ostatnímu dlouhodobému nehmotnému majetku"
+  },
+  {
+    "code": "081",
+    "name": "Oprávky ke stavbám"
+  },
+  {
+    "code": "082",
+    "name": "Oprávky k hmotným movitým věcem a jejich souborům"
+  },
+  {
+    "code": "085",
+    "name": "Oprávky k pěstitelským celkům trvalých porostů"
+  },
+  {
+    "code": "086",
+    "name": "Oprávky k dospělým zvířatům a jejich skupinám"
+  },
+  {
+    "code": "089",
+    "name": "Oprávky k jinému dlouhodobému hmotnému majetku"
+  },
+  {
+    "code": "091",
+    "name": "Opravná položka k dlouhodobému nehmotnému majetku"
+  },
+  {
+    "code": "092",
+    "name": "Opravná položka k dlouhodobému hmotnému majetku"
+  },
+  {
+    "code": "093",
+    "name": "Opravná položka k dlouhodobému nedokončenému nehmotnému majetku"
+  },
+  {
+    "code": "094",
+    "name": "Opravná položka k dlouhodobému nedokončenému hmotnému majetku"
+  },
+  {
+    "code": "095",
+    "name": "Opravná položka k poskytnutým zálohám a závdavkům na dlouhodobý majetek"
+  },
+  {
+    "code": "096",
+    "name": "Opravná položka k dlouhodobému finančnímu majetku"
+  },
+  {
+    "code": "097",
+    "name": "Oceňovací rozdíl k nabytému majetku"
+  },
+  {
+    "code": "098",
+    "name": "Oprávky k oceňovacímu rozdílu k nabytému majetku"
+  },
+  {
+    "code": "111",
+    "name": "Pořízení materiálu"
+  },
+  {
+    "code": "112",
+    "name": "Materiál na skladě"
+  },
+  {
+    "code": "119",
+    "name": "Materiál na cestě"
+  },
+  {
+    "code": "121",
+    "name": "Nedokončená výroba"
+  },
+  {
+    "code": "122",
+    "name": "Polotovary vl. výroby"
+  },
+  {
+    "code": "123",
+    "name": "Výrobky"
+  },
+  {
+    "code": "124",
+    "name": "Mladá a ostatní zvířata a jejich skupiny"
+  },
+  {
+    "code": "131",
+    "name": "Pořízení zboží"
+  },
+  {
+    "code": "132",
+    "name": "Zboží na skladě a v prodejnách"
+  },
+  {
+    "code": "139",
+    "name": "Zboží na cestě"
+  },
+  {
+    "code": "151",
+    "name": "Poskytnuté zálohy a závdavky na materiál"
+  },
+  {
+    "code": "152",
+    "name": "Poskytnuté zálohy a závdavky na zvířata"
+  },
+  {
+    "code": "153",
+    "name": "Poskytnuté zálohy a závdavky na zboží"
+  },
+  {
+    "code": "191",
+    "name": "Opravná položka k materiálu"
+  },
+  {
+    "code": "192",
+    "name": "Opravná položka k nedokončené výrobě"
+  },
+  {
+    "code": "193",
+    "name": "Opravná položka k polotovarům"
+  },
+  {
+    "code": "194",
+    "name": "Opravná položka k výrobkům"
+  },
+  {
+    "code": "195",
+    "name": "Opravná položka k mladým a ostatním zvířatům a jejich skupinám"
+  },
+  {
+    "code": "196",
+    "name": "Opravná položka ke zboží"
+  },
+  {
+    "code": "197",
+    "name": "OP k zálohám a závdavkům na materiál"
+  },
+  {
+    "code": "198",
+    "name": "OP k zálohám a závdavkům na zboží"
+  },
+  {
+    "code": "199",
+    "name": "OP k zálohám a závdavkům na zvířata"
+  },
+  {
+    "code": "211",
+    "name": "Pokladna"
+  },
+  {
+    "code": "213",
+    "name": "Ceniny"
+  },
+  {
+    "code": "221",
+    "name": "Běžný účet"
+  },
+  {
+    "code": "231",
+    "name": "Krátkodobé dluhy k úvěrovým institucím"
+  },
+  {
+    "code": "232",
+    "name": "Eskontní úvěry"
+  },
+  {
+    "code": "241",
+    "name": "Emitované krátkodobé dluhopisy"
+  },
+  {
+    "code": "249",
+    "name": "Ostatní krátkodobé finanční výpomoci"
+  },
+  {
+    "code": "251",
+    "name": "Majetkové cenné papíry k obchodování"
+  },
+  {
+    "code": "252",
+    "name": "Vlastní podíly"
+  },
+  {
+    "code": "253",
+    "name": "Dluhové cenné papíry k obchodování"
+  },
+  {
+    "code": "254",
+    "name": "Podíly – ovládaná nebo ovládající osoba"
+  },
+  {
+    "code": "255",
+    "name": "Vlastní dluhopisy"
+  },
+  {
+    "code": "256",
+    "name": "Dluhové cenné papíry se splatností do 1 roku držené do splatnosti"
+  },
+  {
+    "code": "257",
+    "name": "Ostatní cenné papíry"
+  },
+  {
+    "code": "259",
+    "name": "Pořizování krátkodobého finančního majetku"
+  },
+  {
+    "code": "261",
+    "name": "Peníze na cestě"
+  },
+  {
+    "code": "291",
+    "name": "Opravná položka ke krátkodobému finančnímu majetku"
+  },
+  {
+    "code": "311",
+    "name": "Odběratelé (Pohledávky z obchodních vztahů)"
+  },
+  {
+    "code": "312",
+    "name": "Směnky k inkasu"
+  },
+  {
+    "code": "313",
+    "name": "Pohledávky za eskontované cenné papíry"
+  },
+  {
+    "code": "314",
+    "name": "Poskytnuté zálohy a závdavky – dlouhodobé i krátkodobé"
+  },
+  {
+    "code": "315",
+    "name": "Ostatní pohledávky"
+  },
+  {
+    "code": "321",
+    "name": "Dodavatelé (Dluhy z obchodních vztahů)"
+  },
+  {
+    "code": "322",
+    "name": "Směnky k úhradě"
+  },
+  {
+    "code": "324",
+    "name": "Přijaté provozní zálohy a závdavky"
+  },
+  {
+    "code": "325",
+    "name": "Ostatní dluhy"
+  },
+  {
+    "code": "331",
+    "name": "Zaměstnanci"
+  },
+  {
+    "code": "333",
+    "name": "Ostatní dluhy vůči zaměstnancům"
+  },
+  {
+    "code": "335",
+    "name": "Pohledávky za zaměstnanci"
+  },
+  {
+    "code": "336",
+    "name": "Zúčtování s institucemi sociálního zabezpečení a zdravotního pojištění"
+  },
+  {
+    "code": "341",
+    "name": "Daň z příjmů"
+  },
+  {
+    "code": "342",
+    "name": "Ostatní přímé daně"
+  },
+  {
+    "code": "343",
+    "name": "Daň z přidané hodnoty"
+  },
+  {
+    "code": "345",
+    "name": "Ostatní daně a poplatky"
+  },
+  {
+    "code": "346",
+    "name": "Dotace ze státního rozpočtu"
+  },
+  {
+    "code": "347",
+    "name": "Ostatní dotace"
+  },
+  {
+    "code": "349",
+    "name": "Spojovací účet k DPH"
+  },
+  {
+    "code": "351",
+    "name": "Pohledávky – ovládaná nebo ovládající osoba"
+  },
+  {
+    "code": "352",
+    "name": "Pohledávky - podstatný vliv"
+  },
+  {
+    "code": "353",
+    "name": "Pohledávky za upsaný základní kapitál"
+  },
+  {
+    "code": "354",
+    "name": "Pohledávky za společníky při úhradě ztráty obchodní korporace"
+  },
+  {
+    "code": "355",
+    "name": "Ostatní pohledávky za společníky obchodní korporace"
+  },
+  {
+    "code": "361",
+    "name": "Dluhy - ovládaná nebo ovládající osoba"
+  },
+  {
+    "code": "362",
+    "name": "Dluhy - podstatný vliv"
+  },
+  {
+    "code": "364",
+    "name": "Dluhy ke společ. obch. korp. při rozdělování zisku"
+  },
+  {
+    "code": "365",
+    "name": "Ostatní dluhy ke společníkům obchodní korporace"
+  },
+  {
+    "code": "366",
+    "name": "Dluhy ke společníkům obch. korp. ze závislé činnosti"
+  },
+  {
+    "code": "367",
+    "name": "Dluhy z upsaných nesplacených cenných papírů a vkladů"
+  },
+  {
+    "code": "371",
+    "name": "Pohledávky z prodeje obchodního závodu"
+  },
+  {
+    "code": "372",
+    "name": "Dluhy z koupě obchodního závodu"
+  },
+  {
+    "code": "373",
+    "name": "Pohledávky a dluhy z pevných termínových operací"
+  },
+  {
+    "code": "374",
+    "name": "Pohledávky z pachtu obchodního závodu"
+  },
+  {
+    "code": "375",
+    "name": "Pohledávky z emitovaných dluhopisů"
+  },
+  {
+    "code": "376",
+    "name": "Nakoupené opce"
+  },
+  {
+    "code": "377",
+    "name": "Prodané opce"
+  },
+  {
+    "code": "378",
+    "name": "Jiné pohledávky"
+  },
+  {
+    "code": "379",
+    "name": "Jiné dluhy"
+  },
+  {
+    "code": "381",
+    "name": "Náklady příštích období"
+  },
+  {
+    "code": "382",
+    "name": "Komplexní náklady příštích období"
+  },
+  {
+    "code": "383",
+    "name": "Výdaje příštích období"
+  },
+  {
+    "code": "384",
+    "name": "Výnosy příštích období"
+  },
+  {
+    "code": "385",
+    "name": "Příjmy příštích období"
+  },
+  {
+    "code": "388",
+    "name": "Dohadné účty aktivní"
+  },
+  {
+    "code": "389",
+    "name": "Dohadné účty pasivní"
+  },
+  {
+    "code": "391",
+    "name": "Opravná položka k pohledávkám"
+  },
+  {
+    "code": "395",
+    "name": "Vnitřní zúčtování"
+  },
+  {
+    "code": "411",
+    "name": "Základní kapitál"
+  },
+  {
+    "code": "412",
+    "name": "Emisní ážio"
+  },
+  {
+    "code": "413",
+    "name": "Ostatní kapitálové fondy"
+  },
+  {
+    "code": "414",
+    "name": "Oceňovací rozdíly z přecenění majetku a dluhů"
+  },
+  {
+    "code": "416",
+    "name": "Rozdíly z ocenění při přeměnách obch. korporací"
+  },
+  {
+    "code": "417",
+    "name": "Rozdíly z přeměn obchodních korporací"
+  },
+  {
+    "code": "418",
+    "name": "Oceň. rozdíly z přecenění při přeměnách obch. korporací"
+  },
+  {
+    "code": "419",
+    "name": "Změny základního kapitálu"
+  },
+  {
+    "code": "421",
+    "name": "Rezervní fond"
+  },
+  {
+    "code": "423",
+    "name": "Statutární fondy"
+  },
+  {
+    "code": "426",
+    "name": "Jiný výsledek hospodaření minulých let"
+  },
+  {
+    "code": "427",
+    "name": "Ostatní fondy"
+  },
+  {
+    "code": "428",
+    "name": "Nerozdělený zisk minulých let"
+  },
+  {
+    "code": "429",
+    "name": "Neuhrazená ztráta minulých let"
+  },
+  {
+    "code": "431",
+    "name": "Výsledek hospodaření ve schval. řízení"
+  },
+  {
+    "code": "432",
+    "name": "Zálohy na podíly na zisku"
+  },
+  {
+    "code": "451",
+    "name": "Rezervy podle zvláštních právních předpisů"
+  },
+  {
+    "code": "453",
+    "name": "Rezerva na daň z příjmů"
+  },
+  {
+    "code": "459",
+    "name": "Ostatní rezervy"
+  },
+  {
+    "code": "461",
+    "name": "Dlouhodobé dluhy k úvěrovým institucím"
+  },
+  {
+    "code": "471",
+    "name": "Dlouhodobé dluhy – ovládaná nebo ovládající osoba"
+  },
+  {
+    "code": "472",
+    "name": "Dlouhodobé dluhy – podstatný vliv"
+  },
+  {
+    "code": "473",
+    "name": "Vydané dluhopisy"
+  },
+  {
+    "code": "474",
+    "name": "Dluhy z pachtu obchodního závodu"
+  },
+  {
+    "code": "475",
+    "name": "Dlouhodobé přijaté zálohy a závdavky"
+  },
+  {
+    "code": "478",
+    "name": "Dlouhodobé směnky k úhradě"
+  },
+  {
+    "code": "479",
+    "name": "Jiné dlouhodobé dluhy"
+  },
+  {
+    "code": "481",
+    "name": "Odložený daňový závazek a pohledávka"
+  },
+  {
+    "code": "491",
+    "name": "Účet individuálního podnikatele"
+  },
+  {
+    "code": "501",
+    "name": "Spotřeba materiálu"
+  },
+  {
+    "code": "502",
+    "name": "Spotřeba energie"
+  },
+  {
+    "code": "503",
+    "name": "Spotřeba ostatních neskladovatelných dodávek"
+  },
+  {
+    "code": "504",
+    "name": "Prodané zboží"
+  },
+  {
+    "code": "511",
+    "name": "Opravy a udržování"
+  },
+  {
+    "code": "512",
+    "name": "Cestovné"
+  },
+  {
+    "code": "513",
+    "name": "Náklady na reprezentaci"
+  },
+  {
+    "code": "518",
+    "name": "Ostatní služby"
+  },
+  {
+    "code": "521",
+    "name": "Mzdové náklady"
+  },
+  {
+    "code": "522",
+    "name": "Příjmy společníků obchodní korporace ze závislé činnosti"
+  },
+  {
+    "code": "523",
+    "name": "Odměny členům orgánů obch. korporace"
+  },
+  {
+    "code": "524",
+    "name": "Zákonné sociální a zdravotní pojištění"
+  },
+  {
+    "code": "525",
+    "name": "Ostatní sociální pojištění"
+  },
+  {
+    "code": "526",
+    "name": "Sociální náklady individuálního podnikatele"
+  },
+  {
+    "code": "527",
+    "name": "Zákonné sociální náklady"
+  },
+  {
+    "code": "528",
+    "name": "Ostatní sociální náklady"
+  },
+  {
+    "code": "531",
+    "name": "Daň silniční"
+  },
+  {
+    "code": "532",
+    "name": "Daň z nemovitých věcí"
+  },
+  {
+    "code": "538",
+    "name": "Ostatní daně a poplatky"
+  },
+  {
+    "code": "541",
+    "name": "Zůstatková cena prodaného dlouhodobého nehmotného a hmotného majetku"
+  },
+  {
+    "code": "542",
+    "name": "Prodaný materiál"
+  },
+  {
+    "code": "543",
+    "name": "Dary"
+  },
+  {
+    "code": "544",
+    "name": "Smluvní pokuty a úroky z prodlení"
+  },
+  {
+    "code": "545",
+    "name": "Ostatní pokuty a penále"
+  },
+  {
+    "code": "546",
+    "name": "Odpisy pohledávek"
+  },
+  {
+    "code": "547",
+    "name": "Mimořádné provozní náklady"
+  },
+  {
+    "code": "548",
+    "name": "Ostatní provozní náklady"
+  },
+  {
+    "code": "549",
+    "name": "Manka a škody z provozní činnosti"
+  },
+  {
+    "code": "551",
+    "name": "Odpisy DNM a DHM"
+  },
+  {
+    "code": "552",
+    "name": "Tvorba a zúčtování rezerv podle zvláštních právních předpisů"
+  },
+  {
+    "code": "554",
+    "name": "Tvorba a zúčtování ostatních rezerv"
+  },
+  {
+    "code": "555",
+    "name": "Tvorba a zúčtování komplexních nákladů příštích období"
+  },
+  {
+    "code": "557",
+    "name": "Zúčtování oprávky k oceňovacímu rozdílu k nabytému majetku"
+  },
+  {
+    "code": "558",
+    "name": "Tvorba a zúčtování zákonných opravných položek v provozní činnosti"
+  },
+  {
+    "code": "559",
+    "name": "Tvorba a zúčtování ostatních opravných položek v provozní činnosti"
+  },
+  {
+    "code": "561",
+    "name": "Prodané cenné papíry a podíly"
+  },
+  {
+    "code": "562",
+    "name": "Úroky"
+  },
+  {
+    "code": "563",
+    "name": "Kursové ztráty"
+  },
+  {
+    "code": "564",
+    "name": "Náklady z přecenění cenných papírů"
+  },
+  {
+    "code": "566",
+    "name": "Náklady z finančního majetku"
+  },
+  {
+    "code": "567",
+    "name": "Mimořádné finanční náklady"
+  },
+  {
+    "code": "568",
+    "name": "Ostatní finanční náklady"
+  },
+  {
+    "code": "569",
+    "name": "Manka a škody na finančním majetku"
+  },
+  {
+    "code": "571",
+    "name": "Tvorba a zúčtování finančních rezerv"
+  },
+  {
+    "code": "579",
+    "name": "Tvorba a zúčtování opravných položek ve finanční činnosti"
+  },
+  {
+    "code": "581",
+    "name": "Změna stavu nedokončené výroby"
+  },
+  {
+    "code": "582",
+    "name": "Změna stavu polotovarů vlastní výroby"
+  },
+  {
+    "code": "583",
+    "name": "Změna stavu výrobků"
+  },
+  {
+    "code": "584",
+    "name": "Změna stavu zvířat"
+  },
+  {
+    "code": "585",
+    "name": "Aktivace materiálu, zboží a zvířat"
+  },
+  {
+    "code": "586",
+    "name": "Aktivace vnitropodnikových služeb"
+  },
+  {
+    "code": "587",
+    "name": "Aktivace DNM"
+  },
+  {
+    "code": "588",
+    "name": "Aktivace DHM"
+  },
+  {
+    "code": "591",
+    "name": "Daň z příjmů - splatná"
+  },
+  {
+    "code": "592",
+    "name": "Daň z příjmů - odložená"
+  },
+  {
+    "code": "595",
+    "name": "Dodatečné odvody daně z příjmů"
+  },
+  {
+    "code": "597",
+    "name": "Tvorba a zúčtování rezervy na daň z příjmů"
+  },
+  {
+    "code": "599",
+    "name": "Vnitropodnikové náklady"
+  },
+  {
+    "code": "601",
+    "name": "Tržby za vlastní výrobky"
+  },
+  {
+    "code": "602",
+    "name": "Tržby z prodeje služeb"
+  },
+  {
+    "code": "604",
+    "name": "Tržby za zboží"
+  },
+  {
+    "code": "641",
+    "name": "Tržby z prodeje dlouhodobého nehmotného a hmotného majetku"
+  },
+  {
+    "code": "642",
+    "name": "Tržby z prodeje materiálu"
+  },
+  {
+    "code": "644",
+    "name": "Smluvní pokuty a úroky z prodlení"
+  },
+  {
+    "code": "646",
+    "name": "Výnosy z odepsaných pohledávek"
+  },
+  {
+    "code": "647",
+    "name": "Mimořádné provozní výnosy"
+  },
+  {
+    "code": "648",
+    "name": "Ostatní provozní výnosy"
+  },
+  {
+    "code": "661",
+    "name": "Tržby z prodeje cenných papírů a podílů"
+  },
+  {
+    "code": "662",
+    "name": "Úroky"
+  },
+  {
+    "code": "663",
+    "name": "Kursové zisky"
+  },
+  {
+    "code": "664",
+    "name": "Výnosy z přecenění cenných papírů"
+  },
+  {
+    "code": "665",
+    "name": "Výnosy z dlouhodobého finančního majetku"
+  },
+  {
+    "code": "666",
+    "name": "Výnosy z krátkodobého finančního majetku"
+  },
+  {
+    "code": "667",
+    "name": "Mimořádné finanční výnosy"
+  },
+  {
+    "code": "668",
+    "name": "Ostatní finanční výnosy"
+  },
+  {
+    "code": "697",
+    "name": "Převod provozních výnosů"
+  },
+  {
+    "code": "698",
+    "name": "Převod finančních výnosů"
+  },
+  {
+    "code": "699",
+    "name": "Vnitropodnikové výnosy"
+  },
+  {
+    "code": "701",
+    "name": "Počáteční účet rozvažný"
+  },
+  {
+    "code": "702",
+    "name": "Konečný účet rozvažný"
+  },
+  {
+    "code": "710",
+    "name": "Účet zisků a ztrát"
+  },
+  {
+    "code": "761",
+    "name": "Odepsané pohledávky"
+  },
+  {
+    "code": "762",
+    "name": "Najatý majetek"
+  },
+  {
+    "code": "799",
+    "name": "Pomocný účet"
+  }
+]
