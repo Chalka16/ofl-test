@@ -190,7 +190,7 @@ input {
   right: auto;
   z-index: 100;
   display: none;
-  width: min(390px, calc(100vw - 34px));
+  width: min(370px, calc(100vw - 48px));
   max-height: 300px;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -307,7 +307,7 @@ input {
   right: auto;
   z-index: 100;
   display: none;
-  width: min(390px, calc(100vw - 34px));
+  width: min(370px, calc(100vw - 48px));
   max-height: 300px;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -396,7 +396,7 @@ input {
   right: auto;
   z-index: 100;
   display: none;
-  width: min(390px, calc(100vw - 34px));
+  width: min(370px, calc(100vw - 48px));
   max-height: 300px;
   overflow-y: auto;
   overscroll-behavior: contain;
