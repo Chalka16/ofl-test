@@ -7,7 +7,7 @@ topicCards.forEach(card => {
     const topic = card.dataset.topic;
 
     if (topic === "1") {
-      window.location.href = "test.html";
+      window.location.href = "ucti-mat-zpusB.html";
       return;
     }
 
