@@ -1,18 +1,15 @@
-ÚČETNICTVÍ – TEST V1.3
+ÚČETNICTVÍ – TÉMA 1: ÚČTOVÁNÍ MATERIÁLU ZPŮSOBEM B
 
-Nově:
-- našeptávač účtů v MD i D
-- vyhledávání podle čísla i názvu účtu
-- výběr účtu klepnutím
-- po výběru MD automatický přechod do D
-- po zadání přesně tří číslic existujícího účtu v MD automatický přechod do D
-- účtová osnova je v accounts.json
+Obsah je přepsaný z uživatelem dodaných obrázků.
+14 položek celkem, z toho 11 účetních operací se MD/D a 3 operace, které se podle zdroje při metodě B neúčtují.
 
-Zdroj účetní osnovy:
-u.rozvrh-prijimaci-rizeni-2018.pdf
+Soubory:
+index.html – hlavní stránka
+style_pink.css – vzhled hlavní stránky
+test.html – Téma 1
+test.css – vzhled testu
+test.js – otázky, vyhodnocení a našeptávač
+accounts.json – účetní osnova pro našeptávač
+script.js – navigace hlavní stránky
 
-Testové otázky:
-1. VPD – Vklad peněz z pokladny na bankovní účet — MD 261 / D 211
-2. VBU – Vklad peněz — MD 221 / D 261
-3. PPD – Výběr peněz z bankovního účtu — MD 211 / D 261
-4. VBU – Výběr peněz na přepážce — MD 261 / D 221
+Téma 1 je nyní aktivní a lze jej otevřít z index.html.

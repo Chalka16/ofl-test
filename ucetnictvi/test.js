@@ -6,38 +6,122 @@
 
 const questions = [
   {
-    id: 1,
-    text: "VPD – Vklad peněz z pokladny na bankovní účet",
-    amountRequired: false,
-    md: "261",
-    d: "211",
-    explanation: "Účet 221 se účtuje až na základě výpisu z bankovního účtu."
+    "id": 1,
+    "text": "Základ daně FAP č. 1",
+    "amountRequired": false,
+    "md": "501",
+    "d": "321",
+    "explanation": "V průběhu účetního období se složky pořizovací ceny nakupovaných zásob účtují přímo do spotřeby – tedy u materiálu na účet 501."
   },
   {
-    id: 2,
-    text: "VBU – Vklad peněz",
-    amountRequired: false,
-    md: "221",
-    d: "261",
-    explanation: "Vyrovnání účtu 261 a přírůstek na účet 221 na základě výpisu z bankovního účtu."
+    "id": 2,
+    "text": "DPH 21 % k FAP č. 1",
+    "amountRequired": false,
+    "md": "343",
+    "d": "321",
+    "explanation": "Ačkoli základ daně účtujete do spotřeby (501), tak DPH vztahující se k tomuto materiálu účtujete na účet určený pro DPH, tedy 343."
   },
   {
-    id: 3,
-    text: "PPD – Výběr peněz z bankovního účtu",
-    amountRequired: false,
-    md: "211",
-    d: "261",
-    explanation: "O úbytku peněz budeme účtovat až na základě bankovního výpisu."
+    "id": 3,
+    "text": "Příjemka materiálu na sklad",
+    "amountRequired": false,
+    "md": null,
+    "d": null,
+    "explanation": "Při účtování o zásobách způsobem B neúčtujeme o příjemkách ani o výdejkách.",
+    "noPosting": true
   },
   {
-    id: 4,
-    text: "VBU – Výběr peněz na přepážce",
-    amountRequired: false,
-    md: "261",
-    d: "221",
-    explanation: "Máme k dispozici bankovní výpis, můžeme účtovat úbytek na bankovním účtu."
+    "id": 4,
+    "text": "Základ daně FAV č. 1",
+    "amountRequired": false,
+    "md": "311",
+    "d": "642",
+    "explanation": "Při prodeji materiálu zaúčtujeme na stranu D výnosový účet určený pro tržbu z prodeje materiálu. Zde nemá vliv zp. metody B."
+  },
+  {
+    "id": 5,
+    "text": "DPH 21 % FAV č. 1",
+    "amountRequired": false,
+    "md": "311",
+    "d": "343",
+    "explanation": "Účtování o DPH na výstupu. Bez vlivu, zda-li účtujete zp. B nebo A."
+  },
+  {
+    "id": 6,
+    "text": "VÚD – Vyskladnění prodaného materiálu",
+    "amountRequired": false,
+    "md": null,
+    "d": null,
+    "explanation": "Při účtování o zásobách způsobem B neúčtujeme o vyskladnění prodaného materiálu.",
+    "noPosting": true
+  },
+  {
+    "id": 7,
+    "text": "Výdejka materiálu do spotřeby",
+    "amountRequired": false,
+    "md": null,
+    "d": null,
+    "explanation": "Při účtování o zásobách způsobem B neúčtujeme o příjemkách ani o výdejkách.",
+    "noPosting": true
+  },
+  {
+    "id": 8,
+    "text": "Základ daně FAP č. 2",
+    "amountRequired": false,
+    "md": "501",
+    "d": "321",
+    "explanation": "V průběhu účetního období se složky pořizovací ceny nakupovaných zásob účtují přímo do spotřeby – tedy u materiálu na účet 501."
+  },
+  {
+    "id": 9,
+    "text": "DPH 21 % k FAP č. 2",
+    "amountRequired": false,
+    "md": "343",
+    "d": "321",
+    "explanation": "DPH na vstupu. Účtujeme vždy takto, ať účtujeme podle metody A nebo B."
+  },
+  {
+    "id": 10,
+    "text": "VÚD – Převod počátečního stavu do spotřeby",
+    "amountRequired": false,
+    "md": "501",
+    "d": "112",
+    "explanation": "Na konci roku při uzavírání účetních knih převedeme konečný stav na účet 501 na straně MD. Na začátku následujícího roku pak převedeme tento stav opět na účet 501 na stranu DAL."
+  },
+  {
+    "id": 11,
+    "text": "VÚD – Zaúčtování konečného stavu materiálu na sklad",
+    "amountRequired": false,
+    "md": "112",
+    "d": "501",
+    "explanation": "Poslední transakce roku v oblasti materiálu účtovaným zp. B je převod z účtu 501 na účet 112 na straně MD."
+  },
+  {
+    "id": 12,
+    "text": "VÚD – Materiál podle FAP č. 2 ještě nebyl přijat na sklad",
+    "amountRequired": false,
+    "md": "119",
+    "d": "501",
+    "explanation": "Koncem roku může dojít k případům, že účetní jednotka obdrží fakturu od dodavatele za materiál, ale dodávka do konce roku nebude převzata na sklad. Pro tyto případy se použije účet 119 na straně MD. A protože byl materiál na základě FAP zaúčtován podle zp. B na účtu 501 na MD, musíme ho zaúčtovat na str. D účtu 501."
+  },
+  {
+    "id": 13,
+    "text": "VÚD – Počáteční zůstatek materiálu",
+    "amountRequired": false,
+    "md": "112",
+    "d": "701",
+    "explanation": "Na začátku roku otevíráme účetní knihy a počáteční stav materiálu účtujeme na str. MD účtu 112. Poté převedeme tento počáteční stav na účet 501 MD."
+  },
+  {
+    "id": 14,
+    "text": "Příjemka materiálu na sklad podle FAP č. 2 z minulého účetního období",
+    "amountRequired": false,
+    "md": "501",
+    "d": "119",
+    "explanation": "Při uplatnění způsobu B je zvláště nutné vést skladovou evidenci na analytických účtech, aby bylo možné zjistit a prokázat stav zásob v průběhu účetního období."
   }
 ];
+
 
 const questionsContainer = document.getElementById("questions");
 const form = document.getElementById("testForm");
@@ -82,7 +166,7 @@ function renderQuestions(list = questions) {
       <div class="question-number">OTÁZKA ${index + 1}</div>
       <p class="question-text">${question.text}</p>
 
-      <div class="answer-grid">
+      <div class="answer-grid ${question.noPosting ? "answer-grid-no-posting" : ""}">
         <div class="answer-cell">
           <label for="amount-${question.id}">Částka</label>
           <input
@@ -96,43 +180,49 @@ function renderQuestions(list = questions) {
           >
         </div>
 
-        <div class="answer-cell">
-          <label for="md-${question.id}">MD</label>
-          <div class="account-field">
-            <input
-              class="answer-input md-input account-input"
-              id="md-${question.id}"
-              name="md-${question.id}"
-              type="text"
-              inputmode="text"
-              autocomplete="off"
-              autocapitalize="off"
-              spellcheck="false"
-              aria-autocomplete="list"
-              aria-expanded="false"
-            >
-            <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů MD"></div>
+        ${question.noPosting ? `
+          <div class="no-posting-note">
+            Tato operace se při účtování zásob způsobem B neúčtuje.
           </div>
-        </div>
+        ` : `
+          <div class="answer-cell">
+            <label for="md-${question.id}">MD</label>
+            <div class="account-field">
+              <input
+                class="answer-input md-input account-input"
+                id="md-${question.id}"
+                name="md-${question.id}"
+                type="text"
+                inputmode="text"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                aria-autocomplete="list"
+                aria-expanded="false"
+              >
+              <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů MD"></div>
+            </div>
+          </div>
 
-        <div class="answer-cell">
-          <label for="d-${question.id}">D</label>
-          <div class="account-field">
-            <input
-              class="answer-input d-input account-input"
-              id="d-${question.id}"
-              name="d-${question.id}"
-              type="text"
-              inputmode="text"
-              autocomplete="off"
-              autocapitalize="off"
-              spellcheck="false"
-              aria-autocomplete="list"
-              aria-expanded="false"
-            >
-            <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů D"></div>
+          <div class="answer-cell">
+            <label for="d-${question.id}">D</label>
+            <div class="account-field">
+              <input
+                class="answer-input d-input account-input"
+                id="d-${question.id}"
+                name="d-${question.id}"
+                type="text"
+                inputmode="text"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                aria-autocomplete="list"
+                aria-expanded="false"
+              >
+              <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů D"></div>
+            </div>
           </div>
-        </div>
+        `}
       </div>
 
       <div class="question-explanation">
@@ -304,6 +394,12 @@ function normalizeAndCheckAccount(value) {
 }
 
 function evaluateQuestion(card, question) {
+  if (question.noPosting) {
+    card.classList.remove("correct", "incorrect");
+    card.classList.add("correct", "evaluated", "informational");
+    return true;
+  }
+
   const md = normalizeAndCheckAccount(card.querySelector(".md-input").value);
   const d = normalizeAndCheckAccount(card.querySelector(".d-input").value);
 
@@ -327,6 +423,10 @@ function evaluateQuestion(card, question) {
   }
 
   return correct;
+}
+
+function getScoredQuestions(list) {
+  return list.filter(question => !question.noPosting);
 }
 
 function saveResult(score, total) {
@@ -405,13 +505,16 @@ form.addEventListener("submit", event => {
 
     if (!card) return;
 
-    if (evaluateQuestion(card, question)) {
+    const correct = evaluateQuestion(card, question);
+
+    if (!question.noPosting && correct) {
       score += 1;
     }
   });
 
-  saveResult(score, currentQuestions.length);
-  showResult(score, currentQuestions.length);
+  const scoredQuestions = getScoredQuestions(currentQuestions);
+  saveResult(score, scoredQuestions.length);
+  showResult(score, scoredQuestions.length);
 });
 
 document.addEventListener("click", event => {

@@ -586,3 +586,24 @@ input {
     max-height: 320px;
   }
 }
+
+.answer-grid-no-posting {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.no-posting-note {
+  align-self: end;
+  padding: 14px 16px;
+  border: 1px solid var(--border, #f0dce5);
+  border-radius: 14px;
+  background: var(--surface-soft, #fff1f7);
+  color: var(--muted, #806b75);
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.question-card.informational {
+  border-color: #cde8d7;
+}
+
