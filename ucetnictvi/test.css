@@ -1,0 +1,353 @@
+:root {
+  --bg: #fff7fb;
+  --surface: #ffffff;
+  --surface-soft: #fff1f7;
+  --text: #24151d;
+  --muted: #806b75;
+  --border: #f0dce5;
+  --primary: #d94680;
+  --primary-dark: #b83268;
+  --primary-soft: #fce7f3;
+  --success: #4d8b3a;
+  --success-soft: #edf7e9;
+  --error: #b42318;
+  --error-soft: #fff0ee;
+  --navy: #4a2334;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --shadow: 0 8px 28px rgba(150, 54, 94, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+               "SF Pro Text", Inter, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(12px + env(safe-area-inset-top)) 16px 12px;
+  border-bottom: 1px solid rgba(240, 220, 229, 0.85);
+  background: rgba(255, 247, 251, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.back-button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface);
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.topbar-title {
+  min-width: 0;
+  flex: 1;
+}
+
+.topbar-title strong {
+  display: block;
+  overflow: hidden;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.progress-badge {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.main-content {
+  width: min(calc(100% - 24px), 760px);
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+.intro {
+  margin-bottom: 18px;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(26px, 7.2vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.intro p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.question-list {
+  display: grid;
+  gap: 14px;
+}
+
+.question-card {
+  padding: 17px 14px 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.question-number {
+  margin-bottom: 7px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.question-text {
+  margin: 0 0 17px;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.82fr 0.82fr;
+  gap: 7px;
+}
+
+.answer-cell label {
+  display: block;
+  margin: 0 0 6px 3px;
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.answer-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  background: var(--surface-soft);
+  color: var(--text);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.answer-input:focus {
+  border-color: #e993b3;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(217, 70, 128, 0.12);
+}
+
+.question-explanation {
+  display: none;
+  margin-top: 13px;
+  padding: 13px 13px 13px 15px;
+  border-left: 3px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  background: #fff8fb;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.question-explanation strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.question-card.correct {
+  border-color: #cde2c4;
+}
+
+.question-card.correct .answer-input {
+  border-color: #a9ce9d;
+  background: var(--success-soft);
+}
+
+.question-card.correct .question-number {
+  color: var(--success);
+}
+
+.question-card.incorrect {
+  border-color: #f0b9b3;
+}
+
+.question-card.incorrect .answer-input {
+  border-color: #e4a19a;
+  background: var(--error-soft);
+}
+
+.question-card.incorrect .question-number {
+  color: var(--error);
+}
+
+.question-card.evaluated .question-explanation {
+  display: block;
+}
+
+.correct-answer {
+  margin-top: 9px;
+  font-weight: 700;
+}
+
+.submit-area {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 17px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(217, 70, 128, 0.22);
+  cursor: pointer;
+}
+
+.submit-button:active {
+  transform: scale(0.985);
+  background: var(--primary-dark);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.result-score {
+  font-size: 40px;
+  font-weight: 850;
+  letter-spacing: -0.05em;
+}
+
+.result-percent {
+  margin-top: 2px;
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.result-message {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.retry-button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.retry-wrong-button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 9px;
+  border: 1px solid var(--primary);
+  border-radius: 14px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .main-content {
+    padding-top: 40px;
+  }
+
+  .question-card {
+    padding: 20px;
+  }
+
+  .answer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
