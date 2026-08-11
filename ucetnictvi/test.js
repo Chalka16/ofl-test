@@ -219,4 +219,26 @@ form.addEventListener("submit", (event) => {
   showResult(score, currentQuestions.length);
 });
 
+
+// Mobilní UX: po zadání tří číslic do MD se kurzor automaticky přesune do D.
+document.addEventListener("input", (event) => {
+  const input = event.target;
+
+  if (!input.classList.contains("md-input")) {
+    return;
+  }
+
+  const digits = input.value.replace(/\D/g, "");
+
+  if (digits.length === 3) {
+    const card = input.closest(".question-card");
+    const dInput = card?.querySelector(".d-input");
+
+    if (dInput) {
+      dInput.focus();
+      dInput.select();
+    }
+  }
+});
+
 renderQuestions();
