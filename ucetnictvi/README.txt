@@ -21,3 +21,5 @@ Funkce:
 - Index → Téma 1 → Test
 
 Otevři index.html.
+
+Oprava V1.1: Po volbě „Opakovat chybné“ lze test znovu vyhodnotit bez chyby JavaScriptu.

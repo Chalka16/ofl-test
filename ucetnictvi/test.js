@@ -43,8 +43,10 @@ const questions = [
 const questionsContainer = document.getElementById("questions");
 const form = document.getElementById("testForm");
 const result = document.getElementById("result");
+let currentQuestions = [...questions];
 
 function renderQuestions(list = questions) {
+  currentQuestions = [...list];
   questionsContainer.innerHTML = "";
 
   list.forEach((question, index) => {
@@ -201,15 +203,20 @@ form.addEventListener("submit", (event) => {
 
   let score = 0;
 
-  questions.forEach((question) => {
+  // Vyhodnocujeme pouze otázky, které jsou právě zobrazené.
+  // To je důležité hlavně při režimu „Opakovat chybné“.
+  currentQuestions.forEach((question) => {
     const card = document.querySelector(`.question-card[data-id="${question.id}"]`);
+
+    if (!card) return;
+
     if (evaluateQuestion(card, question)) {
       score += 1;
     }
   });
 
-  saveResult(score, questions.length);
-  showResult(score, questions.length);
+  saveResult(score, currentQuestions.length);
+  showResult(score, currentQuestions.length);
 });
 
 renderQuestions();
