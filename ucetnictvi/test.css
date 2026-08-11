@@ -185,18 +185,22 @@ input {
 
 .account-suggestions {
   position: absolute;
-  top: calc(100% + 5px);
-  right: 0;
-  left: 0;
+  top: calc(100% + 6px);
+  left: 50%;
+  right: auto;
   z-index: 100;
   display: none;
-  overflow: hidden;
-  max-height: 230px;
+  width: min(390px, calc(100vw - 34px));
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid #efcddd;
-  border-radius: 13px;
+  border-radius: 15px;
   background: #fff;
-  box-shadow: 0 12px 30px rgba(74, 35, 52, 0.16);
+  box-shadow: 0 14px 34px rgba(74, 35, 52, 0.18);
   text-align: left;
+  transform: translateX(-50%);
 }
 
 .account-suggestions.open {
@@ -206,7 +210,8 @@ input {
 .account-option {
   display: block;
   width: 100%;
-  padding: 11px 12px;
+  min-height: 52px;
+  padding: 9px 13px;
   border: 0;
   border-bottom: 1px solid #f5e4eb;
   background: #fff;
@@ -297,18 +302,22 @@ input {
 
 .account-suggestions {
   position: absolute;
-  top: calc(100% + 5px);
-  right: 0;
-  left: 0;
+  top: calc(100% + 6px);
+  left: 50%;
+  right: auto;
   z-index: 100;
   display: none;
-  overflow: hidden;
-  max-height: 230px;
+  width: min(390px, calc(100vw - 34px));
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid #efcddd;
-  border-radius: 13px;
+  border-radius: 15px;
   background: #fff;
-  box-shadow: 0 12px 30px rgba(74, 35, 52, 0.16);
+  box-shadow: 0 14px 34px rgba(74, 35, 52, 0.18);
   text-align: left;
+  transform: translateX(-50%);
 }
 
 .account-suggestions.open {
@@ -318,7 +327,8 @@ input {
 .account-option {
   display: block;
   width: 100%;
-  padding: 11px 12px;
+  min-height: 52px;
+  padding: 9px 13px;
   border: 0;
   border-bottom: 1px solid #f5e4eb;
   background: #fff;
@@ -381,18 +391,22 @@ input {
 
 .account-suggestions {
   position: absolute;
-  top: calc(100% + 5px);
-  right: 0;
-  left: 0;
+  top: calc(100% + 6px);
+  left: 50%;
+  right: auto;
   z-index: 100;
   display: none;
-  overflow: hidden;
-  max-height: 230px;
+  width: min(390px, calc(100vw - 34px));
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid #efcddd;
-  border-radius: 13px;
+  border-radius: 15px;
   background: #fff;
-  box-shadow: 0 12px 30px rgba(74, 35, 52, 0.16);
+  box-shadow: 0 14px 34px rgba(74, 35, 52, 0.18);
   text-align: left;
+  transform: translateX(-50%);
 }
 
 .account-suggestions.open {
@@ -402,7 +416,8 @@ input {
 .account-option {
   display: block;
   width: 100%;
-  padding: 11px 12px;
+  min-height: 52px;
+  padding: 9px 13px;
   border: 0;
   border-bottom: 1px solid #f5e4eb;
   background: #fff;
@@ -562,5 +577,12 @@ input {
 
   .answer-grid {
     grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 700px) {
+  .account-suggestions {
+    width: min(430px, 50vw);
+    max-height: 320px;
   }
 }

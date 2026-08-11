@@ -249,6 +249,7 @@ function showSuggestions(input) {
   });
 
   suggestions.classList.add("open");
+  suggestions.scrollTop = 0;
   input.setAttribute("aria-expanded", "true");
 }
 
