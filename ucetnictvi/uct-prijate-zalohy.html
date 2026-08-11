@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#4a2334">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Účtování přijatých záloh</title>
-<link rel="stylesheet" href="style_pink.css">
-<style>
-.test-page{width:min(100% - 32px,820px);margin:0 auto;padding:28px 0 110px}
-.test-back{display:inline-flex;border:0;background:transparent;color:var(--primary);font-weight:800;padding:4px 0 18px;cursor:pointer}
-.test-header{margin-bottom:18px}.test-header h1{margin:0;font-size:clamp(28px,7vw,42px);line-height:1.08;letter-spacing:-.04em}
-.task-box,.result-box,.question{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow)}
-.task-box{margin-top:12px;padding:16px 18px;line-height:1.5}.result-box{margin:0 0 18px;padding:18px}.result-title{font-size:22px;font-weight:850;margin-bottom:10px}.result-stats{display:flex;gap:12px;flex-wrap:wrap}.result-stat{padding:10px 13px;border-radius:14px;background:var(--surface-soft)}.result-stat strong{display:block;font-size:21px}
-.question{margin:0 0 14px;padding:18px}.question-head{font-weight:800;font-size:17px;line-height:1.35;margin-bottom:18px}.account-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.field-wrap label{display:block;margin:0 0 7px;font-size:12px;font-weight:800;color:var(--muted)}
-.account-input,.amount-input{width:100%;min-height:54px;padding:12px 14px;border:1px solid var(--border);border-radius:15px;background:var(--surface-soft);color:var(--text);font-weight:750;outline:none}.account-input:focus,.amount-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(217,70,128,.12);background:#fff}.amount-row{margin-bottom:14px}
-.suggestions{position:relative;z-index:20;display:none;margin-top:6px;width:100%;max-height:260px;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:15px;background:#fff;box-shadow:0 10px 30px rgba(74,35,52,.14)}.suggestions.open{display:block}.suggestion{display:block;width:100%;border:0;border-bottom:1px solid #f1e3e9;background:#fff;padding:11px 13px;text-align:left;cursor:pointer}.suggestion:last-child{border-bottom:0}.suggestion:hover,.suggestion:active{background:var(--surface-soft)}.suggestion-code{display:block;color:var(--primary);font-weight:850;font-size:16px}.suggestion-name{display:block;margin-top:2px;color:var(--muted);font-size:13px;line-height:1.3}
-.explanation{margin-top:14px;padding:14px 15px;border-left:3px solid var(--navy);border-radius:12px;background:#fffafc;line-height:1.5;font-size:14px}.correct{border-color:#b8dfc0!important;background:#f4fbf5!important}.wrong{border-color:#efb1b1!important;background:#fff6f6!important}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:15px;padding:13px 17px;font-weight:800;cursor:pointer}.btn-primary{background:var(--navy);color:#fff}.btn-secondary{background:var(--primary-soft);color:var(--primary-dark)}
-@media(max-width:620px){.test-page{width:min(100% - 24px,820px);padding-top:18px}.question{padding:15px}.account-grid{gap:9px}.account-input,.amount-input{min-height:50px;padding:11px 10px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#fff7fb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Téma 3 – Test | Účetnictví</title>
+  <link rel="stylesheet" href="test.css">
 </head>
-<body>
-<div class="app-shell">
-<header class="topbar"><div class="brand"><div class="brand-mark" aria-hidden="true">Ú</div><div><div class="brand-name">Účetnictví</div><div class="brand-subtitle">Procvičování účetních operací</div></div></div></header>
-<main class="test-page">
-<button class="test-back" type="button" id="backBtn">← Zpět na témata</button>
-<section class="test-header"><span class="eyebrow">TÉMA 03</span><h1>Účtování přijatých záloh</h1><div class="task-box">Účetní jednotka je plátcem DPH, zásoby účtuje způsobem A.<br>Zaúčtujte následující účetní případy týkající se přijatých záloh.</div></section>
-<section id="resultBox" class="result-box" hidden></section><section id="questions"></section>
-<div class="actions"><button class="btn btn-primary" id="checkAll" type="button">Vyhodnotit test</button><button class="btn btn-secondary" id="repeat" type="button" hidden>Vyplnit tento test znovu</button></div>
-</main></div>
-<script src="uct-prijate-zalohy.js"></script>
 
-</body></html>
+<body>
+  <div class="app-shell">
+
+    <header class="topbar">
+      <a class="back-button" href="index.html" aria-label="Zpět na témata">‹</a>
+      <div class="topbar-title">
+        <span class="eyebrow">TÉMA 3</span>
+        <strong>Účtování přijatých záloh</strong>
+      </div>
+      <div class="progress-badge">8 otázek</div>
+    </header>
+
+    <main class="main-content">
+
+      <section class="intro">
+        <span class="eyebrow">ZADÁNÍ</span>
+        <h1>Zaúčtujte danou účetní operaci</h1>
+        <p>Vyplňte u každé účetní operace částku a účty <strong>MD</strong> a <strong>D</strong>.</p>
+      </section>
+
+      <form id="testForm" novalidate>
+        <div id="questions"></div>
+
+        <div class="submit-area">
+          <button class="submit-button" type="submit">
+            Vyhodnotit test
+          </button>
+          <a class="back-link" href="index.html">Zpět na výběr témat</a>
+        </div>
+      </form>
+
+      <section id="result" class="result hidden" aria-live="polite"></section>
+
+    </main>
+
+  </div>
+
+  <script src="tema3.js"></script>
+</body>
+</html>
