@@ -5,10 +5,10 @@ const statsButton = document.getElementById("statsButton");
 topicCards.forEach(card => {
   card.addEventListener("click", () => {
     const topic = card.dataset.topic;
-    if (topic === "1") { window.location.href = "ucti-mat-zpusB.html"; return; }
-    if (topic === "2") { window.location.href = "uct-posk-zaloh.html"; return; }
-    if (topic === "3") { window.location.href = "uct-prijate-zalohy.html"; return; }
-    if (topic === "4") { window.location.href = "uct-hospodareni-zisk.html"; return; }
+    if (topic === "1") { window.location.href = "../testy/ucti-mat-zpusB-01.html"; return; }
+    if (topic === "2") { window.location.href = "../testy/uct-posk-zaloh-02.html"; return; }
+    if (topic === "3") { window.location.href = "../testy/uct-prijate-zalohy-03.html"; return; }
+    if (topic === "4") { window.location.href = "../testy/uct-hospodareni-zisk-04.html"; return; }
     showToast(`Téma ${topic} bude brzy připraveno.`);
   });
 });
