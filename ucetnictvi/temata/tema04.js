@@ -62,9 +62,21 @@ document.getElementById("testForm").addEventListener("submit",e=>{
   questions.forEach((q,i)=>{
     const c=document.querySelector(`[data-index="${i}"]`);
     const a=c.querySelector('[data-type="amount"]'),m=c.querySelector('[data-type="md"]'),d=c.querySelector('[data-type="d"]'),x=c.querySelector(".explanation");
-    const ok=[norm(a.value)===norm(q.amount),norm(m.value)===norm(q.md),norm(d.value)===norm(q.d)];
-    [a,m,d].forEach((el,j)=>{el.classList.remove("correct","wrong");el.classList.add(ok[j]?"correct":"wrong");});
-    if(ok.every(Boolean))correct++;
+    // Částka se v tomto tématu nehodnotí.
+    // Správnost účetního případu určují pouze účty MD a D.
+    const mdCorrect = norm(m.value) === norm(q.md);
+    const dCorrect = norm(d.value) === norm(q.d);
+
+    [m,d].forEach((el,j)=>{
+      const isCorrect = j === 0 ? mdCorrect : dCorrect;
+      el.classList.remove("correct","wrong");
+      el.classList.add(isCorrect ? "correct" : "wrong");
+    });
+
+    // Pole částka zůstává zobrazené, ale není součástí hodnocení.
+    a.classList.remove("correct","wrong");
+
+    if(mdCorrect && dCorrect)correct++;
     x.hidden=false;x.innerHTML=`<strong>Vysvětlení:</strong> ${q.explanation}`;
   });
   const total=questions.length,p=Math.round(correct/total*100),r=document.getElementById("result");
