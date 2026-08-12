@@ -22,7 +22,7 @@ topicCards.forEach(card => {
     }
 
     if (topic === "4") {
-      window.location.href = "testy/uct-hospodar-zisk-04.html";
+      window.location.href = "testy/uct-hospodareni-zisk-04.html";
       return;
     }
 
