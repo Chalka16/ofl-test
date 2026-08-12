@@ -8,7 +8,7 @@ const questions = [
   {
     "id": 1,
     "text": "VBU – přijatá záloha od odběratele na zboží: 72 600 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "72600",
     "md": "221",
     "d": "324",
@@ -17,7 +17,7 @@ const questions = [
   {
     "id": 2,
     "text": "VÚD – vystavení daňového dokladu na přijatou platbu od odběratele, DPH 21 % činí 12 600 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "12600",
     "md": "324",
     "d": "343",
@@ -26,7 +26,7 @@ const questions = [
   {
     "id": 3,
     "text": "FAV za zboží – základ daně 100 000 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "100000",
     "md": "311",
     "d": "604",
@@ -35,7 +35,7 @@ const questions = [
   {
     "id": 4,
     "text": "DPH 21 % činí 21 000 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "21000",
     "md": "311",
     "d": "343",
@@ -44,7 +44,7 @@ const questions = [
   {
     "id": 5,
     "text": "VÚD – Zúčtování zálohy – základ daně 60 000 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "60000",
     "md": "324",
     "d": "311",
@@ -53,7 +53,7 @@ const questions = [
   {
     "id": 6,
     "text": "VÚD – Zúčtování zálohy – DPH 12 600 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "12600",
     "md": "343",
     "d": "311",
@@ -62,7 +62,7 @@ const questions = [
   {
     "id": 7,
     "text": "VÚD – Vyskladnění prodaného zboží: 80 000 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "80000",
     "md": "504",
     "d": "132",
@@ -71,7 +71,7 @@ const questions = [
   {
     "id": 8,
     "text": "VBÚ – úhrada od odběratele za zboží: 48 400 Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "48400",
     "md": "221",
     "d": "311",
@@ -363,16 +363,8 @@ function evaluateQuestion(card, question) {
 
   const md = normalizeAndCheckAccount(card.querySelector(".md-input").value);
   const d = normalizeAndCheckAccount(card.querySelector(".d-input").value);
-  const amount = normalizeAmount(card.querySelector(".amount-input")?.value || "");
-
-  // Prázdné pole Částka se nevyhodnocuje.
-  // Pokud je částka vyplněná, kontroluje se podle správné odpovědi.
-  const amountCorrect =
-    !amount ||
-    !question.amountRequired ||
-    amount === normalizeAmount(question.amount);
-
-  const correct = amountCorrect && md === question.md && d === question.d;
+  // Částka je pouze informativní a nikdy se neúčastní vyhodnocení.
+  const correct = md === question.md && d === question.d;
 
   card.classList.remove("correct", "incorrect");
   card.classList.add(correct ? "correct" : "incorrect", "evaluated");
@@ -388,7 +380,7 @@ function evaluateQuestion(card, question) {
       explanation.appendChild(answer);
     }
 
-    const amountText = question.amountRequired ? `Částka ${Number(question.amount).toLocaleString("cs-CZ")} · ` : "";
+    const amountText = "";
     answer.textContent = `Správně: ${amountText}MD ${question.md} · D ${question.d}`;
   }
 
