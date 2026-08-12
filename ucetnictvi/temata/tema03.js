@@ -1,5 +1,5 @@
 /*
-  Účetnictví – Téma 2
+  Účetnictví – Téma 3
   Účetní operace jsou převzaté z přiložených obrázků.
   Účetní osnova je načtena z accounts.json.
 */
