@@ -8,7 +8,7 @@ const questions = [
   {
     "id": 1,
     "text": "VBÚ – zaplacena záloha na pořízení stroje v celkové částce 50 000,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "50000",
     "md": "052",
     "d": "221",
@@ -17,7 +17,7 @@ const questions = [
   {
     "id": 2,
     "text": "Daňový doklad k poskytnuté záloze, DPH 21 % činí 8 678,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "8678",
     "md": "343",
     "d": "052",
@@ -26,7 +26,7 @@ const questions = [
   {
     "id": 3,
     "text": "FAP od dodavatele za stroj v celkové částce 201 659,- Kč – základ daně 166 660,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "166660",
     "md": "042",
     "d": "321",
@@ -35,7 +35,7 @@ const questions = [
   {
     "id": 4,
     "text": "DPH 21 % činí 34 999,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "34999",
     "md": "343",
     "d": "321",
@@ -44,7 +44,7 @@ const questions = [
   {
     "id": 5,
     "text": "VÚD – Zúčtování zálohy – základ daně 41 322,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "41322",
     "md": "321",
     "d": "052",
@@ -53,7 +53,7 @@ const questions = [
   {
     "id": 6,
     "text": "VÚD – Zúčtování zálohy – DPH 8 678,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "8678",
     "md": "321",
     "d": "343",
@@ -62,7 +62,7 @@ const questions = [
   {
     "id": 7,
     "text": "VPD – hotově zaplaceno za montáž stroje 5 000,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "5000",
     "md": "042",
     "d": "211",
@@ -71,7 +71,7 @@ const questions = [
   {
     "id": 8,
     "text": "VÚD – Zařazení stroje do užívání 171 660,- Kč",
-    "amountRequired": true,
+    "amountRequired": false,
     "amount": "171660",
     "md": "022",
     "d": "042",
@@ -89,7 +89,7 @@ let accounts = [];
 
 async function loadAccounts() {
   try {
-    const response = await fetch("../accounts.json", { cache: "no-store" });
+    const response = await fetch("accounts.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Nelze načíst účtovou osnovu.");
     accounts = await response.json();
   } catch (error) {
@@ -363,19 +363,10 @@ function evaluateQuestion(card, question) {
 
   const md = normalizeAndCheckAccount(card.querySelector(".md-input").value);
   const d = normalizeAndCheckAccount(card.querySelector(".d-input").value);
-  const amount = normalizeAmount(card.querySelector(".amount-input")?.value || "");
 
-  // Částka se hodnotí pouze tehdy, pokud je v datech otázky
-  // výslovně označena jako povinná a zároveň je uvedena.
-  // Prázdná částka ve zdroji tedy není chyba a do hodnocení se nezapočítává.
-  const amountRequired =
-    question.amountRequired === true &&
-    String(question.amount ?? "").trim() !== "";
-
-  const amountCorrect =
-    !amountRequired || amount === normalizeAmount(question.amount);
-
-  const correct = amountCorrect && md === question.md && d === question.d;
+  // Částka je v tomto testu pouze informativní.
+  // Neúčastní se vyhodnocení správnosti odpovědi.
+  const correct = md === question.md && d === question.d;
 
   card.classList.remove("correct", "incorrect");
   card.classList.add(correct ? "correct" : "incorrect", "evaluated");
