@@ -132,7 +132,7 @@ let accounts = [];
 
 async function loadAccounts() {
   try {
-    const response = await fetch("accounts.json", { cache: "no-store" });
+    const response = await fetch("../accounts.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Nelze načíst účtovou osnovu.");
     accounts = await response.json();
   } catch (error) {
