@@ -1,5 +1,5 @@
 /*
-  Účetnictví – Téma 3
+  Účetnictví – Téma 2
   Účetní operace jsou převzaté z přiložených obrázků.
   Účetní osnova je načtena z accounts.json.
 */
@@ -89,7 +89,7 @@ let accounts = [];
 
 async function loadAccounts() {
   try {
-    const response = await fetch("../accounts.json", { cache: "no-store" });
+    const response = await fetch("accounts.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Nelze načíst účtovou osnovu.");
     accounts = await response.json();
   } catch (error) {
@@ -365,7 +365,13 @@ function evaluateQuestion(card, question) {
   const d = normalizeAndCheckAccount(card.querySelector(".d-input").value);
   const amount = normalizeAmount(card.querySelector(".amount-input")?.value || "");
 
-  const amountCorrect = !question.amountRequired || amount === normalizeAmount(question.amount);
+  // Prázdné pole Částka se nevyhodnocuje.
+  // Pokud je částka vyplněná, kontroluje se podle správné odpovědi.
+  const amountCorrect =
+    !amount ||
+    !question.amountRequired ||
+    amount === normalizeAmount(question.amount);
+
   const correct = amountCorrect && md === question.md && d === question.d;
 
   card.classList.remove("correct", "incorrect");

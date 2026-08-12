@@ -89,7 +89,7 @@ let accounts = [];
 
 async function loadAccounts() {
   try {
-    const response = await fetch("../accounts.json", { cache: "no-store" });
+    const response = await fetch("accounts.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Nelze načíst účtovou osnovu.");
     accounts = await response.json();
   } catch (error) {
@@ -365,7 +365,16 @@ function evaluateQuestion(card, question) {
   const d = normalizeAndCheckAccount(card.querySelector(".d-input").value);
   const amount = normalizeAmount(card.querySelector(".amount-input")?.value || "");
 
-  const amountCorrect = !question.amountRequired || amount === normalizeAmount(question.amount);
+  // Částka se hodnotí pouze tehdy, pokud je v datech otázky
+  // výslovně označena jako povinná a zároveň je uvedena.
+  // Prázdná částka ve zdroji tedy není chyba a do hodnocení se nezapočítává.
+  const amountRequired =
+    question.amountRequired === true &&
+    String(question.amount ?? "").trim() !== "";
+
+  const amountCorrect =
+    !amountRequired || amount === normalizeAmount(question.amount);
+
   const correct = amountCorrect && md === question.md && d === question.d;
 
   card.classList.remove("correct", "incorrect");
