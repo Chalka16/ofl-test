@@ -14,7 +14,7 @@ const norm=v=>String(v??"").replace(/\s+/g,"").replace(/[.,-]/g,"").trim();
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 
 async function loadAccounts(){
-  try{const r=await fetch("accounts.json");if(r.ok)accounts=await r.json();}
+  try{const r=await fetch("../accounts.json");if(r.ok)accounts=await r.json();}
   catch(e){accounts=[];}
 }
 
