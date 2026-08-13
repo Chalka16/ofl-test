@@ -126,21 +126,21 @@ function checkAll() {
 
   result.classList.remove("hidden");
   result.innerHTML = `
-    <div class="result-heading">Výsledek testu: Účtování časového rozlišení</div>
+    <div class="mc-result-heading">Výsledek testu: Účtování časového rozlišení</div>
 
-    <div class="result-row">
-      <div class="result-percent">${percent}%</div>
-      <div class="result-summary">
+    <div class="mc-result-row">
+      <div class="mc-result-percent">${percent}%</div>
+      <div class="mc-result-summary">
         <div>Správné odpovědi: <strong>${correct}x</strong></div>
         <div>Špatné odpovědi: <strong>${wrong}x</strong></div>
       </div>
     </div>
 
-    <div class="result-actions">
-      <button class="result-button primary" id="showTopics" type="button">
+    <div class="mc-result-actions">
+      <button class="mc-result-button primary" id="showTopics" type="button">
         « Zobrazit nabídku všech testů
       </button>
-      <button class="result-button secondary" id="repeatTest" type="button">
+      <button class="mc-result-button secondary" id="repeatTest" type="button">
         Vyplnit tento test znovu
       </button>
     </div>
