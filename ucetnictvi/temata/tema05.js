@@ -1,5 +1,12 @@
+/*
+  Účetnictví – Téma 5
+  Účetní operace jsou převzaté z podkladů.
+  Účetní osnova je načtena z accounts.json.
+*/
+
 const questions = [
   {
+    id: 1,
     text: "VÚD - Počáteční zůstatek Výsledku hospodaření",
     amount: "300000",
     md: "431",
@@ -7,6 +14,7 @@ const questions = [
     explanation: "Ztráta má počáteční zůstatek na straně MD účtu 431 (v případě zisku by se HV účtoval stále na stejný účet 431, avšak na str. D)."
   },
   {
+    id: 2,
     text: "VÚD - Úhrada ztráty z rezervního fondu",
     amount: "40000",
     md: "421",
@@ -14,6 +22,7 @@ const questions = [
     explanation: "Snížíme zákonný rezervní fond (strana MD) a zároveň snížíme ztrátu zaúčtováním účtu 431 na stranu Dal."
   },
   {
+    id: 3,
     text: "VÚD - Úhrada ztráty z nerozděleného zisku minulých let",
     amount: "150000",
     md: "428",
@@ -21,6 +30,7 @@ const questions = [
     explanation: "Ztrátu lze uhradit z účtu 428, na který ÚJ v minulých obdobích účtovala dosažený nerozdělený zisk. Jedná se pouze o účetní termín „úhrady“. Vidíte, že úhrada není účtována ani z účtu 211 nebo 221, o skutečný převod peněžních prostředků tedy nejde."
   },
   {
+    id: 4,
     text: "VÚD - Předpis ztráty společníkům k úhradě",
     amount: "70000",
     md: "354",
@@ -28,6 +38,7 @@ const questions = [
     explanation: "Pohledávky za společníky při úhradě ztráty se účtují na účet 354 na stranu MD. Zároveň snížíme ztrátu - strana Dal."
   },
   {
+    id: 5,
     text: "VÚD - Převedení ztráty na nerozdělenou ztrátu minulých let",
     amount: "40000",
     md: "429",
@@ -35,6 +46,7 @@ const questions = [
     explanation: "V případě převodu ztráty na účet 429 opět nejde o úhradu. Avšak ztráta bude na tomto účtu viset. Ke konci BO účet 431 vykazovat žádný zůstatek, proto se ztráta musí převést. Zůstatek účtu 429 lze snižovat (nulovat) z účtu 428 v případě budoucího dosažení nerozděleného zisku."
   },
   {
+    id: 6,
     text: "VBÚ - zaplacení ztráty společníky",
     amount: "70000",
     md: "221",
@@ -43,197 +55,382 @@ const questions = [
   }
 ];
 
+const questionsContainer = document.getElementById("questions");
+const form = document.getElementById("testForm");
+const result = document.getElementById("result");
+
+let currentQuestions = [...questions];
 let accounts = [];
-
-const norm = v => String(v ?? "").replace(/\s+/g, "").replace(/[.,-]/g, "").trim();
-
-const esc = s => String(s).replace(/[&<>"']/g, c => ({
-  "&": "&amp;",
-  "<": "&lt;",
-  ">": "&gt;",
-  '"': "&quot;",
-  "'": "&#39;"
-}[c]));
 
 async function loadAccounts() {
   try {
-    const r = await fetch("../accounts.json", { cache: "no-store" });
-    if (r.ok) accounts = await r.json();
-  } catch (e) {
+    const response = await fetch("../accounts.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Nelze načíst účtovou osnovu.");
+    accounts = await response.json();
+  } catch (error) {
+    console.error(error);
     accounts = [];
   }
 }
 
-function render() {
-  document.getElementById("questions").innerHTML = questions.map((q, i) => `
-    <article class="question" data-index="${i}">
-      <div class="question-head">${i + 1}. ${q.text}</div>
-
-      <div class="amount-row field-wrap">
-        <label>Částka</label>
-        <input class="amount-input" inputmode="numeric" autocomplete="off" data-type="amount">
-      </div>
-
-      <div class="account-grid">
-        <div class="field-wrap">
-          <label>MD</label>
-          <input class="account-input" inputmode="numeric" autocomplete="off" data-type="md">
-          <div class="suggestions"></div>
-        </div>
-
-        <div class="field-wrap">
-          <label>D</label>
-          <input class="account-input" inputmode="numeric" autocomplete="off" data-type="d">
-          <div class="suggestions"></div>
-        </div>
-      </div>
-
-      <div class="explanation" hidden></div>
-    </article>
-  `).join("");
-
-  bindInputs();
+function normalizeText(value) {
+  return value
+    .toLocaleLowerCase("cs-CZ")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
 }
 
-function matches(q) {
-  q = q.trim().toLowerCase();
-
-  return (
-    q
-      ? accounts.filter(a =>
-          String(a.code).includes(q) ||
-          String(a.name).toLowerCase().includes(q)
-        )
-      : accounts
-  ).slice(0, 30);
+function normalizeAccount(value) {
+  return value.trim().replace(/\s+/g, "");
 }
 
-function closeAll(except) {
-  document.querySelectorAll(".suggestions.open").forEach(x => {
-    if (x !== except) x.classList.remove("open");
+function renderQuestions(list = questions) {
+  currentQuestions = [...list];
+  questionsContainer.innerHTML = "";
+
+  list.forEach((question, index) => {
+    const card = document.createElement("article");
+    card.className = "question-card";
+    card.dataset.id = question.id ?? index + 1;
+
+    card.innerHTML = `
+      <div class="question-number">OTÁZKA ${index + 1}</div>
+      <p class="question-text">${question.text}</p>
+
+      <div class="answer-grid">
+        <div class="answer-cell">
+          <label for="amount-${card.dataset.id}">Částka</label>
+          <input
+            class="answer-input amount-input"
+            id="amount-${card.dataset.id}"
+            name="amount-${card.dataset.id}"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            placeholder=""
+          >
+        </div>
+
+        <div class="answer-cell">
+          <label for="md-${card.dataset.id}">MD</label>
+          <div class="account-field">
+            <input
+              class="answer-input md-input account-input"
+              id="md-${card.dataset.id}"
+              name="md-${card.dataset.id}"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-autocomplete="list"
+              aria-expanded="false"
+            >
+            <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů MD"></div>
+          </div>
+        </div>
+
+        <div class="answer-cell">
+          <label for="d-${card.dataset.id}">D</label>
+          <div class="account-field">
+            <input
+              class="answer-input d-input account-input"
+              id="d-${card.dataset.id}"
+              name="d-${card.dataset.id}"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-autocomplete="list"
+              aria-expanded="false"
+            >
+            <div class="account-suggestions" role="listbox" aria-label="Nabídka účtů D"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-explanation">
+        <strong>Vysvětlení</strong>
+        <span>${question.explanation}</span>
+      </div>
+    `;
+
+    questionsContainer.appendChild(card);
+  });
+
+  attachAccountAutocomplete();
+}
+
+function findAccounts(query) {
+  const q = normalizeText(query);
+  if (!q) return [];
+
+  return accounts
+    .filter(account => {
+      const code = String(account.code).toLowerCase();
+      const name = normalizeText(account.name);
+      return code.includes(q) || name.includes(q);
+    })
+    .sort((a, b) => {
+      const ac = String(a.code).toLowerCase();
+      const bc = String(b.code).toLowerCase();
+      const an = normalizeText(a.name);
+      const bn = normalizeText(b.name);
+
+      const aCodeExact = ac === q;
+      const bCodeExact = bc === q;
+      if (aCodeExact !== bCodeExact) return aCodeExact ? -1 : 1;
+
+      const aCodeStart = ac.startsWith(q);
+      const bCodeStart = bc.startsWith(q);
+      if (aCodeStart !== bCodeStart) return aCodeStart ? -1 : 1;
+
+      const aNameStart = an.startsWith(q);
+      const bNameStart = bn.startsWith(q);
+      if (aNameStart !== bNameStart) return aNameStart ? -1 : 1;
+
+      return String(a.code).localeCompare(String(b.code));
+    })
+    .slice(0, 8);
+}
+
+function closeSuggestions(container) {
+  const suggestions = container?.querySelector(".account-suggestions");
+  const input = container?.querySelector(".account-input");
+
+  if (!suggestions) return;
+
+  suggestions.classList.remove("open");
+  input?.setAttribute("aria-expanded", "false");
+}
+
+function closeAllSuggestions(except = null) {
+  document.querySelectorAll(".account-field").forEach(field => {
+    if (field !== except) closeSuggestions(field);
   });
 }
 
-function showSuggestions(input) {
-  const box = input.parentElement.querySelector(".suggestions");
-  const list = matches(input.value);
+function selectAccount(input, account) {
+  input.value = account.code;
 
-  box.innerHTML = list.map(a => `
-    <button type="button" class="suggestion" data-code="${a.code}">
-      <span class="suggestion-code">${a.code}</span>
-      <span class="suggestion-name">${esc(a.name)}</span>
+  const field = input.closest(".account-field");
+  closeSuggestions(field);
+
+  if (input.classList.contains("md-input")) {
+    const card = input.closest(".question-card");
+    const dInput = card?.querySelector(".d-input");
+    dInput?.focus();
+  }
+}
+
+function showSuggestions(input) {
+  const field = input.closest(".account-field");
+  const suggestions = field?.querySelector(".account-suggestions");
+
+  if (!field || !suggestions) return;
+
+  closeAllSuggestions(field);
+
+  const matches = findAccounts(input.value);
+
+  if (!input.value.trim()) {
+    closeSuggestions(field);
+    return;
+  }
+
+  if (matches.length === 0) {
+    suggestions.innerHTML = `<div class="account-empty">Účet nebyl nalezen.</div>`;
+    suggestions.classList.add("open");
+    input.setAttribute("aria-expanded", "true");
+    return;
+  }
+
+  suggestions.innerHTML = matches.map(account => `
+    <button class="account-option" type="button" data-code="${account.code}">
+      <span class="account-code">${account.code}</span>
+      <span class="account-name">${account.name}</span>
     </button>
   `).join("");
 
-  box.classList.toggle("open", list.length > 0);
+  suggestions.querySelectorAll(".account-option").forEach(option => {
+    option.addEventListener("mousedown", event => {
+      event.preventDefault();
+      const account = accounts.find(item => item.code === option.dataset.code);
+      if (account) selectAccount(input, account);
+    });
+  });
+
+  suggestions.classList.add("open");
+  suggestions.scrollTop = 0;
+  input.setAttribute("aria-expanded", "true");
 }
 
-function bindInputs() {
+function attachAccountAutocomplete() {
   document.querySelectorAll(".account-input").forEach(input => {
     input.addEventListener("input", () => {
       showSuggestions(input);
 
-      if (/^\d{3}$/.test(input.value) && input.dataset.type === "md") {
-        input.closest(".question")
-          .querySelector('[data-type="d"]')
-          .focus();
+      const digits = input.value.replace(/\D/g, "");
+
+      if (
+        input.classList.contains("md-input") &&
+        digits.length === 3 &&
+        /^\d{3}$/.test(input.value.trim())
+      ) {
+        const account = accounts.find(item => item.code === digits);
+
+        if (account) {
+          input.value = account.code;
+          const field = input.closest(".account-field");
+          closeSuggestions(field);
+
+          const card = input.closest(".question-card");
+          card?.querySelector(".d-input")?.focus();
+        }
       }
     });
 
     input.addEventListener("focus", () => {
-      closeAll(input.parentElement.querySelector(".suggestions"));
-      showSuggestions(input);
+      if (input.value.trim()) showSuggestions(input);
     });
-  });
 
-  document.addEventListener("click", e => {
-    const s = e.target.closest(".suggestion");
-
-    if (s) {
-      const input = s.closest(".field-wrap").querySelector(".account-input");
-      input.value = s.dataset.code;
-      s.parentElement.classList.remove("open");
-
-      if (input.dataset.type === "md") {
-        input.closest(".question")
-          .querySelector('[data-type="d"]')
-          .focus();
+    input.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeSuggestions(input.closest(".account-field"));
       }
-
-      return;
-    }
-
-    if (!e.target.closest(".field-wrap")) closeAll();
+    });
   });
 }
 
-function checkAll() {
-  let correct = 0;
+function normalizeAndCheckAccount(value) {
+  const normalized = normalizeAccount(value);
 
-  questions.forEach((q, i) => {
-    const c = document.querySelector(`[data-index="${i}"]`);
-    const a = c.querySelector('[data-type="amount"]');
-    const m = c.querySelector('[data-type="md"]');
-    const d = c.querySelector('[data-type="d"]');
-    const x = c.querySelector(".explanation");
+  if (/^\d{3}$/.test(normalized)) return normalized;
 
-    const ok = [
-      norm(a.value) === norm(q.amount),
-      norm(m.value) === norm(q.md),
-      norm(d.value) === norm(q.d)
-    ];
+  const found = accounts.find(account =>
+    normalizeText(account.name) === normalizeText(value)
+  );
 
-    [a, m, d].forEach((el, j) => {
-      el.classList.remove("correct", "wrong");
-      el.classList.add(ok[j] ? "correct" : "wrong");
-    });
+  return found ? found.code : normalized;
+}
 
-    if (ok.every(Boolean)) correct++;
+function evaluateQuestion(card, question) {
+  const md = normalizeAndCheckAccount(card.querySelector(".md-input").value);
+  const d = normalizeAndCheckAccount(card.querySelector(".d-input").value);
 
-    x.hidden = false;
-    x.innerHTML = `<strong>Vysvětlení:</strong> ${q.explanation}`;
-  });
+  const correct = md === question.md && d === question.d;
 
-  const total = questions.length;
-  const p = Math.round(correct / total * 100);
-  const r = document.getElementById("result");
+  card.classList.remove("correct", "incorrect");
+  card.classList.add(correct ? "correct" : "incorrect", "evaluated");
 
-  r.classList.remove("hidden");
-  r.innerHTML = `
-    <div class="result-title">Výsledek testu:</div>
-    <div class="result-stats">
-      <div class="result-stat">
-        <span>Správně</span>
-        <strong>${correct} / ${total}</strong>
-      </div>
-      <div class="result-stat">
-        <span>Úspěšnost</span>
-        <strong>${p} %</strong>
-      </div>
-      <div class="result-stat">
-        <span>Chybně</span>
-        <strong>${total - correct}</strong>
-      </div>
-    </div>
-  `;
+  const explanation = card.querySelector(".question-explanation");
 
-  const st = JSON.parse(
-    localStorage.getItem("ucetnictvi_stats") ||
+  if (!correct) {
+    let answer = explanation.querySelector(".correct-answer");
+
+    if (!answer) {
+      answer = document.createElement("div");
+      answer.className = "correct-answer";
+      explanation.appendChild(answer);
+    }
+
+    answer.textContent = `Správně: MD ${question.md} · D ${question.d}`;
+  }
+
+  return correct;
+}
+
+function saveResult(score, total) {
+  const key = "ucetnictvi_stats";
+  const old = JSON.parse(
+    localStorage.getItem(key) ||
     '{"tests":0,"correct":0,"questions":0,"wrong":0}'
   );
 
-  st.tests++;
-  st.correct += correct;
-  st.questions += total;
-  st.wrong += total - correct;
+  old.tests += 1;
+  old.correct += score;
+  old.questions += total;
+  old.wrong += total - score;
 
-  localStorage.setItem("ucetnictvi_stats", JSON.stringify(st));
+  localStorage.setItem(key, JSON.stringify(old));
 }
 
-document.getElementById("testForm").addEventListener("submit", e => {
-  e.preventDefault();
-  checkAll();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function showResult(score, total) {
+  const percent = Math.round((score / total) * 100);
+  const wrong = total - score;
+
+  result.classList.remove("hidden");
+
+  result.innerHTML = `
+    <div class="eyebrow">VÝSLEDEK TESTU</div>
+    <div class="result-score">${score} / ${total}</div>
+    <div class="result-percent">${percent} %</div>
+    <div class="result-message">
+      ${wrong === 0
+        ? "Výborně. Všechny odpovědi jsou správně."
+        : `Chybně: ${wrong} ${wrong === 1 ? "otázka" : "otázky"}.`}
+    </div>
+
+    ${wrong > 0 ? `
+      <button class="retry-wrong-button" id="retryWrong" type="button">
+        Opakovat chybné
+      </button>
+    ` : ""}
+
+    <button class="retry-button" id="retryAll" type="button">
+      Opakovat celý test
+    </button>
+  `;
+
+  document.getElementById("retryAll").addEventListener("click", () => {
+    renderQuestions(questions);
+    result.classList.add("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  if (wrong > 0) {
+    document.getElementById("retryWrong").addEventListener("click", () => {
+      const wrongIds = [...document.querySelectorAll(".question-card.incorrect")]
+        .map(card => Number(card.dataset.id));
+
+      const wrongQuestions = questions.filter((q, index) =>
+        wrongIds.includes(Number(q.id ?? index + 1))
+      );
+
+      renderQuestions(wrongQuestions);
+      result.classList.add("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  result.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+form.addEventListener("submit", event => {
+  event.preventDefault();
+
+  let score = 0;
+
+  currentQuestions.forEach((question, index) => {
+    const id = question.id ?? index + 1;
+    const card = document.querySelector(`.question-card[data-id="${id}"]`);
+
+    if (!card) return;
+
+    if (evaluateQuestion(card, question)) score += 1;
+  });
+
+  saveResult(score, currentQuestions.length);
+  showResult(score, currentQuestions.length);
 });
 
-loadAccounts().then(render);
+document.addEventListener("click", event => {
+  if (!event.target.closest(".account-field")) closeAllSuggestions();
+});
+
+(async function init() {
+  await loadAccounts();
+  renderQuestions();
+})();
