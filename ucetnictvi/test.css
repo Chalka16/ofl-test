@@ -293,6 +293,7 @@ input {
 
 .question-card.correct {
   border-color: #cde2c4;
+  background: var(--success-soft);
 }
 
 .question-card.correct 
@@ -371,7 +372,7 @@ input {
   z-index: 20;
 }
 
-.answer-input {
+.question-card.correct .answer-input {
   border-color: #a9ce9d;
   background: var(--success-soft);
 }
@@ -460,7 +461,7 @@ input {
   z-index: 20;
 }
 
-.answer-input {
+.question-card.incorrect .answer-input {
   border-color: #e4a19a;
   background: var(--error-soft);
 }
