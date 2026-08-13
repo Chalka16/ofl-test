@@ -31,6 +31,11 @@ topicCards.forEach(card => {
       return;
     }
 
+    if (topic === "6") {
+      window.location.href = "testy/uctovani-casoveho-rozliseni-06.html";
+      return;
+    }
+
     showToast(`Téma ${topic} bude brzy připraveno.`);
   });
 });

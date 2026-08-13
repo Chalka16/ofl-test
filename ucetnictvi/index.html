@@ -9,8 +9,10 @@
   <title>Účetnictví – Procvičování</title>
   <link rel="stylesheet" href="style_pink.css">
 </head>
+
 <body>
   <div class="app-shell">
+
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">Ú</div>
@@ -20,50 +22,93 @@
         </div>
       </div>
     </header>
+
     <main class="main-content">
       <section class="hero">
         <span class="eyebrow">TRÉNINK ÚČETNICTVÍ</span>
         <h1>Vyber si téma</h1>
         <p>Procvičuj účetní operace, sleduj své výsledky a vrať se k chybám.</p>
       </section>
+
       <section class="topics" aria-label="Témata">
         <button class="topic-card" data-topic="1" type="button">
           <span class="topic-number">01</span>
           <span class="topic-content"><strong>Účtování materiálu způsobem B</strong></span>
           <span class="topic-arrow" aria-hidden="true">›</span>
         </button>
+
         <button class="topic-card" data-topic="2" type="button">
           <span class="topic-number">02</span>
           <span class="topic-content"><strong>Účtování poskytnutých záloh</strong></span>
           <span class="topic-arrow" aria-hidden="true">›</span>
         </button>
+
         <button class="topic-card" data-topic="3" type="button">
           <span class="topic-number">03</span>
           <span class="topic-content"><strong>Účtování přijatých záloh</strong></span>
           <span class="topic-arrow" aria-hidden="true">›</span>
         </button>
+
         <button class="topic-card" data-topic="4" type="button">
           <span class="topic-number">04</span>
           <span class="topic-content"><strong>Výsledek hospodaření – zisk</strong></span>
           <span class="topic-arrow" aria-hidden="true">›</span>
         </button>
+
         <button class="topic-card" data-topic="5" type="button">
           <span class="topic-number">05</span>
           <span class="topic-content"><strong>Výsledek hospodaření – ztráta</strong></span>
           <span class="topic-arrow" aria-hidden="true">›</span>
         </button>
+
+        <button class="topic-card" data-topic="6" type="button">
+          <span class="topic-number">06</span>
+          <span class="topic-content"><strong>Účtování časového rozlišení</strong></span>
+          <span class="topic-arrow" aria-hidden="true">›</span>
+        </button>
+      </section>
+
+      <section class="stats-preview">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">TVŮJ POKROK</span>
+            <h2>Statistiky</h2>
+          </div>
+          <button class="text-button" id="statsButton" type="button">Zobrazit</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Testů</span>
+            <strong>0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Úspěšnost</span>
+            <strong>—</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Chyby</span>
+            <strong>0</strong>
+          </div>
+        </div>
       </section>
     </main>
+
     <nav class="bottom-nav" aria-label="Hlavní navigace">
       <button class="nav-item active" type="button" data-nav="home">
-        <span class="nav-icon">⌂</span><span>Domů</span>
+        <span class="nav-icon">⌂</span>
+        <span>Domů</span>
       </button>
+
       <button class="nav-item" type="button" data-nav="stats">
-        <span class="nav-icon">◔</span><span>Statistiky</span>
+        <span class="nav-icon">◔</span>
+        <span>Statistiky</span>
       </button>
     </nav>
+
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
