@@ -1,6 +1,6 @@
 *{box-sizing:border-box}
 :root{--ink:#101827;--muted:#64748b;--line:#e1e7ef;--bg:#f4f7fb;--blue:#0b8fd8;--soft:#e9f6fd;--green:#238447;--red:#b42323}
-html{scroll-behavior:smooth} 
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 button{font:inherit}.hidden{display:none!important}
 .app{max-width:920px;margin:auto;padding:18px 18px 112px}
