@@ -1,28 +1,52 @@
-# Test design v2 – změny
+# A2 Drone Trainer – Test V3
 
-## 1. Navigace
-Navigace je plovoucí ve spodní části obrazovky. Uživatel nemusí rolovat k tlačítkům.
+## Co bylo opraveno
 
-V režimu učení má být po odpovědi automaticky provedeno posunutí k vysvětlení a navigaci.
+### UX
+- Navigace Předchozí / Další je trvale plovoucí ve spodní části.
+- V režimu Učení se po zvolení odpovědi automaticky posune obrazovka k vysvětlení.
+- Vysvětlení je v režimu Zkouška během testu skryté.
+- Výsledek zobrazuje především skóre a chybné otázky.
+- Výsledek obsahuje tlačítko „Zopakovat chybné otázky“.
 
-## 2. Výsledek
-Výsledek nezahlcuje uživatele rozborem všech 30 otázek. Primárně ukazuje:
-- skóre,
-- počet chyb,
-- seznam chybných otázek,
-- tlačítko „Zopakovat chybné otázky“.
+### Odpovědi
+- Pořadí odpovědí se při vykreslení každé otázky náhodně zamíchává.
+- Správná odpověď se proto nemůže systematicky objevovat na pozici A.
+- `correctAnswer` v JSON zůstává indexem původní možnosti; JS pracuje s mapováním po zamíchání.
 
-## 3. Odpovědi
-Pořadí správné odpovědi se musí při generování testu náhodně promíchávat.
+### Databáze
+Otázky jsou oddělené od HTML a JS v `data/questions.json`.
 
-## 4. Kvalita otázek
-Původní sada byla příliš didaktická. Nový vzorek používá:
+## Obsahový vzorek
+
+Tato verze obsahuje 10 referenčních otázek. Nejde o kompletní testovou databázi.
+
+Záměrně jsou použity:
 - situační otázky,
-- pojmové otázky,
 - výpočty,
-- věrohodné distraktory,
-- menší používání absolutních a očividně nesmyslných odpovědí.
+- otázky založené na skutečných provozních podmínkách,
+- věrohodnější distraktory,
+- technické otázky s odděleným označením `technical_verified`.
 
-Veřejné komerční přípravné materiály byly použity pouze jako inspirace pro styl a témata. Nejsou autoritou.
+## Zdrojová kontrola
 
-ÚCL potvrzuje, že test obsahuje 30 uzavřených otázek a každá má 4 varianty s právě jednou správnou odpovědí. ÚCL v roce 2024 zveřejnil tehdejší testbanku 38 otázek (6 meteorologie, 16 UAS výkonnost, 16 technická/provozní zmírnění), ale aktuální stránka ÚCL toto rozložení neuvádí; proto jej aplikace nepovažuje za aktuální oficiální poměr.
+Aktuální stránka ÚCL uvádí, že A2 zkouška probíhá jako test s 30 otázkami a minimální úspěšností 75 %. EASA v aktuální revizi Easy Access Rules z června 2026 uvádí A2 témata meteorologie, výkonnost UAS a technická/provozní opatření ke zmírnění rizik; současně stanovuje podmínky 30 m / až 5 m v low-speed režimu a referenční pravidlo 1:1.
+
+## Poznámka
+
+Časový limit není v této V3 vydáván za oficiální parametr zkoušky. Vizuální časovač z předchozího prototypu byl proto odstraněn, dokud jeho aktuální hodnotu samostatně neověříme.
+
+## Kontrola před vydáním
+
+- 10 otázek: OK
+- 4 možnosti u každé: OK
+- unikátní ID: OK
+- právě jedna správná možnost: OK
+- oddělená databáze: OK
+- náhodné pořadí odpovědí: OK
+- režim Učení: OK
+- režim Zkouška bez vysvětlení před koncem: OK
+- automatický scroll k vysvětlení: OK
+- plovoucí navigace: OK
+- rozbor pouze chybných otázek: OK
+- opakování chybných otázek: OK
