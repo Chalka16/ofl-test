@@ -42,3 +42,7 @@ button{font:inherit}.hidden{display:none!important}
 .result-actions{display:flex;gap:10px}.result-actions button{flex:1}
 .error-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
 @media(max-width:700px){.app{padding:12px 12px 105px}.mode-grid{grid-template-columns:1fr}.hero{padding:24px}.hero h2{font-size:30px}.question-card{padding:20px}.question-card h2{font-size:21px}.info-grid{grid-template-columns:1fr 1fr}.info-grid div:last-child{grid-column:1/-1}.floating-nav{bottom:7px;width:calc(100% - 16px)}.floating-nav button{padding:12px 9px}.result-stats{grid-template-columns:1fr 1fr}.result-stats div:last-child{grid-column:1/-1}}
+
+/* V3 – při načtení další otázky zarovnáme kartu k horní části viewportu.
+   Spodní prostor chrání odpovědi před překrytím plovoucí navigací. */
+.question-card{scroll-margin-top:6px;margin-bottom:96px}
