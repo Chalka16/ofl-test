@@ -51,3 +51,8 @@ Nejde o oficiální databázi otázek ÚCL.
 ## Důležitá zásada
 
 Nejdříve ověřit fakta, potom vytvořit výstup a výsledek před předáním znovu zkontrolovat.
+
+
+## Režimy zpětné vazby
+
+V režimu Učení i Moje chyby se odpověď vyhodnotí okamžitě, zobrazí se správnost a vysvětlení a po zobrazení zpětné vazby lze pokračovat na další otázku. Režim Zkouška poskytuje zpětnou vazbu až po dokončení testu.
