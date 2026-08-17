@@ -1,1 +1,116 @@
-a
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<title>A2 Drone Trainer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="app">
+
+<header class="topbar">
+  <div>
+    <div class="eyebrow">UAS • OPEN • A2</div>
+    <h1>A2 Drone Trainer</h1>
+  </div>
+  <button id="homeBtn" class="icon-btn hidden" aria-label="Domů">⌂</button>
+</header>
+
+<section id="homeScreen" class="screen">
+  <div class="hero">
+    <span class="badge">TRÉNINKOVÁ APLIKACE</span>
+    <h2>Připrav se na A2.</h2>
+    <p>Procvičuj ověřené učivo, simuluj test a vracej se k otázkám, ve kterých chybuješ.</p>
+  </div>
+
+  <div class="mode-grid">
+    <button class="mode-card" data-mode="learn">
+      <span class="mode-icon">📚</span>
+      <strong>UČENÍ</strong>
+      <small>Okamžité vyhodnocení a vysvětlení.</small>
+    </button>
+    <button class="mode-card" data-mode="exam">
+      <span class="mode-icon">🎯</span>
+      <strong>ZKOUŠKA</strong>
+      <small>30 otázek • výsledek až na konci.</small>
+    </button>
+    <button class="mode-card" data-mode="mistakes">
+      <span class="mode-icon">↻</span>
+      <strong>MOJE CHYBY</strong>
+      <small>Procvičuj otázky, ve kterých jsi chyboval.</small>
+    </button>
+  </div>
+
+  <div class="info-grid">
+    <div><b id="examCount">30</b><span>otázek ve zkoušce</span></div>
+    <div><b id="passPercent">75 %</b><span>hranice úspěchu</span></div>
+    <div><b id="passingScore">23/30</b><span>minimum správně</span></div>
+  </div>
+
+  <p class="disclaimer">Vlastní tréninková aplikace. Nejde o oficiální aplikaci ani databázi otázek ÚCL.</p>
+</section>
+
+<section id="setupScreen" class="screen hidden">
+  <div class="section-head">
+    <button id="backBtn" class="text-btn">← Zpět</button>
+    <div>
+      <div id="setupEyebrow" class="eyebrow"></div>
+      <h2 id="setupTitle"></h2>
+    </div>
+  </div>
+  <div id="setupContent" class="panel"></div>
+  <button id="startBtn" class="primary-btn">Začít</button>
+</section>
+
+<section id="quizScreen" class="screen hidden">
+  <header class="quiz-head">
+    <div>
+      <div id="quizMode" class="eyebrow"></div>
+      <strong id="progressText"></strong>
+      <span id="answeredText"></span>
+    </div>
+  </header>
+
+  <div class="progress"><i id="progressBar"></i></div>
+
+  <article class="question-card">
+    <div class="question-meta">
+      <span id="categoryTag"></span>
+      <span id="difficultyTag"></span>
+    </div>
+    <div id="questionNumber" class="question-number"></div>
+    <h2 id="questionText"></h2>
+    <div id="answers" class="answers"></div>
+    <div id="explanation" class="explanation hidden" tabindex="-1"></div>
+  </article>
+
+  <nav class="floating-nav" aria-label="Navigace otázkami">
+    <button id="prevBtn" class="secondary-btn">← Předchozí</button>
+    <button id="nextBtn" class="primary-btn">Další →</button>
+  </nav>
+</section>
+
+<section id="resultScreen" class="screen hidden">
+  <div id="resultHero" class="result-hero"></div>
+  <div id="resultStats" class="result-stats"></div>
+  <div class="panel">
+    <div class="result-title">
+      <h3>Moje chyby</h3>
+      <span id="mistakeCount"></span>
+    </div>
+    <div id="resultList"></div>
+    <button id="repeatMistakesBtn" class="primary-btn full-btn hidden">↻ Zopakovat chybné otázky</button>
+  </div>
+  <div class="result-actions">
+    <button id="homeResultBtn" class="secondary-btn">Domů</button>
+    <button id="retryBtn" class="primary-btn">Zopakovat</button>
+  </div>
+</section>
+
+<div id="errorScreen" class="screen hidden"></div>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>
