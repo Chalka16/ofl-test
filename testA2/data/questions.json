@@ -1,1 +1,1044 @@
-
+{
+  "schemaVersion": "1.0",
+  "datasetVersion": "0.2",
+  "title": "A2 Drone Trainer – první ověřená sada",
+  "language": "cs",
+  "purpose": "Vlastní tréninková databáze pro přípravu na A2; nejde o oficiální databázi otázek ÚCL ani o zveřejněný seznam ostrých otázek.",
+  "verifiedAt": "2026-08-17",
+  "exam": {
+    "questions": 30,
+    "passPercentage": 75,
+    "passingScore": 23,
+    "note": "Rozložení 30 otázek v této tréninkové sadě není vydáváno za oficiální poměr otázek jednotlivých oblastí."
+  },
+  "sourcePriority": [
+    "ÚCL",
+    "EASA",
+    "autoritativní technické zdroje pro obecnou fyziku/elektrotechniku"
+  ],
+  "questions": [
+    {
+      "id": "A2-MET-001",
+      "category": "meteorologie",
+      "subcategory": "vítr",
+      "difficulty": "easy",
+      "question": "Který meteorologický faktor je podle oficiálního okruhu A2 výslovně třeba zohlednit při provozu UAS?",
+      "options": [
+        "Vítr",
+        "Barva oblohy",
+        "Fáze Měsíce",
+        "Magnetické pole Země"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Oficiální okruh A2 uvádí mezi vlivy počasí na bezpilotní letadlo vítr, teplotu, dohlednost a hustotu vzduchu.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí potřebné pro zkoušku pro podkategorii A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        },
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "vítr",
+        "meteorologie"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-002",
+      "category": "meteorologie",
+      "subcategory": "předpověď počasí",
+      "difficulty": "easy",
+      "question": "Co patří mezi požadované znalosti A2 v oblasti meteorologie?",
+      "options": [
+        "Umět získat předpověď počasí",
+        "Umět sestavit meteorologický satelit",
+        "Umět řídit letadlo podle radaru",
+        "Umět předpovídat počasí bez meteorologických údajů"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ÚCL i EASA výslovně uvádějí získávání předpovědi počasí jako součást požadovaných znalostí A2.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        },
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "předpověď",
+        "meteorologie"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-003",
+      "category": "meteorologie",
+      "subcategory": "hustota vzduchu",
+      "difficulty": "medium",
+      "question": "Při stejném atmosférickém tlaku vede zvýšení teploty obecně ke změně hustoty vzduchu jakým směrem?",
+      "options": [
+        "Hustota vzduchu klesá",
+        "Hustota vzduchu roste",
+        "Hustota se nemění",
+        "Hustota se vždy zdvojnásobí"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Při konstantním tlaku je hustota plynu nepřímo úměrná teplotě. Vyšší teplota tedy znamená nižší hustotu vzduchu. Jde o obecný fyzikální princip používaný pro posuzování vlivu hustoty na leteckou výkonnost.",
+      "source": [
+        {
+          "authority": "FAA",
+          "document": "Pilot’s Handbook of Aeronautical Knowledge / density altitude",
+          "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/phak"
+        },
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope_plus_technical_source",
+      "tags": [
+        "hustota vzduchu",
+        "teplota"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "technical_verified",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-004",
+      "category": "meteorologie",
+      "subcategory": "hustota vzduchu",
+      "difficulty": "medium",
+      "question": "Která kombinace podmínek obecně vede k nižší hustotě vzduchu a tím může zhoršovat leteckou výkonnost?",
+      "options": [
+        "Vyšší teplota a vyšší vlhkost",
+        "Nižší teplota a nižší vlhkost",
+        "Pouze zatažená obloha",
+        "Pouze slabý vítr"
+      ],
+      "correctAnswer": 0,
+      "explanation": "FAA uvádí, že vysoká teplota a vysoká vlhkost přispívají k vyšší density altitude, tedy k řidšímu vzduchu a horší výkonnosti letadla.",
+      "source": [
+        {
+          "authority": "FAA",
+          "document": "Pilot’s Handbook of Aeronautical Knowledge / density altitude",
+          "url": "https://www.faa.gov/sites/faa.gov/files/uas/recreational_fliers/where_can_i_fly/airspace_101/pilot_handbook.pdf"
+        },
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope_plus_technical_source",
+      "tags": [
+        "hustota vzduchu",
+        "vlhkost",
+        "teplota"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "technical_verified",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-005",
+      "category": "meteorologie",
+      "subcategory": "dohlednost",
+      "difficulty": "easy",
+      "question": "Proč je dohlednost relevantní pro bezpečný provoz UAS?",
+      "options": [
+        "Ovlivňuje možnost bezpečně sledovat a řídit let v podmínkách, ve kterých se UAS nachází",
+        "Určuje kapacitu baterie",
+        "Určuje hmotnost dronu",
+        "Mění třídu C dronu"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dohlednost je jedním z meteorologických faktorů výslovně uvedených v oficiálním okruhu A2.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "dohlednost",
+        "meteorologie"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-006",
+      "category": "meteorologie",
+      "subcategory": "turbulence",
+      "difficulty": "medium",
+      "question": "Který jev je v oficiálním rozsahu A2 uveden jako příklad vlivu větru?",
+      "options": [
+        "Turbulence",
+        "Příliv",
+        "Geomagnetická bouře",
+        "Polární záře"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA v požadovaných znalostech A2 výslovně uvádí vítr, včetně městských efektů a turbulence.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "turbulence",
+        "vítr"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-007",
+      "category": "meteorologie",
+      "subcategory": "vítr",
+      "difficulty": "medium",
+      "question": "Dron má rychlost vůči vzduchu 10 m/s a letí proti větru o rychlosti 7 m/s. Jaká je při zjednodušeném předpokladu přibližná rychlost vůči zemi?",
+      "options": [
+        "3 m/s",
+        "7 m/s",
+        "10 m/s",
+        "17 m/s"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Při letu přímo proti větru se při tomto zjednodušeném příkladu rychlost vůči zemi získá jako 10 − 7 = 3 m/s.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2 – vliv větru na UAS",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope_plus_basic_physics",
+      "tags": [
+        "vítr",
+        "rychlost",
+        "situační otázka"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "training",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-008",
+      "category": "meteorologie",
+      "subcategory": "počasí",
+      "difficulty": "medium",
+      "question": "Jaký je správný přístup pilota při plánování letu s ohledem na předpověď počasí?",
+      "options": [
+        "Před letem získat a vyhodnotit relevantní předpověď pro plánovaný provoz",
+        "Předpověď není pro UAS potřebná",
+        "Stačí znát teplotu",
+        "Stačí se podívat na oblohu těsně před startem"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Získávání předpovědi počasí je výslovnou součástí A2 meteorologických znalostí.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "předpověď",
+        "plánování"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-009",
+      "category": "meteorologie",
+      "subcategory": "teplota",
+      "difficulty": "medium",
+      "question": "Proč je teplota důležitá při posuzování provozu UAS?",
+      "options": [
+        "Může ovlivnit hustotu vzduchu i vlastnosti baterie",
+        "Ovlivňuje pouze barvu krytu",
+        "Nemá vliv na výkon UAS",
+        "Určuje registrační číslo provozovatele"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Teplota patří mezi oficiálně požadované meteorologické faktory a současně může ovlivňovat vlastnosti baterií používaných jako zdroj energie.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        },
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "teplota",
+        "baterie"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-MET-010",
+      "category": "meteorologie",
+      "subcategory": "shrnutí",
+      "difficulty": "easy",
+      "question": "Která skupina faktorů odpovídá základnímu meteorologickému okruhu A2?",
+      "options": [
+        "Vítr, teplota, dohlednost a hustota vzduchu",
+        "Pouze teplota a déšť",
+        "Pouze tlak a oblačnost",
+        "Vítr, magnetické pole a příliv"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ÚCL uvádí čtyři konkrétní meteorologické oblasti: vítr, teplotu, dohlednost a hustotu vzduchu. Součástí je také získávání předpovědi počasí.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "meteorologie",
+        "okruh"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-001",
+      "category": "uas_vykonnost",
+      "subcategory": "hmotnost_a_těžiště",
+      "difficulty": "easy",
+      "question": "Co musí pilot podle oficiálního okruhu A2 zohlednit při připojení gimbalu nebo užitečného zatížení?",
+      "options": [
+        "Celkové vyvážení UAS",
+        "Pouze barvu nákladu",
+        "Pouze typ paměťové karty",
+        "Pouze výrobce vrtulí"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Oficiální okruh A2 požaduje zohlednit celkové vyvážení při připojení gimbalu a užitečného zatížení.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        },
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "gimbal",
+        "náklad",
+        "těžiště"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-002",
+      "category": "uas_vykonnost",
+      "subcategory": "těžiště",
+      "difficulty": "medium",
+      "question": "Proč je důležité znát polohu těžiště konkrétního UAS?",
+      "options": [
+        "Protože poloha těžiště ovlivňuje vyvážení a chování při letu",
+        "Protože určuje barvu registračního štítku",
+        "Protože určuje počasí",
+        "Protože nahrazuje kontrolu baterie"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA výslovně požaduje chápat, že každý druh bezpilotního letadla má těžiště v jiném místě a že celkové vyvážení je třeba zohlednit při připojení vybavení a nákladu.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "CG",
+        "těžiště",
+        "vyvážení"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-003",
+      "category": "uas_vykonnost",
+      "subcategory": "užitečné zatížení",
+      "difficulty": "medium",
+      "question": "Co může způsobit přidání užitečného zatížení, které má jiné vlastnosti než původní konfigurace UAS?",
+      "options": [
+        "Může ovlivnit stabilitu letu",
+        "Nemůže ovlivnit letové vlastnosti",
+        "Vždy pouze zvýší maximální rychlost",
+        "Vždy zlepší výdrž baterie"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA uvádí, že užitečná zatížení mohou mít různé vlastnosti a mohou tím ovlivnit stabilitu letu.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "náklad",
+        "stabilita"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-004",
+      "category": "uas_vykonnost",
+      "subcategory": "zajištění nákladu",
+      "difficulty": "easy",
+      "question": "Co požaduje oficiální okruh A2 v souvislosti s užitečným zatížením?",
+      "options": [
+        "Zajištění užitečného zatížení",
+        "Odstranění veškerého užitečného zatížení",
+        "Připojení nákladu bez kontroly",
+        "Použití pouze kovového nákladu"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Zajištění užitečného zatížení je samostatně uvedeno v oficiálním okruhu A2.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "náklad",
+        "bezpečnost"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-005",
+      "category": "uas_vykonnost",
+      "subcategory": "baterie",
+      "difficulty": "easy",
+      "question": "Proč je znalost zdroje energie součástí A2 učiva?",
+      "options": [
+        "Pomáhá předcházet potenciálně nebezpečným stavům",
+        "Pouze kvůli výběru barvy dronu",
+        "Protože baterie určuje registrační číslo",
+        "Protože nahrazuje předletovou kontrolu"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA i ÚCL uvádějí porozumění zdroji energie jako součást znalostí, které mají pomoci předcházet nebezpečným stavům.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        },
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "baterie",
+        "energie"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-006",
+      "category": "uas_vykonnost",
+      "subcategory": "baterie",
+      "difficulty": "easy",
+      "question": "Které téma je podle EASA součástí znalostí o bateriích pro A2?",
+      "options": [
+        "Kapacita a C-rate",
+        "Pouze barva obalu",
+        "Pouze značka výrobce",
+        "Pouze typ konektoru"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA výslovně uvádí mezi bateriovými pojmy například paměťový efekt, kapacitu a C-rate.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "baterie",
+        "kapacita",
+        "C-rate"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-007",
+      "category": "uas_vykonnost",
+      "subcategory": "baterie",
+      "difficulty": "medium",
+      "question": "Baterie má kapacitu 5 Ah a vybíjecí proud je 10 A. Jaký je přibližný C-rate?",
+      "options": [
+        "0,5 C",
+        "2 C",
+        "5 C",
+        "10 C"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Výpočet C-rate v tomto tréninkovém příkladu: 10 A / 5 Ah = 2 C. EASA požaduje znalost pojmu C-rate, ale tato konkrétní početní úloha je vlastní tréninková otázka vytvořená k procvičení pojmu.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026 – battery terminology",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        },
+        {
+          "authority": "PNNL",
+          "document": "Energy Storage – Discharging/Charging Rate",
+          "url": "https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-33984.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope_plus_technical_source",
+      "tags": [
+        "baterie",
+        "C-rate",
+        "výpočet"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "technical_verified",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-008",
+      "category": "uas_vykonnost",
+      "subcategory": "baterie",
+      "difficulty": "medium",
+      "question": "Co patří mezi témata, kterým má pilot podle EASA rozumět v souvislosti s fungováním baterie?",
+      "options": [
+        "Nabíjení, používání, nebezpečí a skladování",
+        "Pouze barva baterie",
+        "Pouze výrobní číslo",
+        "Pouze rozměr konektoru"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA výslovně uvádí nabíjení, používání, nebezpečí a skladování baterie.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope",
+      "tags": [
+        "baterie",
+        "nabíjení",
+        "skladování"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-009",
+      "category": "uas_vykonnost",
+      "subcategory": "baterie",
+      "difficulty": "medium",
+      "question": "Dvě stejné baterie jsou zapojeny do série. Jaký je obecný účinek sériového zapojení na napětí zdroje?",
+      "options": [
+        "Napětí se sčítá",
+        "Napětí se vždy sníží na polovinu",
+        "Napětí zůstane stejné bez ohledu na baterie",
+        "Napětí se vynuluje"
+      ],
+      "correctAnswer": 0,
+      "explanation": "U stejných zdrojů zapojených do série se jejich napětí sčítají. Jde o obecný elektrický princip, nikoli o specifické pravidlo ÚCL.",
+      "source": [
+        {
+          "authority": "OpenStax",
+          "document": "University Physics Volume 2 – Multiple Voltage Sources",
+          "url": "https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules"
+        },
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2 – baterie",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope_plus_technical_source",
+      "tags": [
+        "baterie",
+        "série",
+        "napětí"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "technical_verified",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-UAS-010",
+      "category": "uas_vykonnost",
+      "subcategory": "baterie",
+      "difficulty": "medium",
+      "question": "Dvě stejné baterie jsou zapojeny paralelně. Jaký je obecný účinek paralelního zapojení na výsledné napětí, pokud mají stejné napětí?",
+      "options": [
+        "Napětí zůstává přibližně stejné jako u jedné baterie",
+        "Napětí se vždy zdvojnásobí",
+        "Napětí se vynuluje",
+        "Napětí se vždy zčtyřnásobí"
+      ],
+      "correctAnswer": 0,
+      "explanation": "U stejných zdrojů zapojených paralelně zůstává výsledné napětí stejné jako napětí jednoho zdroje; paralelní zapojení může zvýšit dostupný proud a kapacitu systému.",
+      "source": [
+        {
+          "authority": "OpenStax",
+          "document": "University Physics Volume 2 – Multiple Voltage Sources",
+          "url": "https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules"
+        },
+        {
+          "authority": "ÚCL",
+          "document": "Oblasti teoretických znalostí A2 – baterie",
+          "url": "https://www.caa.gov.cz/wp-content/uploads/2023/05/05_Oblasti-teoretickych-znalosti-potrebne-pro-zkousku-pro-podkategorii-A2_31-05-2023.pdf"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "official_scope_plus_technical_source",
+      "tags": [
+        "baterie",
+        "paralelní zapojení"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "technical_verified",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-001",
+      "category": "zmírnění_rizik",
+      "subcategory": "A2",
+      "difficulty": "easy",
+      "question": "Kolik otázek obsahuje podle aktuální ÚCL stránky zkouška A2?",
+      "options": [
+        "30",
+        "20",
+        "40",
+        "60"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ÚCL aktuálně uvádí, že zkouška A2 probíhá formou testu složeného ze 30 otázek s výběrem odpovědí.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Postup žádosti o vydání osvědčení o způsobilosti dálkově řídícího pilota",
+          "url": "https://www.caa.gov.cz/provoz/bezpilotni-letadla/otevrena-kategorie-open/zpusobilost-pilotu-pro-provoz-v-podkategorii-provozu-a2/postup-zadosti-o-vydani-osvedceni-o-zpusobilosti-dalkove-ridiciho-pilota/"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_page",
+      "tags": [
+        "zkouška",
+        "30 otázek"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-002",
+      "category": "zmírnění_rizik",
+      "subcategory": "A2",
+      "difficulty": "easy",
+      "question": "Jakého výsledku je podle aktuální ÚCL stránky třeba dosáhnout pro úspěšné absolvování A2 testu?",
+      "options": [
+        "Alespoň 75 %",
+        "Alespoň 50 %",
+        "Alespoň 60 %",
+        "100 %"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ÚCL uvádí jako podmínku úspěšného absolvování testu dosažení alespoň 75 % celkového bodového hodnocení.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Postup žádosti o vydání osvědčení A2",
+          "url": "https://www.caa.gov.cz/provoz/bezpilotni-letadla/otevrena-kategorie-open/zpusobilost-pilotu-pro-provoz-v-podkategorii-provozu-a2/postup-zadosti-o-vydani-osvedceni-o-zpusobilosti-dalkove-ridiciho-pilota/"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_page",
+      "tags": [
+        "zkouška",
+        "75 procent"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-003",
+      "category": "zmírnění_rizik",
+      "subcategory": "vzdálenost od lidí",
+      "difficulty": "easy",
+      "question": "Jaká je obecná minimální horizontální vzdálenost od nezúčastněných osob při provozu UAS třídy C2 v A2, pokud není použito snížení pomocí low-speed funkce?",
+      "options": [
+        "30 m",
+        "5 m",
+        "10 m",
+        "50 m"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA uvádí pro C2 v A2 horizontální vzdálenost 30 m od nezúčastněných osob. Za podmínek pro použití low-speed funkce lze vzdálenost snížit na 5 m.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Drones (UAS) FAQ / Open category",
+          "url": "https://www.easa.europa.eu/en/the-agency/faqs/drones-uas"
+        },
+        {
+          "authority": "EASA",
+          "document": "Open Category — Low Risk — Civil Drones",
+          "url": "https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/open-category-low-risk-civil-drones"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_easa",
+      "tags": [
+        "C2",
+        "30 m",
+        "nezúčastněné osoby"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "training",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-004",
+      "category": "zmírnění_rizik",
+      "subcategory": "low-speed mode",
+      "difficulty": "easy",
+      "question": "Za jakých podmínek může pilot u UAS v A2 snížit horizontální vzdálenost od nezúčastněných osob až na 5 m?",
+      "options": [
+        "Při splnění podmínek pro použití low-speed funkce, zejména při jejím aktivování a při dodržení ostatních podmínek stanovených pravidly",
+        "Vždy, pokud je UAS třídy C2",
+        "Pouze tehdy, když letí přesně 5 m nad zemí",
+        "Bez dalších podmínek, pokud pilot drží UAS ve vizuálním dohledu"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA umožňuje u C2 za stanovených podmínek snížit standardní vzdálenost 30 m až na 5 m. Nestačí pouze skutečnost, že jde o C2; musí být splněny podmínky pro použití low-speed funkce a další podmínky provozu.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Drones (UAS) FAQ / Open category",
+          "url": "https://www.easa.europa.eu/en/the-agency/faqs/drones-uas"
+        },
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_easa",
+      "tags": [
+        "low-speed",
+        "5 m",
+        "C2"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "training",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-005",
+      "category": "zmírnění_rizik",
+      "subcategory": "low-speed mode",
+      "difficulty": "medium",
+      "question": "Jaký je účel low-speed režimu z hlediska A2?",
+      "options": [
+        "Je jedním z technických opatření ke zmírnění rizika na zemi a umožňuje za stanovených podmínek snížit odstup od lidí",
+        "Zvyšuje maximální rychlost UAS",
+        "Nahrazuje registraci provozovatele",
+        "Ruší povinnost respektovat omezení vzdušného prostoru"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Low-speed mode je výslovně uveden mezi technickými a provozními opatřeními ke zmírnění rizika na zemi. U C2 umožňuje za stanovených podmínek použití odstupu 5 m místo 30 m.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for UAS, Revision June 2026",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_easa",
+      "tags": [
+        "low-speed",
+        "riziko"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "training",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-006",
+      "category": "zmírnění_rizik",
+      "subcategory": "pravidlo 1:1",
+      "difficulty": "medium",
+      "question": "Co vyjadřuje pravidlo 1:1 uvedené v aktuálních podkladech EASA pro A2?",
+      "options": [
+        "Jako obecné pravidlo má být horizontální vzdálenost od nezúčastněné osoby alespoň stejná jako výška letu nad zemí",
+        "Dron smí letět pouze ve výšce 1 m",
+        "Každý let musí trvat přesně 1 minutu",
+        "Maximální rychlost je vždy 1 m/s"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA v AMC1 UAS.OPEN.030 uvádí pravidlo 1:1 jako referenční způsob určení horizontální vzdálenosti od nezúčastněných osob: vzdálenost by měla být alespoň stejná jako výška letu nad zemí, pokud není použit konkrétní výpočet založený na rychlosti UAS.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Easy Access Rules for Unmanned Aircraft Systems, AMC1 UAS.OPEN.030",
+          "url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/online-publications/easy-access-rules-unmanned-aircraft-systems"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_easa_amc",
+      "tags": [
+        "1:1",
+        "vzdálenost",
+        "výška"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-007",
+      "category": "zmírnění_rizik",
+      "subcategory": "nezúčastněné osoby",
+      "difficulty": "easy",
+      "question": "Pilot chce v podkategorii A2 přeletět nezúčastněnou osobu, protože používá low-speed režim. Je takový postup v A2 dovolen?",
+      "options": [
+        "Ne. Low-speed režim umožňuje za stanovených podmínek snížit horizontální odstup, ale neumožňuje přelet nezúčastněné osoby",
+        "Ano, pokud je UAS třídy C2",
+        "Ano, pokud je osoba na otevřeném prostranství",
+        "Ano, pokud pilot letí rychlostí nejvýše 5 m/s"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Low-speed režim není výjimkou ze zákazu přeletu nezúčastněných osob. Umožňuje za stanovených podmínek snížit horizontální vzdálenost, nikoli osobu přímo přeletět.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Open Category — Low Risk — Civil Drones",
+          "url": "https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/open-category-low-risk-civil-drones"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_easa",
+      "tags": [
+        "nezúčastněné osoby",
+        "přelet"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "training",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-008",
+      "category": "zmírnění_rizik",
+      "subcategory": "výška",
+      "difficulty": "easy",
+      "question": "Jaký je obecný maximální výškový limit provozu v otevřené kategorii podle EASA?",
+      "options": [
+        "120 m nad nejbližším bodem zemského povrchu",
+        "50 m nad místem startu",
+        "300 m nad místem startu",
+        "Výška není v otevřené kategorii omezena"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA uvádí pro otevřenou kategorii maximální výšku 120 m nad nejbližším bodem zemského povrchu, s dalšími specifickými pravidly a výjimkami.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Open Category — Low Risk — Civil Drones",
+          "url": "https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/open-category-low-risk-civil-drones"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_easa",
+      "tags": [
+        "120 m",
+        "výška"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "training",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-009",
+      "category": "zmírnění_rizik",
+      "subcategory": "C2",
+      "difficulty": "easy",
+      "question": "Jaká třída UAS je podle EASA určena pro provoz v podkategorii A2?",
+      "options": [
+        "C2",
+        "C0",
+        "C4",
+        "C5"
+      ],
+      "correctAnswer": 0,
+      "explanation": "EASA uvádí, že UAS třídy C2 lze provozovat v podkategorii A2.",
+      "source": [
+        {
+          "authority": "EASA",
+          "document": "Drones (UAS) FAQ / Open category",
+          "url": "https://www.easa.europa.eu/en/the-agency/faqs/drones-uas"
+        },
+        {
+          "authority": "EASA",
+          "document": "Open Category — Low Risk — Civil Drones",
+          "url": "https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/open-category-low-risk-civil-drones"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_easa",
+      "tags": [
+        "C2",
+        "A2"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "training",
+      "questionType": "training"
+    },
+    {
+      "id": "A2-RISK-010",
+      "category": "zmírnění_rizik",
+      "subcategory": "A2 podmínky",
+      "difficulty": "medium",
+      "question": "Která trojice oblastí tvoří aktuální tematický základ A2 testu podle ÚCL?",
+      "options": [
+        "Meteorologie; provádění letů bezpilotních letadel; technická a provozní opatření ke zmírnění rizik na zemi",
+        "Navigace; radiokomunikace; letecká angličtina",
+        "První pomoc; požární ochrana; účetnictví",
+        "Pouze konstrukce dronu"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Aktuální stránka ÚCL uvádí právě tyto tři oblasti jako témata 30otázkového A2 testu.",
+      "source": [
+        {
+          "authority": "ÚCL",
+          "document": "Postup žádosti o vydání osvědčení o způsobilosti dálkově řídícího pilota",
+          "url": "https://www.caa.gov.cz/provoz/bezpilotni-letectvi/otevrena-kategorie-open/zpusobilost-pilotu-pro-provoz-v-podkategorii-provozu-a2/postup-zadosti-o-vydani-osvedceni-o-zpusobilosti-dalkove-ridiciho-pilota/"
+        }
+      ],
+      "status": "verified",
+      "verificationBasis": "current_official_page",
+      "tags": [
+        "A2",
+        "okruh",
+        "zkouška"
+      ],
+      "lastVerified": "2026-08-17",
+      "verificationLevel": "official",
+      "questionType": "training"
+    }
+  ],
+  "verificationPolicy": {
+    "official": "Tvrzení přímo podložené aktuálním oficiálním zdrojem ÚCL/EASA.",
+    "technical_verified": "Technický princip podporující požadovanou znalost, ověřený odborným technickým zdrojem; nejde o tvrzení, že jde o oficiální otázku.",
+    "training": "Vlastní tréninková otázka vytvořená na základě ověřeného učiva."
+  },
+  "audit": {
+    "changesFrom": "0.1",
+    "changes": [
+      "Opraveny aktuální URL ÚCL u postupu A2.",
+      "Přidána úroveň ověření official / technical_verified / training.",
+      "Zpřesněna otázka 5 m: testuje podmínky low-speed režimu.",
+      "Zpřesněna otázka o přeletu nezúčastněné osoby.",
+      "Upřesněn zdroj pravidla 1:1 na AMC1 UAS.OPEN.030.",
+      "C-rate otázka označena jako vlastní tréninková technická otázka."
+    ]
+  }
+}
