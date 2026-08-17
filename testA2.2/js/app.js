@@ -3,7 +3,7 @@ const state={
   questions:[],
   mode:null,
   current:0,
-  answers:[],
+  answers:[], 
   displayedOptions:[],
   mistakes:new Set(JSON.parse(localStorage.getItem("a2_mistakes")||"[]")),
   examConfig:{questions:30,passPercentage:75,passingScore:23}
