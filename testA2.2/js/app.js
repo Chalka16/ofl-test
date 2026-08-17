@@ -3,7 +3,7 @@ const state={
   questions:[],
   mode:null,
   current:0,
-  answers:[], 
+  answers:[],
   displayedOptions:[],
   mistakes:new Set(JSON.parse(localStorage.getItem("a2_mistakes")||"[]")),
   examConfig:{questions:30,passPercentage:75,passingScore:23}
@@ -132,7 +132,7 @@ function renderQuestion(){
 
   $("explanation").className="explanation hidden";
   $("explanation").innerHTML="";
-  if(state.mode==="learn" && selected!==null) showExplanation(q,selected,false);
+  if((state.mode==="learn" || state.mode==="mistakes") && selected!==null) showExplanation(q,selected,false);
 
   $("prevBtn").disabled=state.current===0;
   $("nextBtn").textContent=state.current===total-1
@@ -143,7 +143,7 @@ function renderQuestion(){
 function chooseAnswer(originalIndex){
   const q=state.questions[state.current];
 
-  if(state.mode==="learn" && state.answers[state.current]!==null)return;
+  if((state.mode==="learn" || state.mode==="mistakes") && state.answers[state.current]!==null)return;
 
   state.answers[state.current]=originalIndex;
 
@@ -153,7 +153,7 @@ function chooseAnswer(originalIndex){
 
   renderQuestion();
 
-  if(state.mode==="learn"){
+  if(state.mode==="learn" || state.mode==="mistakes"){
     showExplanation(q,originalIndex,true);
   }
 }
