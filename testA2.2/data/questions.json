@@ -5,7 +5,7 @@
   "language": "cs",
   "purpose": "Vlastní tréninkový vzorek. Nejde o oficiální databázi otázek ÚCL.",
   "questions": [
-    {
+    { 
       "id": "S-MET-001",
       "category": "meteorologie",
       "subcategory": "vítr",
