@@ -90,6 +90,13 @@ function startQuiz(){
   renderQuestion();
 }
 
+function focusQuestionView(){
+  const card = document.querySelector(".question-card");
+  if (!card) return;
+  const y = card.getBoundingClientRect().top + window.scrollY - 6;
+  window.scrollTo({top: Math.max(0, y), behavior:"instant"});
+}
+
 function renderQuestion(){
   const q=state.questions[state.current];
   if(!q)return;
@@ -138,6 +145,10 @@ function renderQuestion(){
   $("nextBtn").textContent=state.current===total-1
     ? (state.mode==="exam"?"Dokončit test":"Dokončit")
     :"Další →";
+
+  // Po načtení otázky zarovnáme kartu k horní části viewportu,
+  // aby byly otázka a nabídka odpovědí co nejlépe viditelné bez ručního scrollování.
+  focusQuestionView();
 }
 
 function chooseAnswer(originalIndex){
@@ -185,7 +196,6 @@ function nextQuestion(){
   if(state.current<state.questions.length-1){
     state.current++;
     renderQuestion();
-    window.scrollTo({top:0,behavior:"smooth"});
   }else finishQuiz();
 }
 
@@ -193,7 +203,6 @@ function prevQuestion(){
   if(state.current>0){
     state.current--;
     renderQuestion();
-    window.scrollTo({top:0,behavior:"smooth"});
   }
 }
 
