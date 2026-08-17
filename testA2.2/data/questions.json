@@ -1,11 +1,11 @@
 {
   "schemaVersion": "1.0",
-  "datasetVersion": "0.3-sample",
+  "datasetVersion": "0.3-fixed",
   "title": "A2 Drone Trainer – testový vzorek 30 otázek",
   "language": "cs",
   "purpose": "Vlastní tréninkový vzorek. Nejde o oficiální databázi otázek ÚCL.",
   "questions": [
-    { 
+    {
       "id": "S-MET-001",
       "category": "meteorologie",
       "subcategory": "vítr",
@@ -20,7 +20,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Při letu přímo proti větru se v tomto zjednodušeném příkladu rychlost vůči zemi získá jako rozdíl rychlosti vůči vzduchu a rychlosti větru: 10 − 7 = 3 m/s."
     },
     {
       "id": "S-MET-002",
@@ -37,7 +38,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Při přibližně konstantním tlaku vede zvýšení teploty k rozpínání vzduchu, a tím k nižší hustotě."
     },
     {
       "id": "S-MET-003",
@@ -54,7 +56,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Proudění za překážkou může být turbulentní a méně předvídatelné. Pilot proto musí počítat s tím, že závětří překážky nemusí znamenat klidnější proudění."
     },
     {
       "id": "S-MET-004",
@@ -71,7 +74,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Vyšší teplota a vyšší vlhkost obecně zvyšují hustotní výšku, což může zhoršit výkon UAS."
     },
     {
       "id": "S-MET-005",
@@ -88,7 +92,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Při plánování letu je důležité zkontrolovat aktuální meteorologické podmínky i předpověď. V blízkosti překážek je zvlášť důležitý vítr a jeho očekávaný vývoj."
     },
     {
       "id": "S-MET-006",
@@ -105,7 +110,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Ve velmi nízkých teplotách může klesnout výkon a využitelná kapacita baterie. To může zkrátit dostupnou dobu letu nebo omezit výkon pohonu."
     },
     {
       "id": "S-MET-007",
@@ -122,7 +128,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Mlha výrazně snižuje dohlednost. Pokud pilot nemůže bezpečně sledovat UAS a okolní prostor, je to zásadní provozní riziko."
     },
     {
       "id": "S-MET-008",
@@ -139,7 +146,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Při návratu proti silnému větru je nutné současně zohlednit směr a rychlost větru, dostupnou energii baterie a schopnost UAS bezpečně pokračovat v letu."
     },
     {
       "id": "S-MET-009",
@@ -156,7 +164,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "S rostoucí nadmořskou výškou obecně klesá hustota vzduchu. U některých pohonných systémů to může snížit schopnost vytvářet potřebný tah."
     },
     {
       "id": "S-MET-010",
@@ -173,7 +182,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Při očekávaných bouřkách je nutné vyhodnotit riziko a let podle skutečných podmínek odložit nebo upravit. Bezpečnost nezajišťuje samotný klidný start."
     },
     {
       "id": "S-UAS-001",
@@ -190,7 +200,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Připojení nového užitečného zatížení může změnit hmotnost i polohu těžiště. Proto je nutné znovu posoudit celkové vyvážení UAS."
     },
     {
       "id": "S-UAS-002",
@@ -207,7 +218,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Nevhodně umístěný náklad může posunout těžiště a ovlivnit vyvážení, stabilitu a chování UAS během letu."
     },
     {
       "id": "S-UAS-003",
@@ -224,7 +236,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Nový gimbal mění konfiguraci UAS. Pilot by měl zohlednit jeho hmotnost, umístění a vliv na těžiště a celkové vyvážení."
     },
     {
       "id": "S-UAS-004",
@@ -241,7 +254,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "C-rate je poměr vybíjecího proudu ke kapacitě v Ah. 10 A / 5 Ah = 2 C."
     },
     {
       "id": "S-UAS-005",
@@ -258,7 +272,8 @@
       "correctAnswer": 2,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "1 500 mAh = 1,5 Ah. Při 5 C odpovídá proud 5 × 1,5 A = 7,5 A."
     },
     {
       "id": "S-UAS-006",
@@ -275,7 +290,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Při sériovém zapojení se při ideálním zapojení napětí jednotlivých článků sčítá."
     },
     {
       "id": "S-UAS-007",
@@ -292,7 +308,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Při paralelním zapojení stejných článků zůstává jmenovité napětí přibližně stejné a zvyšuje se dostupná kapacita systému."
     },
     {
       "id": "S-UAS-008",
@@ -309,7 +326,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Nízká teplota může zhoršit výkon baterie a snížit její využitelnou kapacitu. Teplotu je proto nutné zohlednit při plánování letu."
     },
     {
       "id": "S-UAS-009",
@@ -326,7 +344,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Požadované znalosti A2 zahrnují u baterií mimo jiné nabíjení, používání, nebezpečí a skladování."
     },
     {
       "id": "S-UAS-010",
@@ -343,7 +362,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Těžký náklad může současně změnit hmotnost, těžiště, spotřebu energie i letové vlastnosti UAS. Nestačí pouze ověřit, že jej lze fyzicky připevnit."
     },
     {
       "id": "S-RISK-001",
@@ -360,7 +380,8 @@
       "correctAnswer": 2,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "ÚCL aktuálně uvádí zkoušku A2 jako test s 30 otázkami s výběrem odpovědí. Pro úspěch je podle ÚCL třeba alespoň 75 % bodů."
     },
     {
       "id": "S-RISK-002",
@@ -377,7 +398,8 @@
       "correctAnswer": 3,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "V A2 je standardní minimální horizontální bezpečná vzdálenost od nezúčastněných osob nejméně 30 m. S aktivním low-speed režimem lze za stanovených podmínek vzdálenost snížit až na 5 m."
     },
     {
       "id": "S-RISK-003",
@@ -394,7 +416,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Pro snížení odstupu až na 5 m nestačí samotný low-speed režim. EASA vyžaduje vyhodnocení počasí, výkonnosti UAS a vyhrazení přelétávané oblasti."
     },
     {
       "id": "S-RISK-004",
@@ -411,7 +434,8 @@
       "correctAnswer": 2,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Pravidlo 1:1 je v AMC EASA uvedeno jako referenční vodítko: při výšce 40 m má být boční vzdálenost od nezúčastněné osoby alespoň 40 m, pokud není použit konkrétnější výpočet."
     },
     {
       "id": "S-RISK-005",
@@ -428,7 +452,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Low-speed režim neumožňuje přelet nezúčastněné osoby. Umožňuje pouze za stanovených podmínek snížit horizontální odstup."
     },
     {
       "id": "S-RISK-006",
@@ -445,7 +470,8 @@
       "correctAnswer": 2,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Obecný maximální výškový limit otevřené kategorie je 120 m od nejbližšího bodu povrchu země, s výjimkami stanovenými pravidly."
     },
     {
       "id": "S-RISK-007",
@@ -462,7 +488,8 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Pro běžný provoz C2 v A2 platí minimálně 30 m od nezúčastněných osob; za podmínek stanovených pravidly lze s aktivním low-speed režimem odstup snížit na 5 m."
     },
     {
       "id": "S-RISK-008",
@@ -479,7 +506,8 @@
       "correctAnswer": 1,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Zesilující vítr může ovlivnit výkonnost, spotřebu energie i schopnost udržet bezpečnou vzdálenost. Proto je nutné plán podle aktuálních podmínek přehodnotit."
     },
     {
       "id": "S-RISK-009",
@@ -496,7 +524,8 @@
       "correctAnswer": 2,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "V otevřené kategorii nesmí být UAS provozováno nad shromážděním osob. Low-speed režim z tohoto omezení nedělá výjimku."
     },
     {
       "id": "S-RISK-010",
@@ -513,9 +542,11 @@
       "correctAnswer": 0,
       "sourceBasis": "sample_rewrite_based_on_official_scope_and_public_training_examples",
       "verificationLevel": "training",
-      "lastVerified": "2026-08-17"
+      "lastVerified": "2026-08-17",
+      "explanation": "Pilot A2 musí být obeznámen s pokyny výrobce. Ty mohou obsahovat důležitá provozní omezení, informace o konfiguraci, baterii a bezpečném provozu konkrétního UAS."
     }
   ],
-  "note": "Tento vzorek používá styl situačních, pojmových a výpočtových otázek inspirovaný veřejně dostupnými přípravnými materiály. Poměr oblastí není prezentován jako oficiální.",
-  "sourceNote": "ÚCL v roce 2024 zveřejnil informaci, že tehdejší testbank obsahoval 38 otázek: 6 meteorologie, 16 UAS výkonnost a 16 technická/provozní zmírnění rizik; ÚCL zároveň uvedl 4 odpovědi a právě jednu správnou. Tuto historickou informaci nepoužíváme jako aktuální rozložení testu."
+  "note": "Vlastní tréninkový vzorek; nejde o oficiální databázi otázek ÚCL. Vysvětlení jsou výukové komentáře k ověřenému principu.",
+  "sourceNote": "ÚCL v roce 2024 zveřejnil informaci, že tehdejší testbank obsahoval 38 otázek: 6 meteorologie, 16 UAS výkonnost a 16 technická/provozní zmírnění rizik; ÚCL zároveň uvedl 4 odpovědi a právě jednu správnou. Tuto historickou informaci nepoužíváme jako aktuální rozložení testu.",
+  "verifiedAt": "2026-08-17"
 }
