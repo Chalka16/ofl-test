@@ -27,10 +27,17 @@ function shuffle(arr){
   return a;
 }
 
-function categoryLabel(c){
-  return c==="meteorologie"?"Meteorologie":c==="uas_vykonnost"?"Provádění letů / UAS":"Zmírnění rizik";
-}
-function difficultyLabel(d){return d==="easy"?"Lehká":d==="medium"?"Střední":"Těžká";}
+const CATEGORY_LABELS={
+  meteorologie:"Meteorologie",
+  vykonnost_konstrukce_uas:"Výkonnost a konstrukce UAS",
+  baterie_elektricke_systemy:"Baterie a elektrické systémy",
+  rizika_bezpecnost_provozu:"Rizika a bezpečnost provozu",
+  pravidla_a2_open:"Pravidla A2 a Open",
+  ostatni:"Ostatní témata"
+};
+
+function categoryLabel(c){return CATEGORY_LABELS[c]||c||"Ostatní témata";}
+function difficultyLabel(d){return d==="easy"?"Lehká":d==="medium"?"Střední":d==="hard"?"Těžká":"Zdrojový materiál";}
 
 function saveMistakes(){
   localStorage.setItem("a2_mistakes",JSON.stringify([...state.mistakes]));
@@ -42,6 +49,7 @@ function openSetup(mode){
   $("setupTitle").textContent=mode==="exam"?"Zkouška A2":mode==="mistakes"?"Moje chyby":"Učení";
 
   const cats=[...new Set(state.allQuestions.map(q=>q.category))];
+  const categoryCounts=Object.fromEntries(cats.map(c=>[c,state.allQuestions.filter(q=>q.category===c).length]));
   let pool=state.allQuestions;
   if(mode==="mistakes"){
     pool=pool.filter(q=>state.mistakes.has(q.id));
@@ -56,7 +64,7 @@ function openSetup(mode){
   $("setupContent").innerHTML=`
     <div class="setup-options">
       <label class="setup-option"><input type="radio" name="category" value="all" checked> Všechny oblasti</label>
-      ${cats.map(c=>`<label class="setup-option"><input type="radio" name="category" value="${c}"> ${categoryLabel(c)}</label>`).join("")}
+      ${cats.map(c=>`<label class="setup-option"><input type="radio" name="category" value="${c}"> ${categoryLabel(c)} <span class="setup-count">${categoryCounts[c]}</span></label>`).join("")}
     </div>
     <p class="muted">${mode==="exam"
       ? `${state.examConfig.questions} otázek. Správné odpovědi a vysvětlení se zobrazí až po dokončení.`
@@ -273,7 +281,7 @@ async function load(){
     const response=await fetch("data/questions.json");
     if(!response.ok)throw new Error("Databázi otázek se nepodařilo načíst.");
     const data=await response.json();
-    state.allQuestions=data.questions.filter(q=>q.status!=="retired");
+    state.allQuestions=data.questions.filter(q=>q.status!=="retired" && q.correctAnswer!==null && q.correctAnswer!==undefined);
     if(data.exam){
       state.examConfig.questions=data.exam.questions??30;
       state.examConfig.passPercentage=data.exam.passPercentage??75;
