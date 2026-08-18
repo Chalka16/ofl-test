@@ -1,181 +1,412 @@
-# A2 DRONE TRAINER – PROJECT RULES
+# A2 DRONE TRAINER – MASTER PROJECT RULES
 
-## 1. ÚČEL
+## 1. STATUS DOKUMENTU
 
-Aplikace slouží jako vlastní výukový a testovací nástroj pro přípravu na zkoušku dálkově řídícího pilota pro podkategorii A2.
+Tento dokument je jediný závazný soubor pravidel pro další práci na projektu A2 Drone Trainer.
 
-Aplikace není oficiální aplikací ÚCL ani EASA a její otázky nesmí být prezentovány jako oficiální databáze ostrých otázek.
+Všechny dřívější verze RULES.md, README pokyny a neformální pracovní instrukce, které jsou s tímto dokumentem v rozporu, se považují za neplatné.
 
-## 2. ZÁKLADNÍ PRINCIP
+---
 
-Vždy:
+## 2. CÍL APLIKACE
 
-**OVĚŘIT FAKTA → VYHODNOTIT ZDROJE → VYTVOŘIT VÝSTUP → ZNOVU ZKONTROLOVAT VÝSTUP.**
+A2 Drone Trainer je vlastní webová výuková a testovací aplikace pro přípravu na zkoušku dálkově řídícího pilota bezpilotních systémů v podkategorii A2.
 
-Pokud jde o aktuální legislativu, podmínky zkoušky nebo provozní pravidla, nesmí se spoléhat pouze na vlastní znalosti.
+Aplikace není oficiální aplikací ÚCL ani EASA a nesmí vytvářet dojem, že je ÚCL nebo EASA schválena či provozována.
 
-## 3. PRIORITA ZDROJŮ
+Cílem je umožnit studium a procvičování učiva A2 a vytvořit přehlednou simulaci testu.
 
-1. ÚCL – https://www.caa.gov.cz/
-2. EASA – https://www.easa.europa.eu/
-3. EUR-Lex – https://eur-lex.europa.eu/
-4. Autoritativní technické zdroje pro fyziku, elektrotechniku a baterie.
-5. Sekundární odborné zdroje.
-6. Komerční testové materiály pouze jako inspirace pro témata a formulaci, nikoli jako autorita.
+---
 
-Při rozporu má přednost aktuální autoritativní zdroj. Rozpor se nesmí skrýt.
+## 3. HLAVNÍ ZDROJ OTÁZEK A UČIVA
 
-## 4. AKTUÁLNOST
+### Odronech.cz – A2 Kompletní studijní materiály, Kategorie A2
 
-Vždy ověřuj informace citlivé na změnu, zejména:
+Pro otázkovou databázi je hlavním zdrojem licencovaný PDF materiál Odronech.cz.
 
-- počet otázek A2,
-- hranici úspěšnosti,
-- požadavky na A2,
-- třídy UAS,
-- vzdálenosti od osob,
-- low-speed režim,
-- výškové limity,
-- pravidla otevřené kategorie,
-- požadavky na pilota,
-- registraci,
-- provozní omezení.
+Uživatel má oprávnění použít jeho obsah ve své aplikaci.
 
-U každé otázky eviduj datum posledního ověření.
+To znamená, že lze do aplikace převzít doslova:
 
-## 5. OFICIÁLNÍ OTÁZKY
-
-Nikdy netvrď:
-
-„Toto je skutečná otázka ze zkoušky ÚCL.“
-
-pokud není oficiálně zveřejněna.
-
-Používej:
-
-„Vlastní tréninková otázka vytvořená podle ověřeného učiva A2.“
-
-## 6. DATABÁZE OTÁZEK
-
-Každá otázka musí mít minimálně:
-
-- unikátní ID,
-- kategorii,
-- podkategorii,
-- otázku,
-- 4 možnosti,
-- jednu správnou odpověď,
+- výukový text,
+- otázky,
+- všechny možnosti odpovědí,
+- správné odpovědi,
 - vysvětlení,
-- zdroj,
-- stav ověření,
-- datum posledního ověření.
+- tabulky,
+- příklady,
+- další relevantní části materiálu.
 
-Primární soubor databáze:
+### Zásadní pravidlo
 
-`data/questions.json`
+Dosavadní mnou vytvořená sada 30 otázek se NEPOUŽÍVÁ jako základ nové databáze.
 
-## 7. ÚROVNĚ OVĚŘENÍ
+Považuje se za zrušenou pracovní verzi.
 
-Používej:
+Nová databáze otázek se vytvoří od začátku z PDF materiálu.
 
-### official
-Tvrzení je přímo podloženo aktuálním oficiálním zdrojem ÚCL/EASA.
+Do nové databáze se nesmí omylem přimíchat staré vlastní otázky.
 
-### technical_verified
-Technický princip je ověřen autoritativním technickým zdrojem a podporuje požadované učivo, ale nejde o tvrzení, že jde o oficiální otázku.
+---
 
-### training
-Vlastní tréninková otázka založená na ověřených principech.
+## 4. VĚRNOST ZDROJOVÉMU MATERIÁLU
 
-## 8. TVORBA OTÁZEK
+Při vytěžování PDF:
+
+- zachovej původní české znění,
+- zachovej terminologii,
+- zachovej strukturu,
+- zachovej původní otázky,
+- zachovej původní možnosti odpovědí,
+- zachovej správnou odpověď,
+- zachovej původní vysvětlení.
+
+Neprováděj automatické „vylepšování“ otázek.
+
+Neměň distraktory jen proto, že se zdají příliš jednoduché.
+
+Nepřepisuj otázku podle vlastního názoru.
+
+Nepřekládej český materiál do angličtiny ani ho zpětně nepřekládej z anglických zdrojů.
+
+Pokud není požadována úprava, zdrojový obsah zůstává obsahově nezměněn.
+
+---
+
+## 5. ODDĚLENÍ ZDROJE A OVĚŘENÍ
+
+Zdrojový obsah a jeho ověření jsou dvě různé věci.
+
+Například:
+
+```text
+SOURCE
+Odronech.cz PDF
+strana 87
+původní otázka
+původní odpovědi
+původní vysvětlení
+
+VERIFICATION
+ověření aktuálnosti a správnosti
+```
+
+Ověření nesmí automaticky změnit originální text.
+
+Pokud je nalezen problém, zachovej původní znění a problém označ.
+
+Případná opravená verze musí být uvedena samostatně.
+
+---
+
+## 6. ČESKÝ VÝKLAD
+
+Český výklad v licencovaném PDF je pro výukový obsah aplikace zásadní.
+
+Nepovažuj český text automaticky za chybný jen proto, že anglický zdroj EASA používá jinou formulaci.
+
+Nejdříve rozliš:
+
+- rozdíl v překladu,
+- terminologický rozdíl,
+- stylistický rozdíl,
+- zjednodušený výklad,
+- skutečný věcný rozpor.
+
+Pouze skutečný věcný rozpor vyžaduje další zásah.
+
+---
+
+## 7. PRIORITA AUTORITATIVNÍCH ZDROJŮ
+
+Při ověřování aktuálních právních nebo zkouškových informací používej především:
+
+1. ÚCL – české informace a podmínky zkoušky.
+2. Aktuální české znění příslušných právních předpisů.
+3. EASA – evropské metodické a vysvětlující informace.
+4. EUR-Lex – právní znění evropských předpisů.
+5. Odborné technické zdroje – fyzika, meteorologie, elektrotechnika, baterie apod.
+
+Odronech PDF je hlavním zdrojem výukového obsahu a otázek, ale není samo o sobě autoritou pro právní aktuálnost.
+
+---
+
+## 8. JAK PRACOVAT S ROZPOREM
+
+Pokud PDF a aktuální autoritativní zdroj říkají něco odlišného:
+
+1. zachovej původní obsah PDF,
+2. přesně identifikuj rozdíl,
+3. zjisti, zda jde pouze o terminologii/překlad,
+4. pokud jde o skutečný věcný rozpor, označ jej,
+5. ověř aktuální stav podle ÚCL / českého právního znění,
+6. navrhni případnou opravu samostatně.
+
+Nikdy nesmí být rozpor skryt.
+
+Nikdy nesmí být původní PDF tiše přepsáno.
+
+---
+
+## 9. OTÁZKY – PŮVOD
+
+Každá otázka musí mít evidovaný původ.
+
+Pro otázky z hlavního PDF používej například:
+
+```json
+"sourceType": "odronech_pdf"
+```
+
+Pro případné vlastní otázky:
+
+```json
+"sourceType": "own"
+```
+
+Pro otázky přímo z oficiálního zdroje:
+
+```json
+"sourceType": "ucl"
+```
+
+Otázka z PDF zůstává otázkou z PDF i v případě, že je technicky převedena do JSON.
+
+---
+
+## 10. VLASTNÍ OTÁZKY
+
+Vlastní otázky nejsou zakázány.
+
+Není ale cílem nyní vytvářet novou vlastní sadu místo otázek z PDF.
+
+Nejdříve musí být kompletně vytěžena a zpracována databáze z PDF.
+
+Vlastní otázky lze přidat až následně jako samostatné rozšíření, pokud bude potřeba.
+
+Neexistuje pravidlo, že vlastní otázka musí být odlišná od zdrojové otázky.
+
+---
+
+## 11. OFICIÁLNÍ OTÁZKY
+
+Nikdy netvrď, že otázka je skutečnou otázkou ze zkoušky ÚCL, pokud ji ÚCL oficiálně nezveřejnil.
+
+U otázky z PDF používej například:
+
+> „Otázka převzatá z licencovaného studijního materiálu Odronech.cz.“
+
+U vlastní otázky:
+
+> „Vlastní tréninková otázka.“
+
+---
+
+## 12. DATOVÁ STRUKTURA OTÁZKY
+
+Každá otázka v `data/questions.json` má obsahovat minimálně:
+
+- `id`
+- `category`
+- `subcategory`
+- `difficulty`
+- `question`
+- `options`
+- `correctAnswer`
+- `explanation`
+- `source`
+- `sourceType`
+- `sourcePage`, pokud je známá
+- `status`
+- `verificationLevel`
+- `verificationBasis`
+- `tags`
+- `lastVerified`
+
+Příklad:
+
+```json
+{
+  "id": "PDF-A2-001",
+  "category": "meteorologie",
+  "subcategory": "vítr",
+  "difficulty": "medium",
+  "question": "...",
+  "options": [
+    "...",
+    "...",
+    "...",
+    "..."
+  ],
+  "correctAnswer": 1,
+  "explanation": "...",
+  "source": "Odronech.cz – A2 Kompletní studijní materiály",
+  "sourceType": "odronech_pdf",
+  "sourcePage": 87,
+  "status": "verified",
+  "verificationLevel": "source_verified",
+  "verificationBasis": "...",
+  "tags": ["vítr"],
+  "lastVerified": "YYYY-MM-DD"
+}
+```
+
+---
+
+## 13. SPRÁVNÁ ODPOVĚĎ
 
 Každá otázka musí mít právě jednu správnou odpověď.
 
-Kontroluj:
+Při převodu PDF nesmí dojít k omylu v mapování správné odpovědi.
 
-- faktickou správnost,
-- legislativní správnost,
-- jednoznačnost,
-- logickou konzistenci,
-- jazyk,
-- zda jiná odpověď nemůže být také správná.
+Před vložením do databáze zkontroluj:
 
-Pokud otázka není jednoznačná, nesmí být zařazena jako ověřená.
+- text otázky,
+- všechny čtyři možnosti,
+- správnou možnost,
+- vysvětlení.
 
-## 9. SITUAČNÍ OTÁZKY
+---
 
-Preferuj otázky, které ověřují pochopení principu.
+## 14. VYTAŽENÍ PDF
 
-Příklady vhodných oblastí:
+Při vytěžování celého PDF postupuj systematicky.
 
-- vítr a rychlost vůči zemi,
-- hustota vzduchu,
-- teplota,
-- baterie a C-rate,
-- sériové/paralelní zapojení,
-- těžiště,
-- užitečné zatížení,
-- vzdálenosti od osob,
-- low-speed režim.
+Nejdříve vytvoř inventuru:
 
-## 10. KOMERČNÍ TESTOVÉ MATERIÁLY
+- počet kapitol,
+- počet podkapitol,
+- počet otázek,
+- tematické oblasti,
+- případné duplicity,
+- obrázky,
+- tabulky,
+- výpočty.
 
-Komerční materiály mohou být použity pouze jako:
+Potom vytvoř databázi otázek.
 
-- indikace témat,
-- inspirace pro typ otázky,
-- podnět k ověření určitého tvrzení.
+Každá otázka musí zůstat dohledatelná ke konkrétní části PDF.
 
-Nesmí se automaticky přebírat jejich odpovědi ani tvrdit, že jde o oficiální otázky ÚCL.
+Pokud je dostupné číslo stránky, ulož ho.
 
-Každé tvrzení z komerčního zdroje musí být ověřeno primárním zdrojem nebo spolehlivým technickým zdrojem.
+---
 
-## 11. LEGISLATIVA
+## 15. DUPLICITY
 
-Pokud se změní předpis nebo oficiální metodika:
+Pokud se stejná otázka v PDF objeví vícekrát:
 
-1. identifikuj dotčené otázky,
-2. ověř jejich zdroje,
-3. uprav nebo vyřaď zastaralé otázky,
-4. zaznamenej změnu,
-5. aktualizuj datum ověření.
+- neztrácej informaci o výskytu,
+- zjisti, zda jde o skutečnou duplicitu,
+- neprováděj automatické mazání.
 
-Historické otázky nemaž bez důvodu; použij stav `retired`.
+Pokud je vhodné mít v databázi pouze jednu instanci, zachovej informaci o všech známých výskytech.
 
-## 12. STAVY OTÁZEK
+---
+
+## 16. OBRÁZKY A TABULKY
+
+Pokud otázka nebo vysvětlení závisí na obrázku, grafu nebo tabulce:
+
+- zachovej vazbu na daný obsah,
+- nevytvářej odpověď pouze podle odhadu z textu,
+- pokud obrázek nelze spolehlivě interpretovat, označ otázku `review`.
+
+---
+
+## 17. VERIFIKAČNÍ ÚROVNĚ
 
 Používej:
 
-- `draft` – vytvořeno, neověřeno,
-- `verified` – ověřeno,
-- `review` – vyžaduje novou kontrolu,
+### `source_verified`
+
+Obsah odpovídá zdrojovému PDF a nebyl nalezen relevantní rozpor.
+
+### `official`
+
+Tvrzení je přímo potvrzeno aktuálním autoritativním zdrojem.
+
+### `technical_verified`
+
+Technický princip je ověřen odborným technickým zdrojem.
+
+### `review`
+
+Existuje nejistota, rozpor nebo nedostatečné ověření.
+
+### `retired`
+
+Obsah se již nepoužívá, ale zachovává se v historii.
+
+---
+
+## 18. STAVY OTÁZEK
+
+Používej:
+
+- `draft` – ještě nezpracováno/ověřeno,
+- `verified` – zkontrolováno a připraveno,
+- `review` – vyžaduje kontrolu,
 - `retired` – nepoužívá se, ale zůstává v historii.
 
-## 13. SIMULACE ZKOUŠKY
+---
 
-Pokud aktuální ÚCL stanovuje 30 otázek a 75 %:
+## 19. PRÁVNĚ CITLIVÉ INFORMACE
 
-- test má 30 otázek,
-- minimum je 23 správných odpovědí,
-- 22/30 = neúspěch,
-- 23/30 = úspěch.
+Vždy zvlášť kontroluj informace, které se mohou měnit:
 
-Výpočet musí být programově správný, nikoli ručně zaokrouhlený.
+- počet otázek,
+- hranici úspěšnosti,
+- požadavky A2,
+- minimální vzdálenosti,
+- low-speed režim,
+- výškové limity,
+- třídy UAS,
+- provozní omezení,
+- registraci,
+- požadavky na pilota.
 
-Přesný poměr otázek mezi oblastmi se nesmí v aplikaci vydávat za oficiální, pokud není potvrzen aktuálním zdrojem.
+Při změně předpisu identifikuj všechny dotčené otázky.
 
-## 14. REŽIM UČENÍ
+---
 
-V režimu učení:
+## 20. VÝUKOVÝ REŽIM APLIKACE
 
-- lze okamžitě vyhodnotit odpověď,
-- zobrazit správnou odpověď,
-- zobrazit vysvětlení,
-- zobrazit zdroj.
+V režimu UČENÍ:
 
-## 15. REŽIM ZKOUŠKA
+1. uživatel odpoví,
+2. odpověď se okamžitě vyhodnotí,
+3. zobrazí se správná odpověď,
+4. zobrazí se vysvětlení,
+5. zobrazí se zdroj,
+6. uživatel pokračuje na další otázku.
 
-V režimu zkoušky:
+Po vyhodnocení se může obrazovka automaticky posunout k vysvětlení a navigaci.
+
+---
+
+## 21. MOJE CHYBY
+
+Aplikace eviduje otázky, ve kterých uživatel chyboval.
+
+Režim MOJE CHYBY musí fungovat stejně jako UČENÍ:
+
+```text
+odpověď
+↓
+vyhodnocení
+↓
+správná odpověď
+↓
+vysvětlení
+↓
+další otázka
+```
+
+---
+
+## 22. REŽIM ZKOUŠKA
+
+V režimu ZKOUŠKA:
 
 - správná odpověď se před koncem nezobrazuje,
 - vysvětlení se před koncem nezobrazuje,
@@ -183,17 +414,39 @@ V režimu zkoušky:
 - odpovědi mohou být náhodně promíchány,
 - výsledek se zobrazí až po dokončení.
 
-## 16. OPAKOVÁNÍ CHYB
+---
 
-Aplikace má evidovat chybné odpovědi a umožnit režim:
+## 23. NÁHODNÉ POŘADÍ ODPOVĚDÍ
 
-**Moje chyby**
+Správná odpověď nesmí být systematicky na pozici A.
 
-Tento režim má přednostně procvičovat otázky, ve kterých uživatel chyboval.
+Při náhodném promíchání odpovědí musí aplikace zachovat správnou vazbu na `correctAnswer`.
 
-## 17. ODDĚLENÍ DAT A KÓDU
+---
+
+## 24. SKÓROVÁNÍ
+
+Pokud aktuální oficiální podmínky stanovují 30 otázek a hranici 75 %:
+
+- 30/30 = úspěch,
+- 23/30 = úspěch,
+- 22/30 = neúspěch.
+
+Výpočet musí být programově správný.
+
+Pokud se oficiální podmínky změní, aplikace se musí aktualizovat podle aktuálního zdroje.
+
+---
+
+## 25. ODDĚLENÍ DAT A KÓDU
 
 Otázky nesmí být natvrdo vložené do HTML.
+
+Primární databáze:
+
+```text
+data/questions.json
+```
 
 Databáze musí být oddělena od:
 
@@ -203,57 +456,119 @@ Databáze musí být oddělena od:
 - navigace,
 - statistik.
 
-## 18. MINIMÁLNÍ ZMĚNY
+---
 
-Při úpravách aplikace:
+## 26. MINIMÁLNÍ ZMĚNY V APLIKACI
+
+Při úpravách:
 
 - neměň fungující části bez důvodu,
 - nemaž funkce,
 - neměň globální CSS kvůli lokální změně,
 - nezasahuj do společných souborů, pokud to není nutné.
 
-## 19. TESTOVÁNÍ
+Pokud je požadována pouze drobná změna, proveď pouze tuto změnu.
+
+---
+
+## 27. KONTROLA PŘED VYTVOŘENÍM VÝSTUPU
+
+Před každou změnou:
+
+1. identifikuj požadavek,
+2. zjisti zdroj,
+3. zjisti, zda jde o zdrojový nebo vlastní obsah,
+4. identifikuj fakta citlivá na změnu,
+5. ověř je,
+6. vytvoř výstup,
+7. znovu zkontroluj výstup proti zdroji a zadání.
+
+---
+
+## 28. KONTROLA DATABÁZE
+
+Před vydáním `questions.json` ověř:
+
+- validní JSON,
+- unikátní ID,
+- přesně 4 možnosti u každé otázky,
+- právě jednu správnou odpověď,
+- existující vysvětlení,
+- zdroj,
+- původ otázky,
+- stav,
+- verifikační úroveň,
+- datum ověření.
+
+U zdrojových otázek navíc ověř shodu s PDF.
+
+---
+
+## 29. KONTROLA APLIKACE
 
 Před vydáním verze ověř:
 
 - načtení databáze,
+- zobrazení otázky,
 - výběr odpovědi,
-- vyhodnocení,
-- navigaci,
-- skóre,
-- hranici 22/30,
-- hranici 23/30,
-- výsledek,
+- okamžité vyhodnocení v UČENÍ,
+- okamžité vyhodnocení v MOJE CHYBY,
+- vysvětlení,
+- další/předchozí,
 - náhodné pořadí,
+- zkouškový režim,
+- skóre,
+- hranici 22/30 a 23/30,
+- výsledek,
 - mobilní zobrazení.
 
-## 20. PRAVIDLO „NEVÍM“
+---
 
-Pokud nelze tvrzení spolehlivě ověřit, nesmí být vymyšleno.
+## 30. KONTROLA ZIPU
 
-Použij:
+Pokud je vytvořen ZIP:
 
-„Tuto informaci se nepodařilo spolehlivě ověřit.“
+1. vytvoř ZIP,
+2. znovu jej otevři,
+3. zkontroluj všechny soubory,
+4. zkontroluj cesty,
+5. ověř důležité soubory,
+6. teprve potom jej nabídni ke stažení.
 
-## 21. KONTROLA PŘED VÝSTUPEM
+Nikdy netvrď, že je výstup zkontrolovaný, pokud skutečně zkontrolovaný nebyl.
 
-Před každou změnou databáze nebo aplikace:
+---
 
-1. Identifikuj fakta.
-2. Urči, která mohou být zastaralá.
-3. Ověř je.
-4. Porovnej zdroje.
-5. Vyřeš rozpory.
-6. Zkontroluj logiku.
-7. Vytvoř výstup.
-8. Znovu zkontroluj výstup proti zdrojům.
+## 31. PRAVIDLO „NEVÍM“
 
-## 22. HLAVNÍ CÍL
+Pokud zdroj nedává dostatečnou odpověď:
 
-Cílem není naučit uživatele mechanicky odpovědi.
+> „Tuto informaci se nepodařilo spolehlivě ověřit.“
 
-Cílem je naučit ho:
+Nevymýšlej chybějící informace.
 
-**pochopit pravidla, principy a rozhodování potřebné pro bezpečný provoz UAS v A2.**
+Nedoplňuj automaticky vlastní znalosti tak, aby vznikla zdánlivě kompletní odpověď.
 
-Faktická správnost má vždy přednost před množstvím otázek, rychlostí tvorby a designem aplikace.
+---
+
+## 32. HISTORIE
+
+Historické verze mohou zůstat mimo aktivní databázi.
+
+Dosavadní vlastní sada 30 otázek se nepřenáší do nové databáze.
+
+Nová databáze začíná od licencovaného PDF.
+
+---
+
+## 33. HLAVNÍ ZÁSADA
+
+**Nejdříve ověřit zdroj. Potom vytvořit výstup. Nakonec výstup znovu zkontrolovat.**
+
+**Zdrojový obsah PDF zachovat věrně.**
+
+**Nezaměňovat zdrojový obsah za vlastní tvorbu.**
+
+**Nezaměňovat výklad za právní autoritu.**
+
+**Nevymýšlet informace, které zdroj nepodporuje.**

@@ -2,13 +2,14 @@
 
 Vlastní webová aplikace pro přípravu na zkoušku dálkově řídícího pilota UAS v podkategorii A2.
 
-## Čistá V1 struktura
+## Aktuální struktura
 
 ```text
-A2_Drone_Trainer/
+testA2.2/
 ├── index.html
 ├── RULES.md
 ├── README.md
+├── CLEANUP.md
 ├── css/
 │   └── style.css
 ├── js/
@@ -17,42 +18,38 @@ A2_Drone_Trainer/
     └── questions.json
 ```
 
-Aplikace používá **jeden HTML soubor, jeden CSS soubor, jeden JS soubor a jeden zdroj otázek**. Test není veden jako samostatná paralelní aplikace.
+Aplikace používá jednu společnou databázi otázek a jeden testovací engine. Samostatný `test.html` se nepoužívá.
 
-## Aktuální databáze
+## Databáze
 
-`data/questions.json`
+`data/questions.json` obsahuje 650 otázek vytěžených z licencovaného PDF Odronech.cz. Jedna otázka je označena `review` kvůli víceznačnému označení správných odpovědí ve zdroji a není načítána do aktivního procvičování.
 
-V tomto balíčku je současný testový vzorek 30 vlastních otázek (`datasetVersion: 0.3-sample`).
+Pro uživatelské filtrování jsou otázky rozděleny do 6 hlavních bloků:
 
-Nejde o oficiální databázi otázek ÚCL.
+- Meteorologie
+- Výkonnost a konstrukce UAS
+- Baterie a elektrické systémy
+- Rizika a bezpečnost provozu
+- Pravidla A2 a Open
+- Ostatní témata
+
+Každá otázka má současně podtéma, takže detailnější členění lze později použít bez změny databáze.
 
 ## Funkce
 
-- Učení
+- Učení podle tematického bloku
 - Simulace zkoušky
 - Moje chyby
 - náhodné pořadí otázek
 - náhodné pořadí odpovědí A–D
-- okamžité vysvětlení v režimu Učení
+- okamžité vysvětlení v režimu Učení a Moje chyby
 - automatický posun k vysvětlení po odpovědi
 - plovoucí navigace Předchozí / Další
-- výsledek se zaměřením na chybné otázky
-- Zopakovat chybné otázky
 - ukládání chyb do `localStorage`
 - databáze oddělená od kódu
 
-## Co zde záměrně není
-
-- časový limit testu – dokud není samostatně ověřen jako aktuální oficiální parametr
-- další paralelní `test.html`, `test.js`, `test.css`
-- duplicitní databáze otázek
-
 ## Důležitá zásada
 
+Stávající funkční aplikace se upravuje minimálně. Rozšíření databáze nemá vytvářet paralelní testovací aplikaci ani nový `test.html`.
+
 Nejdříve ověřit fakta, potom vytvořit výstup a výsledek před předáním znovu zkontrolovat.
-
-
-## Režimy zpětné vazby
-
-V režimu Učení i Moje chyby se odpověď vyhodnotí okamžitě, zobrazí se správnost a vysvětlení a po zobrazení zpětné vazby lze pokračovat na další otázku. Režim Zkouška poskytuje zpětnou vazbu až po dokončení testu.
