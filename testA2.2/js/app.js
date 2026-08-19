@@ -6,11 +6,13 @@ const state={
   answers:[],
   displayedOptions:[],
   mistakes:new Set(JSON.parse(localStorage.getItem("a2_mistakes")||"[]")),
-  examConfig:{questions:30,passPercentage:75,passingScore:23}
+  examConfig:{questions:30,passPercentage:75,passingScore:23},
+  theory:[],
+  theoryIndex:0
 };
 
 const $=id=>document.getElementById(id);
-const screens=["homeScreen","setupScreen","quizScreen","resultScreen","errorScreen"];
+const screens=["homeScreen","setupScreen","quizScreen","resultScreen","theoryScreen","theoryDetailScreen","errorScreen"];
 
 function show(id){
   screens.forEach(s=>$(s).classList.toggle("hidden",s!==id));
@@ -36,6 +38,83 @@ const CATEGORY_META={
   rizeni_navigace_komunikace_uas:{label:"Řízení, navigace a komunikace",icon:"🛰️",desc:"Navigace, řízení a rádiové spojení"},
   lidske_faktory_vlos_provoz:{label:"Lidské faktory a VLOS",icon:"👁️",desc:"VLOS, pilot a provozní postupy"}
 };
+
+
+
+function theoryChapters(){
+  return state.theory.filter(ch=>ch && ch.title && ch.content && ch.content.trim());
+}
+
+function formatTheoryContent(content){
+  const blocks=content.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean);
+  return blocks.map(block=>{
+    const lines=block.split("\n").map(x=>x.trim()).filter(Boolean);
+    if(lines.length===1) return `<p>${escapeHtml(lines[0])}</p>`;
+    return `<p>${lines.map(escapeHtml).join("<br>")}</p>`;
+  }).join("");
+}
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+
+function openTheory(){
+  const chapters=theoryChapters();
+  const box=$("theoryContent");
+  if(!chapters.length){
+    box.innerHTML=`<div class="panel"><h3>Teorie není dostupná</h3><p class="muted">Databáze teorie neobsahuje žádný výkladový obsah.</p></div>`;
+    show("theoryScreen");
+    return;
+  }
+  box.innerHTML=`
+    <div class="theory-intro panel">
+      <strong>Studijní materiál A2</strong>
+      <p>Procházej teorii podle témat. Obsah vychází z výkladové části studijního materiálu; testové otázky jsou vedeny samostatně v databázi otázek.</p>
+    </div>
+    <div class="theory-list">
+      ${chapters.map((ch,i)=>`
+        <button class="theory-card" type="button" data-theory-index="${i}">
+          <span class="theory-num">${String(i+1).padStart(2,"0")}</span>
+          <span class="theory-copy"><strong>${escapeHtml(ch.title)}</strong><small>${escapeHtml(ch.pages||"")}</small></span>
+          <span class="theory-arrow">→</span>
+        </button>`).join("")}
+    </div>`;
+  box.querySelectorAll(".theory-card").forEach(b=>b.onclick=()=>openTheoryChapter(Number(b.dataset.theoryIndex)));
+  show("theoryScreen");
+}
+
+function openTheoryChapter(index){
+  const chapters=theoryChapters();
+  if(!chapters[index])return;
+  state.theoryIndex=index;
+  renderTheoryChapter();
+  show("theoryDetailScreen");
+}
+
+function renderTheoryChapter(){
+  const chapters=theoryChapters();
+  const ch=chapters[state.theoryIndex];
+  if(!ch)return;
+  $("theoryDetailTitle").textContent=ch.title;
+  $("theoryArticle").innerHTML=`
+    <div class="theory-meta">${escapeHtml(ch.pages||"")} · Zdrojový materiál</div>
+    <div class="theory-body">${formatTheoryContent(ch.content)}</div>
+    <div class="theory-source"><strong>Zdroj</strong><br>${escapeHtml(ch.source||"")}</div>`;
+  $("theoryPrevBtn").disabled=state.theoryIndex===0;
+  $("theoryNextBtn").textContent=state.theoryIndex===chapters.length-1?"Kapitoly":"Další →";
+  $("theoryNextBtn").disabled=false;
+  window.scrollTo({top:0,behavior:"instant"});
+}
+
+function theoryPrev(){
+  if(state.theoryIndex>0){state.theoryIndex--;renderTheoryChapter();}
+}
+
+function theoryNext(){
+  const chapters=theoryChapters();
+  if(state.theoryIndex<chapters.length-1){state.theoryIndex++;renderTheoryChapter();}
+  else show("theoryScreen");
+}
 
 function categoryMeta(c){return CATEGORY_META[c]||{label:c||"Nezařazené",icon:"•",desc:"Tematický okruh"};}
 function categoryLabel(c){return categoryMeta(c).label;}function difficultyLabel(d){return d==="easy"?"Lehká":d==="medium"?"Střední":d==="hard"?"Těžká":"Zdrojový materiál";}
@@ -295,6 +374,10 @@ async function load(){
     const response=await fetch("data/questions.json");
     if(!response.ok)throw new Error("Databázi otázek se nepodařilo načíst.");
     const data=await response.json();
+    const theoryResponse=await fetch("data/theory.json");
+    if(!theoryResponse.ok)throw new Error("Databázi teorie se nepodařilo načíst.");
+    const theoryData=await theoryResponse.json();
+    state.theory=Array.isArray(theoryData.chapters)?theoryData.chapters:[];
     state.allQuestions=data.questions.filter(q=>q.status!=="retired" && q.correctAnswer!==null && q.correctAnswer!==undefined);
     if(data.exam){
       state.examConfig.questions=data.exam.questions??30;
@@ -312,11 +395,18 @@ async function load(){
 
 $("homeBtn").onclick=goHome;
 $("backBtn").onclick=goHome;
+$("theoryBackBtn").onclick=goHome;
+$("theoryDetailBackBtn").onclick=openTheory;
+$("theoryPrevBtn").onclick=theoryPrev;
+$("theoryNextBtn").onclick=theoryNext;
 $("homeResultBtn").onclick=goHome;
 $("startBtn").onclick=startQuiz;
 $("nextBtn").onclick=nextQuestion;
 $("prevBtn").onclick=prevQuestion;
 $("retryBtn").onclick=retry;
-document.querySelectorAll(".mode-card").forEach(b=>b.onclick=()=>openSetup(b.dataset.mode));
+document.querySelectorAll(".mode-card").forEach(b=>b.onclick=()=>{
+  if(b.dataset.mode==="theory") openTheory();
+  else openSetup(b.dataset.mode);
+});
 
 load();
