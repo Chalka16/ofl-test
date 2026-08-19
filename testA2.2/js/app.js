@@ -27,17 +27,18 @@ function shuffle(arr){
   return a;
 }
 
-const CATEGORY_LABELS={
-  meteorologie:"Meteorologie",
-  vykonnost_konstrukce_uas:"Výkonnost a konstrukce UAS",
-  baterie_elektricke_systemy:"Baterie a elektrické systémy",
-  rizika_bezpecnost_provozu:"Rizika a bezpečnost provozu",
-  pravidla_a2_open:"Pravidla A2 a Open",
-  ostatni:"Ostatní témata"
+const CATEGORY_META={
+  meteorologie:{label:"Meteorologie",icon:"🌦️",desc:"Počasí, vítr a atmosféra"},
+  baterie_elektricke_systemy:{label:"Baterie a elektrické systémy",icon:"🔋",desc:"Akumulátory, energie a elektrické systémy"},
+  rizika_bezpecnost_provozu:{label:"Rizika a bezpečnost provozu",icon:"🛡️",desc:"Rizika, osoby a bezpečný provoz"},
+  pravidla_a2_open:{label:"Pravidla A2 a Open",icon:"⚖️",desc:"Pravidla, omezení a provozní podmínky"},
+  vykonnost_konstrukce_uas:{label:"Výkonnost a konstrukce UAS",icon:"🚁",desc:"Letové vlastnosti, výkon a konstrukce"},
+  rizeni_navigace_komunikace_uas:{label:"Řízení, navigace a komunikace",icon:"🛰️",desc:"Navigace, řízení a rádiové spojení"},
+  lidske_faktory_vlos_provoz:{label:"Lidské faktory a VLOS",icon:"👁️",desc:"VLOS, pilot a provozní postupy"}
 };
 
-function categoryLabel(c){return CATEGORY_LABELS[c]||c||"Ostatní témata";}
-function difficultyLabel(d){return d==="easy"?"Lehká":d==="medium"?"Střední":d==="hard"?"Těžká":"Zdrojový materiál";}
+function categoryMeta(c){return CATEGORY_META[c]||{label:c||"Nezařazené",icon:"•",desc:"Tematický okruh"};}
+function categoryLabel(c){return categoryMeta(c).label;}function difficultyLabel(d){return d==="easy"?"Lehká":d==="medium"?"Střední":d==="hard"?"Těžká":"Zdrojový materiál";}
 
 function saveMistakes(){
   localStorage.setItem("a2_mistakes",JSON.stringify([...state.mistakes]));
@@ -63,8 +64,21 @@ function openSetup(mode){
   $("startBtn").disabled=false;
   $("setupContent").innerHTML=`
     <div class="setup-options">
-      <label class="setup-option"><input type="radio" name="category" value="all" checked> Všechny oblasti</label>
-      ${cats.map(c=>`<label class="setup-option"><input type="radio" name="category" value="${c}"> ${categoryLabel(c)} <span class="setup-count">${categoryCounts[c]}</span></label>`).join("")}
+      <label class="setup-option setup-all">
+        <input type="radio" name="category" value="all" checked>
+        <span class="setup-icon">📚</span>
+        <span class="setup-copy"><strong>Všechny oblasti</strong><small>Celá databáze otázek</small></span>
+        <span class="setup-count">${state.allQuestions.length}</span>
+      </label>
+      ${cats.map(c=>{
+        const m=categoryMeta(c);
+        return `<label class="setup-option">
+          <input type="radio" name="category" value="${c}">
+          <span class="setup-icon">${m.icon}</span>
+          <span class="setup-copy"><strong>${m.label}</strong><small>${m.desc}</small></span>
+          <span class="setup-count">${categoryCounts[c]}</span>
+        </label>`;
+      }).join("")}
     </div>
     <p class="muted">${mode==="exam"
       ? `${state.examConfig.questions} otázek. Správné odpovědi a vysvětlení se zobrazí až po dokončení.`
