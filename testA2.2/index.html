@@ -41,6 +41,11 @@
       <strong>MOJE CHYBY</strong>
       <small>Procvičuj otázky, ve kterých jsi chyboval.</small>
     </button>
+    <button class="mode-card" data-mode="theory">
+      <span class="mode-icon">📖</span>
+      <strong>TEORIE</strong>
+      <small>Studuj výklad A2 podle jednotlivých témat.</small>
+    </button>
   </div>
 
   <div class="info-grid">
@@ -50,6 +55,32 @@
   </div>
 
   <p class="disclaimer">Vlastní tréninková aplikace. Nejde o oficiální aplikaci ani databázi otázek ÚCL.</p>
+</section>
+
+<section id="theoryScreen" class="screen hidden">
+  <div class="section-head">
+    <button id="theoryBackBtn" class="text-btn">← Zpět</button>
+    <div>
+      <div class="eyebrow">STUDIJNÍ MATERIÁL</div>
+      <h2>Teorie A2</h2>
+    </div>
+  </div>
+  <div id="theoryContent"></div>
+</section>
+
+<section id="theoryDetailScreen" class="screen hidden">
+  <div class="section-head">
+    <button id="theoryDetailBackBtn" class="text-btn">← Kapitoly</button>
+    <div>
+      <div class="eyebrow">TEORIE A2</div>
+      <h2 id="theoryDetailTitle"></h2>
+    </div>
+  </div>
+  <article id="theoryArticle" class="theory-article"></article>
+  <nav class="theory-nav">
+    <button id="theoryPrevBtn" class="secondary-btn">← Předchozí</button>
+    <button id="theoryNextBtn" class="primary-btn">Další →</button>
+  </nav>
 </section>
 
 <section id="setupScreen" class="screen hidden">
