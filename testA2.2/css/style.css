@@ -80,3 +80,34 @@ button{font:inherit}.hidden{display:none!important}
   .setup-copy small{font-size:10px}
   .setup-count{font-size:12px;min-width:32px}
 }
+
+
+/* Teorie A2 */
+.theory-intro{margin-bottom:12px}
+.theory-intro p{margin:7px 0 0;color:var(--muted);line-height:1.55}
+.theory-list{display:grid;gap:10px}
+.theory-card{
+  width:100%;display:grid;grid-template-columns:42px minmax(0,1fr) 24px;align-items:center;gap:13px;
+  text-align:left;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px 16px;
+  cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+}
+.theory-card:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(15,23,42,.07);border-color:#c4d0dc}
+.theory-num{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--soft);color:#0878b5;font-weight:900;font-size:12px}
+.theory-copy{min-width:0}.theory-copy strong{display:block;font-size:14px;line-height:1.3}.theory-copy small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.theory-arrow{font-size:20px;color:#94a3b8;text-align:right}
+.theory-article{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;margin-bottom:80px}
+.theory-meta{font-size:10px;color:#94a3b8;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.theory-body{color:#334155;line-height:1.7;font-size:16px}
+.theory-body p{margin:0 0 18px}
+.theory-body p:first-child{color:var(--ink);font-weight:700}
+.theory-source{margin-top:25px;padding:15px;border-radius:13px;background:#f8fafc;border-left:4px solid var(--blue);font-size:12px;color:var(--muted);line-height:1.5}
+.theory-nav{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);width:min(884px,calc(100% - 28px));display:flex;justify-content:space-between;gap:10px;padding:9px 10px;background:#ffffffec;backdrop-filter:blur(12px);border:1px solid #dce3ea;border-radius:16px;box-shadow:0 12px 35px #0b122025;z-index:20}
+.theory-nav button{flex:1;max-width:220px}
+@media(max-width:700px){
+  .mode-grid{grid-template-columns:1fr 1fr}
+  .theory-article{padding:20px}
+  .theory-body{font-size:15px}
+  .theory-nav{bottom:7px;width:calc(100% - 16px)}
+  .theory-nav button{padding:12px 9px}
+}
+@media(max-width:480px){.mode-grid{grid-template-columns:1fr}}
