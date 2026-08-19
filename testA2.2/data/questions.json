@@ -1,19 +1,19 @@
 {
   "meta": {
-    "datasetVersion": "1.0-pdf-source-reclassified",
+    "datasetVersion": "1.0-pdf-source-reclassified-v2",
     "title": "A2 Drone Trainer – otázková databáze z Odronech.cz PDF – tematicky reklasifikovaná",
     "purpose": "Základní otázková databáze pro procvičování podle licencovaného PDF.",
     "source": "Odronech.cz – A2 Kompletní studijní materiály, Kategorie A2",
     "sourceQuestionCount": 650,
-    "activeQuestionCount": 650,
+    "activeQuestionCount": 649,
     "reviewQuestionCount": 1,
     "difficultyStatus": "not_classified",
-    "note": "Všech 650 zdrojových otázek bylo znovu tematicky posouzeno podle skutečného obsahu otázky, odpovědí a vysvětlení. Reklasifikace mění pouze klasifikační metadata category, categoryName, subcategory a tags; znění otázek, možnosti, správné odpovědi, vysvětlení, zdroj, stránka a ID jsou zachovány. Byla odstraněna kategorie Ostatní. Pro samostatně technická témata řízení, navigace a komunikace UAS byla vytvořena samostatná kategorie, protože tato témata nelze odborně čistě sloučit s ostatními šesti kategoriemi.",
+    "note": "Všech 650 zdrojových otázek bylo znovu posouzeno podle skutečného obsahu. Reklasifikace mění pouze category, categoryName, subcategory a tags. Původní otázky, možnosti, správné odpovědi, vysvětlení, zdroj, stránka a ID jsou uzamčeny. Kategorie Ostatní není použita. Sedm hraničních/nesprávných zařazení bylo opraveno; PDF-A2-032 zůstává review kvůli více správným odpovědím ve zdroji.",
     "topicBlocks": [
       {
         "id": "meteorologie",
         "name": "Meteorologie",
-        "questionCount": 186,
+        "questionCount": 199,
         "subtopics": [
           {
             "id": "teplota, vlhkost a hustota vzduchu",
@@ -23,22 +23,22 @@
           {
             "id": "mraky, srážky a bouřky",
             "name": "mraky, srážky a bouřky",
-            "questionCount": 30
-          },
-          {
-            "id": "dohlednost a mlha",
-            "name": "dohlednost a mlha",
-            "questionCount": 27
-          },
-          {
-            "id": "předpověď a METAR",
-            "name": "předpověď a METAR",
-            "questionCount": 27
+            "questionCount": 33
           },
           {
             "id": "vítr a proudění",
             "name": "vítr a proudění",
-            "questionCount": 21
+            "questionCount": 30
+          },
+          {
+            "id": "předpověď a METAR",
+            "name": "předpověď a METAR",
+            "questionCount": 29
+          },
+          {
+            "id": "dohlednost a mlha",
+            "name": "dohlednost a mlha",
+            "questionCount": 26
           },
           {
             "id": "atmosférický tlak",
@@ -60,12 +60,12 @@
       {
         "id": "vykonnost_konstrukce_uas",
         "name": "Výkonnost a konstrukce UAS",
-        "questionCount": 108,
+        "questionCount": 110,
         "subtopics": [
           {
             "id": "výkon a letové vlastnosti",
             "name": "výkon a letové vlastnosti",
-            "questionCount": 26
+            "questionCount": 28
           },
           {
             "id": "těžiště a vyvážení",
@@ -102,7 +102,7 @@
       {
         "id": "baterie_elektricke_systemy",
         "name": "Baterie a elektrické systémy",
-        "questionCount": 116,
+        "questionCount": 114,
         "subtopics": [
           {
             "id": "skladování a bezpečnost baterií",
@@ -133,23 +133,13 @@
             "id": "sériové a paralelní zapojení",
             "name": "sériové a paralelní zapojení",
             "questionCount": 2
-          },
-          {
-            "id": "VLOS a vizuální dohled",
-            "name": "VLOS a vizuální dohled",
-            "questionCount": 1
-          },
-          {
-            "id": "mraky, srážky a bouřky",
-            "name": "mraky, srážky a bouřky",
-            "questionCount": 1
           }
         ]
       },
       {
         "id": "rizika_bezpecnost_provozu",
         "name": "Rizika a bezpečnost provozu",
-        "questionCount": 90,
+        "questionCount": 83,
         "subtopics": [
           {
             "id": "pozemní riziko a mitigace",
@@ -177,36 +167,26 @@
             "questionCount": 7
           },
           {
-            "id": "vítr a proudění",
-            "name": "vítr a proudění",
-            "questionCount": 5
-          },
-          {
             "id": "nouzové situace a poruchy",
             "name": "nouzové situace a poruchy",
-            "questionCount": 4
-          },
-          {
-            "id": "mraky, srážky a bouřky",
-            "name": "mraky, srážky a bouřky",
-            "questionCount": 1
+            "questionCount": 3
           }
         ]
       },
       {
         "id": "pravidla_a2_open",
         "name": "Pravidla A2 a Open",
-        "questionCount": 116,
+        "questionCount": 104,
         "subtopics": [
-          {
-            "id": "registrace a povinnosti pilota/provozovatele",
-            "name": "registrace a povinnosti pilota/provozovatele",
-            "questionCount": 33
-          },
           {
             "id": "kategorie Open a A2",
             "name": "kategorie Open a A2",
             "questionCount": 30
+          },
+          {
+            "id": "registrace a povinnosti pilota/provozovatele",
+            "name": "registrace a povinnosti pilota/provozovatele",
+            "questionCount": 28
           },
           {
             "id": "vzdálenosti a low-speed",
@@ -229,41 +209,21 @@
             "questionCount": 5
           },
           {
-            "id": "vítr a proudění",
-            "name": "vítr a proudění",
-            "questionCount": 3
-          },
-          {
             "id": "výška a provozní limity",
             "name": "výška a provozní limity",
             "questionCount": 3
-          },
-          {
-            "id": "předpověď a METAR",
-            "name": "předpověď a METAR",
-            "questionCount": 2
-          },
-          {
-            "id": "mraky, srážky a bouřky",
-            "name": "mraky, srážky a bouřky",
-            "questionCount": 1
-          },
-          {
-            "id": "výkon a letové vlastnosti",
-            "name": "výkon a letové vlastnosti",
-            "questionCount": 1
           }
         ]
       },
       {
         "id": "lidske_faktory_vlos_provoz",
         "name": "Lidské faktory, VLOS a provozní postupy",
-        "questionCount": 21,
+        "questionCount": 24,
         "subtopics": [
           {
             "id": "VLOS a vizuální dohled",
             "name": "VLOS a vizuální dohled",
-            "questionCount": 8
+            "questionCount": 11
           },
           {
             "id": "lidské vnímání a orientace",
@@ -290,17 +250,17 @@
       {
         "id": "rizeni_navigace_komunikace_uas",
         "name": "Řízení, navigace a komunikace UAS",
-        "questionCount": 13,
+        "questionCount": 16,
         "subtopics": [
           {
             "id": "navigace a kompas",
             "name": "navigace a kompas",
-            "questionCount": 6
+            "questionCount": 8
           },
           {
             "id": "rádiové spojení a interference",
             "name": "rádiové spojení a interference",
-            "questionCount": 5
+            "questionCount": 6
           },
           {
             "id": "autopilot a řídicí jednotka",
@@ -309,7 +269,21 @@
           }
         ]
       }
-    ]
+    ],
+    "classificationAudit": {
+      "changedCategoryCount": 7,
+      "changedQuestionIds": [
+        "PDF-A2-083",
+        "PDF-A2-090",
+        "PDF-A2-186",
+        "PDF-A2-283",
+        "PDF-A2-314",
+        "PDF-A2-408",
+        "PDF-A2-418"
+      ],
+      "otherCategoryCount": 0,
+      "lockedContentChecked": true
+    }
   },
   "questions": [
     {
@@ -2617,9 +2591,9 @@
       "id": "PDF-A2-083",
       "sourceQuestionNumber": 83,
       "sourcePage": 80,
-      "category": "pravidla_a2_open",
-      "categoryName": "Pravidla A2 a Open",
-      "subcategory": "registrace a povinnosti pilota/provozovatele",
+      "category": "rizeni_navigace_komunikace_uas",
+      "categoryName": "Řízení, navigace a komunikace UAS",
+      "subcategory": "navigace a kompas",
       "difficulty": null,
       "question": "Kolik satelitů je ideálních pro správnou GPS fixaci UA?",
       "options": [
@@ -2636,8 +2610,8 @@
       "verificationLevel": "review",
       "verificationBasis": "Doslovně vytěženo z licencovaného PDF; aktuální právní a odborný audit bude proveden samostatně.",
       "tags": [
-        "pravidla_a2_open",
-        "registrace a povinnosti pilota/provozovatele"
+        "rizeni_navigace_komunikace_uas",
+        "navigace a kompas"
       ],
       "lastVerified": null
     },
@@ -2813,9 +2787,9 @@
       "id": "PDF-A2-090",
       "sourceQuestionNumber": 90,
       "sourcePage": 82,
-      "category": "pravidla_a2_open",
-      "categoryName": "Pravidla A2 a Open",
-      "subcategory": "registrace a povinnosti pilota/provozovatele",
+      "category": "rizeni_navigace_komunikace_uas",
+      "categoryName": "Řízení, navigace a komunikace UAS",
+      "subcategory": "navigace a kompas",
       "difficulty": null,
       "question": "Jaký je hlavní rozdíl mezi UAV a RPAS?",
       "options": [
@@ -2832,8 +2806,8 @@
       "verificationLevel": "review",
       "verificationBasis": "Doslovně vytěženo z licencovaného PDF; aktuální právní a odborný audit bude proveden samostatně.",
       "tags": [
-        "pravidla_a2_open",
-        "registrace a povinnosti pilota/provozovatele"
+        "rizeni_navigace_komunikace_uas",
+        "navigace a kompas"
       ],
       "lastVerified": null
     },
@@ -5501,9 +5475,9 @@
       "id": "PDF-A2-186",
       "sourceQuestionNumber": 186,
       "sourcePage": 103,
-      "category": "pravidla_a2_open",
-      "categoryName": "Pravidla A2 a Open",
-      "subcategory": "registrace a povinnosti pilota/provozovatele",
+      "category": "lidske_faktory_vlos_provoz",
+      "categoryName": "Lidské faktory, VLOS a provozní postupy",
+      "subcategory": "VLOS a vizuální dohled",
       "difficulty": null,
       "question": "Za jasného a slunečného dne byste měli létat se sluncem:",
       "options": [
@@ -5520,8 +5494,8 @@
       "verificationLevel": "review",
       "verificationBasis": "Doslovně vytěženo z licencovaného PDF; aktuální právní a odborný audit bude proveden samostatně.",
       "tags": [
-        "pravidla_a2_open",
-        "registrace a povinnosti pilota/provozovatele"
+        "lidske_faktory_vlos_provoz",
+        "VLOS a vizuální dohled"
       ],
       "lastVerified": null
     },
@@ -8217,9 +8191,9 @@
       "id": "PDF-A2-283",
       "sourceQuestionNumber": 283,
       "sourcePage": 124,
-      "category": "pravidla_a2_open",
-      "categoryName": "Pravidla A2 a Open",
-      "subcategory": "registrace a povinnosti pilota/provozovatele",
+      "category": "meteorologie",
+      "categoryName": "Meteorologie",
+      "subcategory": "vítr a proudění",
       "difficulty": null,
       "question": "Mohu pro zjištění síly větru v dané oblasti použít mobilní aplikaci?",
       "options": [
@@ -8236,8 +8210,8 @@
       "verificationLevel": "review",
       "verificationBasis": "Doslovně vytěženo z licencovaného PDF; aktuální právní a odborný audit bude proveden samostatně.",
       "tags": [
-        "pravidla_a2_open",
-        "registrace a povinnosti pilota/provozovatele"
+        "meteorologie",
+        "vítr a proudění"
       ],
       "lastVerified": null
     },
@@ -9085,9 +9059,9 @@
       "id": "PDF-A2-314",
       "sourceQuestionNumber": 314,
       "sourcePage": 131,
-      "category": "meteorologie",
-      "categoryName": "Meteorologie",
-      "subcategory": "dohlednost a mlha",
+      "category": "lidske_faktory_vlos_provoz",
+      "categoryName": "Lidské faktory, VLOS a provozní postupy",
+      "subcategory": "VLOS a vizuální dohled",
       "difficulty": null,
       "question": "Je jasný a slunečný den. Slunce mám mít při letu:",
       "options": [
@@ -9104,8 +9078,8 @@
       "verificationLevel": "review",
       "verificationBasis": "Doslovně vytěženo z licencovaného PDF; aktuální právní a odborný audit bude proveden samostatně.",
       "tags": [
-        "meteorologie",
-        "dohlednost a mlha"
+        "lidske_faktory_vlos_provoz",
+        "VLOS a vizuální dohled"
       ],
       "lastVerified": null
     },
@@ -11717,9 +11691,9 @@
       "id": "PDF-A2-408",
       "sourceQuestionNumber": 408,
       "sourcePage": 152,
-      "category": "rizika_bezpecnost_provozu",
-      "categoryName": "Rizika a bezpečnost provozu",
-      "subcategory": "nouzové situace a poruchy",
+      "category": "rizeni_navigace_komunikace_uas",
+      "categoryName": "Řízení, navigace a komunikace UAS",
+      "subcategory": "rádiové spojení a interference",
       "difficulty": null,
       "question": "U komerčně vyráběných UAS, po kolika sekundách ztráty signálu se v průměru aktivuje funkce failsafe?",
       "options": [
@@ -11736,8 +11710,8 @@
       "verificationLevel": "review",
       "verificationBasis": "Doslovně vytěženo z licencovaného PDF; aktuální právní a odborný audit bude proveden samostatně.",
       "tags": [
-        "rizika_bezpecnost_provozu",
-        "nouzové situace a poruchy"
+        "rizeni_navigace_komunikace_uas",
+        "rádiové spojení a interference"
       ],
       "lastVerified": null
     },
@@ -11997,9 +11971,9 @@
       "id": "PDF-A2-418",
       "sourceQuestionNumber": 418,
       "sourcePage": 154,
-      "category": "pravidla_a2_open",
-      "categoryName": "Pravidla A2 a Open",
-      "subcategory": "registrace a povinnosti pilota/provozovatele",
+      "category": "vykonnost_konstrukce_uas",
+      "categoryName": "Výkonnost a konstrukce UAS",
+      "subcategory": "výkon a letové vlastnosti",
       "difficulty": null,
       "question": "S ohledem na dynamickou stabilitu může být bezpilotní letadlo (UAV):",
       "options": [
@@ -12016,8 +11990,8 @@
       "verificationLevel": "review",
       "verificationBasis": "Doslovně vytěženo z licencovaného PDF; aktuální právní a odborný audit bude proveden samostatně.",
       "tags": [
-        "pravidla_a2_open",
-        "registrace a povinnosti pilota/provozovatele"
+        "vykonnost_konstrukce_uas",
+        "výkon a letové vlastnosti"
       ],
       "lastVerified": null
     },
